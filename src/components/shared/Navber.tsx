@@ -7,6 +7,7 @@ import Link from "next/link";
 const Navber = () => {
   return (
     <div>
+        <h1 className="text-center bg-gray-900 text-white p-4 font-semibold"><span className="animate-ping text-yellow-500 duration-500 opacity-100 font-semibold">Free shipping</span> orders from all item</h1>
       <div className="container mx-auto py-4 px-2 m-3 ">
         <div className="grid grid-cols-3 justify-center items-center">
           <div className="mx-auto">
