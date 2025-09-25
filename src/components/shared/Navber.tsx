@@ -3,6 +3,7 @@ import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Search from "antd/es/input/Search";
 import Image from "next/image";
+import Link from "next/link";
 const Navber = () => {
   return (
     <div>
@@ -28,16 +29,37 @@ const Navber = () => {
 
           <div className="grid grid-cols-2 mx-auto justify-center items-center">
             <div className="flex gap-2">
-              <FontAwesomeIcon icon={faUser} className="w-8 hover:text-yellow-500 duration-300" />
+              <FontAwesomeIcon
+                icon={faUser}
+                className="w-8 hover:text-yellow-500 duration-300 text-gray-500"
+              />
               <div>
-                <h1 className="hover:text-yellow-500 duration-300 font-semibold">ACCOUNT</h1>
-                <small className="hover:text-yellow-500 duration-300 font-semibold">Register | Login</small>
+                <Link href={"/"}>
+                  <h1 className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
+                    ACCOUNT
+                  </h1>
+                </Link>
+                <Link href={"/"}>
+                  <small className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
+                    Register | Login
+                  </small>
+                </Link>
               </div>
             </div>
 
-            <div className="flex gap-5 mx-5">
-              <FontAwesomeIcon icon={faHeart} className="w-8 hover:text-yellow-500 duration-300" />
-              <FontAwesomeIcon icon={faShopify} className="w-8 hover:text-yellow-500 duration-300" />
+            <div className="flex gap-5 mx-5 justify-center items-center">
+              <Link href={"/"}>
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  className="w-8 hover:text-yellow-500 duration-300 text-gray-500"
+                />
+              </Link>
+              <Link href={"/"}>
+                <FontAwesomeIcon
+                  icon={faShopify}
+                  className="w-8 hover:text-yellow-500 duration-300 text-gray-500"
+                />
+              </Link>
             </div>
           </div>
         </div>
