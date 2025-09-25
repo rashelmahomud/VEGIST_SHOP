@@ -1,9 +1,15 @@
 import { faShopify } from "@fortawesome/free-brands-svg-icons";
-import { faHeadphones, faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHeadphones,
+  faHeart,
+  faUser,
+} from "@fortawesome/free-regular-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Search from "antd/es/input/Search";
 import Image from "next/image";
 import Link from "next/link";
+import Submenu from "./Submenu";
 const Navber = () => {
   return (
     <div className="">
@@ -14,7 +20,6 @@ const Navber = () => {
         orders from all item
       </h1>
       <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
-        
         <div className="grid grid-cols-3 justify-center items-center">
           <div className="">
             <Image
@@ -71,35 +76,61 @@ const Navber = () => {
           </div>
         </div>
       </div>
-    <p className="border-b-1 mx-36 border-gray-200 "></p>
+      <p className="border-b-1 mx-36 border-gray-200 mb-2"></p>
       <div className="flex justify-between items-center lg:px-36">
-     
-        <ul className="grid grid-cols-6 gap-5 divide-x-1 divide-gray-300">
-          <li className="text-gray-500">
-            <Link href={"/"}>Home</Link>
+        <ul className="grid lg:grid-cols-6 gap-5 divide-x-1 divide-gray-300">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300">
+            <Link href={"/"} className="">
+              Home
+            </Link>
+            <FontAwesomeIcon icon={faAngleDown} className="w-3" />
+            <ul className="absolute mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300">
+              <li>about</li>
+              <li>Home</li>
+              <li>Home</li>
+              <li>Home</li>
+              <li>Home</li>
+            </ul>
           </li>
-          <li className="text-gray-500">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300">
             <Link href={"/"}>Shop</Link>
+            <FontAwesomeIcon icon={faAngleDown} className="w-3" />
+            {/* <p className="absolute mt-10 w-[1000px] -ml-30 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300"> <Submenu /></p> */}
+            <div className="absolute mt-10 invisible group-hover:opacity-100 group-hover:visible duration-300"><Submenu /></div>
           </li>
-          <li className="text-gray-500">
+          
+          <li className="text-gray-500 flex gap-1 hover:text-yellow-500 duration-200">
             <Link href={"/"}>Collection</Link>
+            <FontAwesomeIcon icon={faAngleDown} className="w-3" />
           </li>
-          <li className="text-gray-500">
+          <li className="text-gray-500 hover:text-yellow-500 duration-200">
             <Link href={"/"}>Blogs</Link>
           </li>
-          <li className="text-gray-500">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300">
             <Link href={"/"}>Pages</Link>
+            <FontAwesomeIcon icon={faAngleDown} className="w-3" />
+            <ul className="absolute m-2 mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 w-full">
+              <li>About US</li>
+              <li>Contact Us</li>
+              <li>Payment Policy</li>
+              <li>Privet Policy</li>
+              <li>Privet Policy</li>
+              <li>Return Policy</li>
+              <li>conditions</li>
+            </ul>
           </li>
-          <li className="text-gray-500">
+          <li className="text-gray-500 hover:text-yellow-500 duration-200">
             <Link href={"/"}>Buy vegist</Link>
           </li>
         </ul>
         <div className="flex jusity-center items-center lg:mr-18 gap-5">
-            <FontAwesomeIcon icon={faHeadphones} className="w-8 text-gray-500" />
-            <div>
-                <h1 className="ml-2 font-semibold text-gray-500">Hotline:</h1>
-                <span className="font-semibold hover:text-yellow-500 duration-300 text-gray-500">+8801835199061</span>
-            </div>
+          <FontAwesomeIcon icon={faHeadphones} className="w-8 text-gray-500" />
+          <div>
+            <h1 className="ml-2 font-semibold text-gray-500">Hotline:</h1>
+            <span className="font-semibold hover:text-yellow-500 duration-300 text-gray-500">
+              +8801835199061
+            </span>
+          </div>
         </div>
       </div>
     </div>
