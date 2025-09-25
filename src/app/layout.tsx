@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Navber from "@/components/shared/Navber";
 import Footer from "@/components/shared/Footer";
 
@@ -30,7 +31,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navber />
-        <div className="h-screen">{children}</div>
+        <div className="h-screen">
+          <AntdRegistry>{children}</AntdRegistry>
+        </div>
         <Footer />
       </body>
     </html>
