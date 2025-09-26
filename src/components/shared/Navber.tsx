@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Submenu from "./Submenu";
 const Navber = () => {
+  const menuDesign = "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300";
   return (
     <div className="">
       <h1 className="text-center bg-gray-900 text-white p-4 font-semibold">
@@ -79,57 +80,77 @@ const Navber = () => {
       <p className="border-b-1 mx-36 border-gray-200 mb-2"></p>
       <div className="flex justify-between items-center lg:px-36">
         <ul className="grid lg:grid-cols-6 gap-5 divide-x-1 divide-gray-300">
-          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"} className="">
               Home
             </Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
             <ul className="absolute mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300">
-              <li>about</li>
-              <li>Home</li>
-              <li>Home</li>
-              <li>Home</li>
-              <li>Home</li>
+              <Link href={"/"}>
+                <li className={menuDesign}>about</li>
+              </Link>
+              <Link href={"/"}>
+                <li className={menuDesign}>contact</li>
+              </Link>
+              <Link href={"/"}>
+                <li className={menuDesign}>blogs</li>
+              </Link>
+              <Link href={"/"}>
+                <li className={menuDesign}>use me</li>
+              </Link>
+              <Link href={"/"}>
+
+                <li className={menuDesign}>vegist</li>
+              </Link>
             </ul>
           </li>
-          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"}>Shop</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
             {/* <p className="absolute mt-10 w-[1000px] -ml-30 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300"> <Submenu /></p> */}
-            <div className="absolute mt-10 invisible group-hover:opacity-100 group-hover:visible duration-300"><Submenu /></div>
+            <div className="absolute mt-10 invisible group-hover:opacity-100 group-hover:visible duration-300">
+              <Submenu />
+            </div>
           </li>
-          
-          <li className="text-gray-500 flex gap-1 hover:text-yellow-500 duration-200">
+
+          <li className="text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 font-semibold">
             <Link href={"/"}>Collection</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
           </li>
-          <li className="text-gray-500 hover:text-yellow-500 duration-200">
+          <li className="text-gray-500 hover:text-yellow-500 duration-200 font-semibold">
             <Link href={"/"}>Blogs</Link>
           </li>
-          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"}>Pages</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
             <ul className="absolute m-2 mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 w-full">
-              <li>About US</li>
-              <li>Contact Us</li>
-              <li>Payment Policy</li>
-              <li>Privet Policy</li>
-              <li>Privet Policy</li>
-              <li>Return Policy</li>
-              <li>conditions</li>
+             <Link href={'/'}> <li className={menuDesign}>About US</li></Link>
+              <Link href={'/'}><li className={menuDesign}>Contact Us</li></Link>
+              <Link href={'/'}><li className={menuDesign}>Payment Policy</li></Link>
+              <Link href={'/'}><li className={menuDesign}>Privet Policy</li></Link>
+              <Link href={'/'}><li className={menuDesign}>Privet Policy</li></Link>
+              <Link href={'/'}><li className={menuDesign}>Return Policy</li></Link>
+             <Link href={'/'}> <li className={menuDesign}>conditions</li></Link>
             </ul>
           </li>
-          <li className="text-gray-500 hover:text-yellow-500 duration-200">
+          <li className="text-gray-500 hover:text-yellow-500 duration-200 font-semibold">
             <Link href={"/"}>Buy vegist</Link>
           </li>
         </ul>
         <div className="flex jusity-center items-center lg:mr-18 gap-5">
-          <FontAwesomeIcon icon={faHeadphones} className="w-8 text-gray-500" />
+          <Link href={"/"}>
+            <FontAwesomeIcon
+              icon={faHeadphones}
+              className="w-8 text-gray-500 hover:text-yellow-500"
+            />
+          </Link>
           <div>
             <h1 className="ml-2 font-semibold text-gray-500">Hotline:</h1>
-            <span className="font-semibold hover:text-yellow-500 duration-300 text-gray-500">
-              +8801835199061
-            </span>
+            <Link href={"/"}>
+              <span className="font-semibold hover:text-yellow-500 duration-300 text-gray-500">
+                +8801835199061
+              </span>
+            </Link>
           </div>
         </div>
       </div>
