@@ -16,13 +16,13 @@ const Navber = () => {
   return (
     <div className="">
       <h1 className="text-center bg-gray-900 text-white p-4 font-semibold">
-        <span className="animate-ping text-yellow-500 duration-500 opacity-100 font-semibold">
-          Free shipping
+        <span className="animate-ping text-yellow-500 duration-300 opacity-100 font-semibold mx-2">
+           Free shipping
         </span>
-        orders from all item
+         orders from all item
       </h1>
       <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
-        <div className="grid grid-cols-3 justify-center items-center">
+        <div className="grid lg:grid-cols-3 justify-center items-center">
           <div className="">
             <Image
               src={"/assates/logo-1.svg"}
@@ -79,8 +79,8 @@ const Navber = () => {
         </div>
       </div>
       <p className="border-b-1 mx-36 border-gray-200 mb-2"></p>
-      <div className="flex justify-between items-center lg:px-36">
-        <ul className="grid lg:grid-cols-6 gap-5 divide-x-1 divide-gray-300">
+      <div className="lg:flex justify-between items-center  lg:px-36 px-3">
+        <ul className="grid lg:grid-cols-6 lg:gap-5 gap-2 divide-x-1 divide-gray-300">
           <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"} className="">
               Home
