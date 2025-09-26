@@ -10,6 +10,7 @@ import Search from "antd/es/input/Search";
 import Image from "next/image";
 import Link from "next/link";
 import Submenu from "./Submenu";
+import SubCollection from "./SubCollection";
 const Navber = () => {
   const menuDesign = "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300";
   return (
@@ -113,9 +114,10 @@ const Navber = () => {
             </div>
           </li>
 
-          <li className="text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 font-semibold">
+          <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 font-semibold relative duration-300">
             <Link href={"/"}>Collection</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
+            <div className="absolute mt-10 invisible opacity-0 group-hover:visible group-hover:opacity-100 duration-300 "><SubCollection /></div>
           </li>
           <li className="text-gray-500 hover:text-yellow-500 duration-200 font-semibold">
             <Link href={"/"}>Blogs</Link>
