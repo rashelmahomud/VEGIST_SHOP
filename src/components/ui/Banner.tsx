@@ -19,7 +19,7 @@ const Banner = () => {
             <h2 className="lg:text-6xl text-3xl my-3 text-gray-800 font-semibold">
               Fresh fruits <br />& vegitables
             </h2>
-            <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none">
+            <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500">
               Shop Now
             </button>
           </div>
@@ -40,7 +40,7 @@ const Banner = () => {
             <h2 className="lg:text-6xl text-3xl my-3 text-gray-800 font-semibold mb-8 text-gray-800">
               Fresh for your health
             </h2>
-            <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none">
+            <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500">
               Shop Now
             </button>
           </div>
@@ -60,7 +60,7 @@ const Banner = () => {
               Prod Of Indian <br />
               100% packeging
             </h2>
-            <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none">
+            <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500">
               Shop Now
             </button>
           </div>

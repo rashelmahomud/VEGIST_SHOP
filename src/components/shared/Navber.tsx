@@ -12,7 +12,7 @@ import Link from "next/link";
 import Submenu from "./Submenu";
 import SubCollection from "./SubCollection";
 const Navber = () => {
-  const menuDesign = "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300";
+  const menuDesign = "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300 w-full";
   return (
     <div className="">
       <h1 className="text-center bg-gray-900 text-white p-4 font-semibold">
@@ -38,6 +38,8 @@ const Navber = () => {
               size="large"
               enterButton
               variant="outlined"
+              
+              className=""
             />
           </div>
 
@@ -86,7 +88,7 @@ const Navber = () => {
               Home
             </Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
-            <ul className="absolute mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300">
+            <ul className="absolute mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 z-1 bg-white w-full text-center rounded-b-lg">
               <Link href={"/"}>
                 <li className={menuDesign}>about</li>
               </Link>
@@ -109,7 +111,7 @@ const Navber = () => {
             <Link href={"/"}>Shop</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
             {/* <p className="absolute mt-10 w-[1000px] -ml-30 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300"> <Submenu /></p> */}
-            <div className="absolute mt-10 invisible group-hover:opacity-100 group-hover:visible duration-300">
+            <div className="absolute mt-10 invisible group-hover:opacity-100 group-hover:visible duration-300 z-1">
               <Submenu />
             </div>
           </li>
@@ -125,7 +127,7 @@ const Navber = () => {
           <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"}>Pages</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
-            <ul className="absolute m-2 mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 w-full">
+            <ul className="absolute m-2 mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 w-[150px] rounded-b-lg z-1 bg-white text-center">
              <Link href={'/'}> <li className={menuDesign}>About US</li></Link>
               <Link href={'/'}><li className={menuDesign}>Contact Us</li></Link>
               <Link href={'/'}><li className={menuDesign}>Payment Policy</li></Link>
