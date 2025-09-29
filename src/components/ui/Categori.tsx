@@ -26,7 +26,7 @@ const Categori = () => {
         Shop by Category
       </h1>
 {/* autoplay dots={true} */}
-      <Carousel >
+      <Carousel autoplay dots={true} speed={500}>
         <div>
           <div className="grid grid-cols-6 gap-4 px-6 py-6">
             {items.map((item) => (
@@ -60,7 +60,7 @@ const Categori = () => {
             {shops.map((shop) => (
               <div
                 key={shop.id}
-                className="flex items-center justify-center rounded-full p-2 relative"
+                className="flex items-center justify-center rounded-full p-2 relative group"
               >
                 <Link
                   href={"/"}
@@ -74,7 +74,10 @@ const Categori = () => {
                     className="rounded-full object-cover w-40 h-40 "
                   />
                 </Link>
-                <p className="absolute">{shop.title}</p>
+                     <div className="absolute group-hover:bg-gray-800 group-hover:opacity-60 group-hover:text-white font-semibold group-hover:w-40 group-hover:h-40 group-hover:bg-gray-500 rounded-full duration-700 group-hover:scale-90 group-hover:rotate-180 group-hover:bg-gradient-to-tr group-hover:from-gray-800 group-hover:to-gray-500">
+                  
+                  <p className="invisible group-hover:visible text-center mt-15 group-hover:opacity-100">{shop.title}</p>
+                </div>
               </div>
             ))}
           </div>
