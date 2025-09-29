@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <Banner />
 
-      <div className="lg:px-30 mt-20">
+      <div className="lg:px-36 mt-20">
         <DiscountCard />
         <Categori />
       </div>
