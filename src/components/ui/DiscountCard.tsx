@@ -11,7 +11,7 @@ const DiscountCard = () => {
           alt="dicount image"
           className="transition-transform duration-300 hover:scale-110"
         />
-        <div className="absolute left-0 top-20 pl-8">
+        <div className="absolute left-0 top-26 pl-8">
           <h1 className="lg:text-4xl text-2xl font-semibold mb-4 text-gray-700">
             Fresh fruit,vegetable on <br /> our product
           </h1>
@@ -28,7 +28,7 @@ const DiscountCard = () => {
           alt="dicount image"
           className="transition-transform duration-300 hover:scale-110"
         />
-        <div className="absolute left-0 top-20 pl-8">
+        <div className="absolute left-0 top-26 pl-8">
           <h1 className="lg:text-4xl text-2xl font-semibold mb-4 text-gray-700">
             Vegetable eggplant <br /> 100% fresh food
           </h1>

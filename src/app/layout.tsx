@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navber />
-        <div className="h-screen">
+        <div>
           <AntdRegistry>{children}</AntdRegistry>
         </div>
         <Footer />
