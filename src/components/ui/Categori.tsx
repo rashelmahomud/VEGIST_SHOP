@@ -3,7 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Categori = () => {
-  const items = [
+  interface Categori  {
+    id: number,
+    title: string,
+    img: string
+  }
+
+  const items:Categori[] = [
     { id: 1, title: "Fresh Fist", img: "/assates/shop/shop (1).jpg" },
     { id: 2, title: "Fresh Vegitable", img: "/assates/shop/shop (2).jpg" },
     { id: 3, title: "Fresh Orange", img: "/assates/shop/shop (3).jpg" },
@@ -11,7 +17,7 @@ const Categori = () => {
     { id: 5, title: "excellent mongo", img: "/assates/shop/shop (5).jpg" },
     { id: 6, title: "fresh fish", img: "/assates/shop/shop (6).jpg" },
   ];
-  const shops = [
+  const shops:Categori[] = [
     { id: 7, title: "fresh fish", img: "/assates/shop/shop(7).jpg" },
     { id: 8, title: "fresh fish", img: "/assates/shop/shop(8).webp" },
     { id: 9, title: "fresh fish", img: "/assates/shop/shop(9).jpg" },
