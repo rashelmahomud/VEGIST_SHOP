@@ -5,6 +5,9 @@ const DealOfDay = () => {
   const minite = date.getMinutes();
   const secound = date.getSeconds();
 
+  const dayDesign =
+    "flex flex-col items-center bg-yellow-500 p-3 rounded-lg text-white font-semibold my-4";
+
   return (
     <div className="bg-[url('/assates/dealbanner.webp')] h-[450px] bg-cover bg-no-repet bg-center bg-fixed px-36 flex flex-col justify-center">
       <p className="text-white font-semibold text-xl">
@@ -14,19 +17,19 @@ const DealOfDay = () => {
         Deal Of the day!
       </h2>
       <div className="flex gap-2">
-        <div className="flex flex-col items-center bg-yellow-500 p-3 rounded-lg text-white font-semibold my-4">
+        <div className={dayDesign}>
           <span className="text-2xl">{day}</span>
           <p>DAY</p>
         </div>
-        <div className="flex flex-col items-center bg-yellow-500 p-3 rounded-lg text-white font-semibold my-4">
+        <div className={dayDesign}>
           <span className="text-2xl">{hours}</span>
           <p>HRS</p>
         </div>
-        <div className="flex flex-col items-center bg-yellow-500 p-3 rounded-lg text-white font-semibold my-4">
-          <span className="text-2xl">{secound}</span>
+        <div className={dayDesign}>
+          <span className="text-2xl">{minite}</span>
           <p>MIN</p>
         </div>
-        <div className="flex flex-col items-center bg-yellow-500 p-3 rounded-lg text-white font-semibold my-4">
+        <div className={dayDesign}>
           <span className="text-2xl">{secound}</span>
           <p>SEC</p>
         </div>
