@@ -4,6 +4,7 @@ import DiscountCard from "@/components/ui/DiscountCard";
 import TrandingPage from "./tranding/page";
 import DealOfDay from "@/components/ui/DealOfDay";
 import ProductsPage from "./products/page";
+import CustomerSayPage from "@/components/ui/CustomerSay";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       </div>
       <DealOfDay />
       <ProductsPage />
+      <CustomerSayPage />
     </div>
   );
 }
