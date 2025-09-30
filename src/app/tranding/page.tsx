@@ -1,4 +1,5 @@
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
+import { faBagShopping, faShop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel } from "antd";
 import Image from "next/image";
@@ -78,7 +79,7 @@ const TrandingPage = () => {
       <h1 className="text-4xl font-semibold text-gray-600 text-center mb-2">
         Trending products
       </h1>
-      <Carousel autoplay>
+      <Carousel>
         <div>
           <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
             {items.map((item) => (
@@ -95,6 +96,30 @@ const TrandingPage = () => {
                     className="rounded-lg object-cover"
                   />
                 </Link>
+                <div className="absolute group-hover:w-full group-hover:h-full duration-700">
+                  <Image
+                    src={"/assates/shop/shop(3).jpg"}
+                    alt="cat1"
+                    width={300}
+                    height={200}
+                    className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                  />
+
+                  <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-700">
+                    <FontAwesomeIcon
+                      icon={faEye}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                    />
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                    />
+                    <FontAwesomeIcon
+                      icon={faBagShopping}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                    />
+                  </div>
+                </div>
 
                 <div className=" mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
