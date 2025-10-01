@@ -1,11 +1,77 @@
+import { faCashApp, faReacteurope } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faPaperPlane, faTired } from "@fortawesome/free-regular-svg-icons";
+import { faCar, faMicrophoneLines, faTransgenderAlt, faVoicemail } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 const Footer = () => {
-    return (
-        <div className="text-2xl text-center">
-            <h1>This is footer page</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati id natus rerum aperiam nostrum iusto aut quaerat architecto, maiores, sapiente voluptas quos. Possimus corporis quod fugit qui impedit tenetur molestiae doloribus? Reprehenderit quod ipsum earum vel laborum temporibus omnis quos corporis, voluptates, excepturi libero at optio expedita dolorum a atque possimus? Perferendis placeat molestias, animi natus, debitis repellendus officia dolor a ex est dolorum obcaecati sit. Pariatur corporis sit distinctio, nemo id consequuntur laudantium nisi tenetur autem nihil et non recusandae libero magnam, vitae ullam necessitatibus, ipsam obcaecati. Explicabo neque quam distinctio maxime voluptate tempora natus accusantium. Debitis autem quo nostrum id ea reprehenderit minima itaque natus dolore quibusdam? Officia accusantium, quisquam doloribus excepturi quae assumenda illo quam odit quis error esse ipsum adipisci aspernatur deserunt veniam tempora explicabo, exercitationem labore mollitia similique inventore minima necessitatibus. Est, qui aut. Dolorem praesentium repellendus debitis voluptatum quasi, voluptatibus amet facilis dolorum corporis odit, vel architecto similique a eius nesciunt cum sequi temporibus, aliquam obcaecati modi corrupti? Sed ut odio hic deleniti assumenda alias commodi ipsum voluptas est aliquam, beatae quis ad, dolor temporibus amet, quae eveniet illum repudiandae modi omnis illo minus repellat? Adipisci debitis nihil repellat doloribus similique dolor amet ducimus assumenda cupiditate, corporis aspernatur nobis minima ad tempore veritatis nemo officiis cum numquam odit qui placeat non nostrum at? Cupiditate tempora consequatur molestias at animi omnis facilis saepe laborum officia praesentium provident non atque, quisquam illo, dolores rem harum laboriosam ad quam sapiente? Vitae doloribus nostrum sit earum natus dicta maiores repudiandae perspiciatis. Eum minima distinctio quo, vitae sed magni numquam earum deserunt. Est quibusdam ea qui, rerum sunt eius accusamus suscipit quia numquam vel, praesentium id animi dignissimos! Aliquam officiis perferendis, officia minima recusandae, molestiae, harum aliquid enim possimus quam eum repellendus temporibus porro minus sapiente quisquam fugit.</p>
+  return (
+    <div className="bg-[#faf8ed]">
+      <div className="lg:px-36">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mx-auto p-2 py-10">
+          <div className="flex items-center gap-5">
+            <FontAwesomeIcon
+              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+              icon={faCar}
+            />
+            <p className="font-semibold text-gray-600">Free Delivery</p>
+          </div>
+          <div className="flex items-center gap-5">
+            <FontAwesomeIcon
+              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+              icon={faCashApp}
+            />
+            <p className="font-semibold text-gray-600">Cash On Delivery</p>
+          </div>
+          <div className="flex items-center gap-5">
+            <FontAwesomeIcon
+              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+              icon={faReacteurope}
+            />
+            <p className="font-semibold text-gray-600">30 Days Return</p>
+          </div>
+          <div className="flex items-center gap-5">
+            <FontAwesomeIcon
+              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+              icon={faMicrophoneLines}
+            />
+            <p className="font-semibold text-gray-600">Online Support</p>
+          </div>
         </div>
-    );
+
+        <div className="grid lg:grid-cols-3 gap-10 my-5">
+          <div>
+            <Image
+              src={"/assates/logo-1.svg"}
+              alt="fLogo"
+              width={120}
+              height={120}
+            />
+            <p className="text-gray-500">
+              Lorem ipsum iasds simply dummy text of the printing and
+              typesetting industry.
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faPaperPlane} className="text-4xl text-yellow-500" />
+            <div><h2 className="text-xl font-semibold text-yellow-500">Address</h2>
+            <p className="text-gray-500">
+              38 block street arean licard <br />
+              hamonia road sydney, australia
+            </p></div>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faEnvelope} className="text-5xl text-yellow-500" />
+            <div><h2 className="font-semibold text-yellow-500 text-xl mb-2">Get in touch</h2>
+            <p className="text-gray-500">
+              (+880 1835199061) <br />
+              support@demo.com
+            </p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;
