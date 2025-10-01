@@ -1,5 +1,9 @@
 import { faFileText } from "@fortawesome/free-regular-svg-icons/faFileText";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faArrowRightArrowLeft,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -74,13 +78,21 @@ const BlogsPage = () => {
               </h2>
               <p className="text-gray-500">{blog.dec}</p>
               <button className="font-semibold mt-2">
-                <Link href={"/"}>Read More</Link>
+                <Link href={"/"} className="flex items-center">
+                  Read More
+                  <FontAwesomeIcon
+                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    icon={faArrowRight}
+                  />
+                </Link>
               </button>
             </div>
           </div>
         ))}
       </div>
-      <button className="bg-yellow-500 rounded-full text-white  font-semibold p-3 px-5 my-5 flex mx-auto"><Link href={'/'}>View All News</Link></button>
+      <button className="bg-yellow-500 rounded-full text-white  font-semibold p-3 px-5 my-5 flex mx-auto">
+        <Link href={"/"}>View All News</Link>
+      </button>
     </div>
   );
 };
