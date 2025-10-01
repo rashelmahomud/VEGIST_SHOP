@@ -56,21 +56,21 @@ const CustomerSayPage = () => {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col justify-center rounded-full p-2 relative group"
+                className="flex flex-col justify-center p-2 relative group border border-gray-200"
               >
-                <div className=" mt-2 p-1">
+                <div className="mt-2 p-1 my-3">
                   <FontAwesomeIcon
-                    className="bg-yellow-500 border rounded-full p-2 text-white border-5 border-yellow-300 w-20"
+                    className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-1 ring-yellow-400 text-2xl"
                     icon={faQuoteLeft}
                   />
 
-                  <h1 className="text-xl font-semibold text-gray-800">
+                  <h1 className="text-xl my-2 font-semibold text-gray-600">
                     {item.title}
                   </h1>
                   <p className="font-semibld text-gray-500">
                     {item.description}
                   </p>
-                  <p className="font-semibld text-gray-700 text-xl">
+                  <p className="font-semibld text-gray-800 text-xl">
                     {item.name}
                   </p>
                   <div className="flex gap-2 justify-center items-center mt-2">
@@ -106,20 +106,20 @@ const CustomerSayPage = () => {
             {shops.map((shop) => (
               <div
                 key={shop.id}
-                className="flex flex-col justify-center rounded-full p-2 relative group"
+                className="flex flex-col justify-center border border-gray-200 p-2 relative group"
               >
-                <div className=" mt-2 p-1">
+                <div className="mt-2 p-1 my-3">
                   <FontAwesomeIcon
-                    className="bg-yellow-500 border rounded-full p-2 text-white border-5 border-yellow-300 w-20"
+                    className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-1 ring-yellow-400 text-2xl"
                     icon={faQuoteLeft}
-                  />{" "}
-                  <h1 className="text-xl font-semibold text-gray-800">
+                  />
+                  <h1 className="text-xl my-2 font-semibold text-gray-800">
                     {shop.title}
                   </h1>
                   <p className="font-semibld text-gray-500">
                     {shop.description}
                   </p>
-                  <p className="font-semibld text-gray-700 text-xl">
+                  <p className="font-semibld text-gray-800  text-xl ">
                     {shop.name}
                   </p>
                   <div className="flex gap-2 justify-center items-center mt-2">

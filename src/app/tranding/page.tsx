@@ -105,7 +105,7 @@ const TrandingPage = () => {
                     className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
                   />
 
-                  <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-700">
+                  <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
                     <FontAwesomeIcon
                       icon={faEye}
                       className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
@@ -126,7 +126,7 @@ const TrandingPage = () => {
                     {item.title}
                   </h1>
                   <p className="font-semibld text-gray-500">{item.cost}</p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 items-center">
                     <FontAwesomeIcon
                       icon={faStar}
                       className="w-3 text-yellow-600"
@@ -171,12 +171,36 @@ const TrandingPage = () => {
                     className="rounded-lg object-cover "
                   />
                 </Link>
+                <div className="absolute group-hover:w-full group-hover:h-full duration-700">
+                  <Image
+                    src={"/assates/shop/shop(3).jpg"}
+                    alt="cat1"
+                    width={300}
+                    height={200}
+                    className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                  />
+
+                  <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
+                    <FontAwesomeIcon
+                      icon={faEye}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                    />
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                    />
+                    <FontAwesomeIcon
+                      icon={faBagShopping}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                    />
+                  </div>
+                </div>
                 <div className=" mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
                     {shop.title}
                   </h1>
                   <p className="font-semibld text-gray-500">{shop.cost}</p>
-                  <div className="flex gap-2">
+                  <div className="flex items-center gap-2">
                     <FontAwesomeIcon
                       icon={faStar}
                       className="w-3 text-yellow-600"

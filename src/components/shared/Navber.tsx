@@ -44,10 +44,10 @@ const Navber = () => {
           </div>
 
           <div className="grid grid-cols-2 mx-auto mr-10 justify-center items-center">
-            <div className="flex gap-2">
+            <div className="flex justify-center items-center gap-2">
               <FontAwesomeIcon
                 icon={faUser}
-                className="w-8 hover:text-yellow-500 duration-300 text-gray-500"
+                className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
               />
               <div>
                 <Link href={"/"}>
@@ -68,7 +68,7 @@ const Navber = () => {
                 <Link href={"/"}>
                   <FontAwesomeIcon
                     icon={faHeart}
-                    className="w-8 hover:text-yellow-500 duration-300 text-gray-500"
+                    className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
                   />
                 </Link>
     <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">0</span>
@@ -77,7 +77,7 @@ const Navber = () => {
                 <Link href={"/"}>
                   <FontAwesomeIcon
                     icon={faShopify}
-                    className="w-8 hover:text-yellow-500 duration-300 text-gray-500"
+                    className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
                   />
                 </Link>
                  <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">0</span>
@@ -124,7 +124,7 @@ const Navber = () => {
           <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 font-semibold relative duration-300">
             <Link href={"/"}>Collection</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
-            <div className="absolute mt-10 invisible opacity-0 group-hover:visible group-hover:opacity-100 duration-300 ">
+            <div className="absolute mt-10 invisible opacity-0 group-hover:visible group-hover:opacity-100 duration-300 z-1">
               <SubCollection />
             </div>
           </li>
@@ -168,7 +168,7 @@ const Navber = () => {
           <Link href={"/"}>
             <FontAwesomeIcon
               icon={faHeadphones}
-              className="w-8 text-gray-500 hover:text-yellow-500"
+              className="text-3xl text-gray-500 hover:text-yellow-500"
             />
           </Link>
           <div>

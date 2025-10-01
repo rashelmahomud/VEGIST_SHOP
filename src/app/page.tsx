@@ -16,9 +16,11 @@ export default function Home() {
         <Categori />
         <TrandingPage />
       </div>
-      <DealOfDay />
-      <ProductsPage />
-      <CustomerSayPage />
+      <div>
+        <DealOfDay />
+        <ProductsPage />
+        <CustomerSayPage />
+      </div>
     </div>
   );
 }

@@ -45,7 +45,7 @@ const ProductsPage = () => {
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
     },
-      {
+    {
       id: 5,
       title: "fresh fish",
       cost: "$12.00",
@@ -72,7 +72,7 @@ const ProductsPage = () => {
       cost: "$15.00",
       review: "no review",
       img: "/assates/shop/shop(10).webp",
-    }
+    },
   ];
   return (
     <div className="lg:px-36">
@@ -139,21 +139,20 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                       />
-
-                      <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-700">
+                      <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
+                          className="bg-white text-gray-500 hover:text-white hover:bg-yellow-500 p-2 rounded-full w-10 duration-300"
                           icon={faEye}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
                         />
                         <FontAwesomeIcon
+                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                           icon={faHeart}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
                         />
                         <FontAwesomeIcon
+                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                           icon={faBagShopping}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
                         />
                       </div>
                     </div>
@@ -163,39 +162,40 @@ const ProductsPage = () => {
                         {item.title}
                       </h1>
                       <p className="font-semibld text-gray-500">{item.cost}</p>
-                      <div className="flex gap-2">
+                  
+                    </div>
+                        <div className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <p className="font-semibld text-gray-500">
                           {item.review}
                         </p>
                       </div>
-                    </div>
                   </div>
                 ))}
               </div>
             )}
 
-
-            {activeTab === "2" && <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
+            {activeTab === "2" && (
+              <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
                 {items.reverse().map((item) => (
                   <div
                     key={item.id}
@@ -216,10 +216,9 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                     className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                       />
-
-                      <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-700">
+                      <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
@@ -240,26 +239,26 @@ const ProductsPage = () => {
                         {item.title}
                       </h1>
                       <p className="font-semibld text-gray-500">{item.cost}</p>
-                      <div className="flex gap-2">
+                      <div className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <p className="font-semibld text-gray-500">
                           {item.review}
@@ -268,8 +267,10 @@ const ProductsPage = () => {
                     </div>
                   </div>
                 ))}
-              </div>}
-            {activeTab === "3" && <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
+              </div>
+            )}
+            {activeTab === "3" && (
+              <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
                 {items.map((item) => (
                   <div
                     key={item.id}
@@ -290,10 +291,9 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                       />
-
-                      <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-700">
+                      <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
@@ -314,26 +314,26 @@ const ProductsPage = () => {
                         {item.title}
                       </h1>
                       <p className="font-semibld text-gray-500">{item.cost}</p>
-                      <div className="flex gap-2">
+                      <div className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <FontAwesomeIcon
                           icon={faStar}
-                          className="w-3 text-yellow-600"
+                          className="text-sm text-yellow-600"
                         />
                         <p className="font-semibld text-gray-500">
                           {item.review}
@@ -342,7 +342,8 @@ const ProductsPage = () => {
                     </div>
                   </div>
                 ))}
-              </div>}
+              </div>
+            )}
           </div>
         </div>
       </div>
