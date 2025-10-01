@@ -5,6 +5,7 @@ import TrandingPage from "./tranding/page";
 import DealOfDay from "@/components/ui/DealOfDay";
 import ProductsPage from "./products/page";
 import CustomerSayPage from "@/components/ui/CustomerSay";
+import LatestDeal from "@/components/ui/LatestDeal";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <DealOfDay />
         <ProductsPage />
         <CustomerSayPage />
+        <LatestDeal />
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import {
   faCashApp,
   faCcMastercard,
+  faCcVisa,
   faFacebook,
   faInstagram,
   faLinkedin,
-  faPadlet,
   faPaypal,
   faPinterest,
   faReacteurope,
@@ -214,22 +214,22 @@ const Footer = () => {
               className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
             />
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 justify-end">
             <FontAwesomeIcon
               icon={faCcMastercard}
-              className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+              className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
             />
             <FontAwesomeIcon
               icon={faPaypal}
-              className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+              className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
             />
             <FontAwesomeIcon
-              icon={faPadlet}
-              className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+              icon={faCcVisa}
+              className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
             />
             <FontAwesomeIcon
               icon={faDollar}
-              className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+              className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
             />
           </div>
         </div>
