@@ -7,6 +7,7 @@ import ProductsPage from "./products/page";
 import CustomerSayPage from "@/components/ui/CustomerSay";
 import LatestDeal from "@/components/ui/LatestDeal";
 import BlogsPage from "./blogs/page";
+import Testimonial from "@/components/ui/Testimonial";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <CustomerSayPage />
         <BlogsPage />
         <LatestDeal />
+        <Testimonial />
       </div>
     </div>
   );

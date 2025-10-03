@@ -79,7 +79,7 @@ const TrandingPage = () => {
       <h1 className="text-4xl font-semibold text-gray-600 text-center mb-2">
         Trending products
       </h1>
-      <Carousel autoplay>
+      <Carousel autoplay autoplaySpeed={3000}>
         <div>
           <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
             {items.map((item) => (

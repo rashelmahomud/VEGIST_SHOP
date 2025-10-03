@@ -50,7 +50,7 @@ const CustomerSayPage = () => {
       <h1 className="text-4xl font-semibold text-gray-800 text-center">
         Our customer say
       </h1>
-      <Carousel autoplay>
+      <Carousel autoplay autoplaySpeed={3000}>
         <div>
           <div className="grid lg:grid-cols-2 gap-4 px-6 py-6 text-center">
             {items.map((item) => (
