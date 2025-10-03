@@ -14,6 +14,7 @@ const ProductsPage = () => {
     cost: string;
     review: string;
     img: string;
+    discount?: string;
   }
 
   const items: Products[] = [
@@ -23,6 +24,7 @@ const ProductsPage = () => {
       cost: "$10.00",
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
+      discount: "30%",
     },
     {
       id: 2,
@@ -37,6 +39,7 @@ const ProductsPage = () => {
       cost: "$30.00",
       review: "no review",
       img: "/assates/tendingProduct/tran (3).jpg",
+      discount: "30%",
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ const ProductsPage = () => {
       cost: "$12.00",
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
+      discount: "20%",
     },
     {
       id: 6,
@@ -65,6 +69,7 @@ const ProductsPage = () => {
       cost: "$10.00",
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
+      discount: "30%",
     },
     {
       id: 8,
@@ -72,6 +77,7 @@ const ProductsPage = () => {
       cost: "$15.00",
       review: "no review",
       img: "/assates/shop/shop(10).webp",
+      discount: "30%",
     },
   ];
   return (
@@ -130,8 +136,9 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover relative"
                       />
+                    {item.discount ? <span className="absolute top-3 right-5 z-1 text-white bg-red-600 p-1 px-2 w-12 h-7 flex justify-center items-center rounded-full">{item.discount}</span>: ""}
                     </Link>
                     <div className="absolute group-hover:w-full group-hover:h-full duration-700">
                       <Image
@@ -157,38 +164,38 @@ const ProductsPage = () => {
                       </div>
                     </div>
 
+
                     <div className=" mt-2 p-1">
                       <h1 className="text-xl font-semibold text-gray-500">
                         {item.title}
                       </h1>
                       <p className="font-semibld text-gray-500">{item.cost}</p>
-                  
                     </div>
-                        <div className="flex items-center gap-2">
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <p className="font-semibld text-gray-500">
-                          {item.review}
-                        </p>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-sm text-yellow-600"
+                      />
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-sm text-yellow-600"
+                      />
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-sm text-yellow-600"
+                      />
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-sm text-yellow-600"
+                      />
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-sm text-yellow-600"
+                      />
+                      <p className="font-semibld text-gray-500">
+                        {item.review}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -207,8 +214,9 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover relative"
                       />
+                       {item.discount ? <span className="absolute top-3 right-5 z-1 text-white bg-red-600 p-1 px-2 w-12 h-7 flex justify-center items-center rounded-full">{item.discount}</span>: ""}
                     </Link>
                     <div className="absolute group-hover:w-full group-hover:h-full duration-700">
                       <Image
@@ -216,7 +224,7 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                     className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
+                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                       />
                       <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
@@ -282,8 +290,9 @@ const ProductsPage = () => {
                         alt="cat1"
                         width={300}
                         height={200}
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover relative"
                       />
+                       {item.discount ? <span className="absolute top-3 right-5 z-1 text-white bg-red-600 p-1 px-2 w-12 h-7 flex justify-center items-center rounded-full">{item.discount}</span>: ""}
                     </Link>
                     <div className="absolute group-hover:w-full group-hover:h-full duration-700">
                       <Image
