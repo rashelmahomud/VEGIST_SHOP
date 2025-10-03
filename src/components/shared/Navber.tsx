@@ -4,7 +4,7 @@ import {
   faHeart,
   faUser,
 } from "@fortawesome/free-regular-svg-icons";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Search from "antd/es/input/Search";
 import Image from "next/image";
@@ -37,7 +37,11 @@ const Navber = () => {
             <Search
               placeholder="search your stor"
               size="large"
-              enterButton
+              enterButton={
+                <button>
+                  <FontAwesomeIcon icon={faSearch} className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5" />
+                </button>
+              }
               variant="outlined"
               className=""
             />
@@ -71,7 +75,9 @@ const Navber = () => {
                     className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
                   />
                 </Link>
-    <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">0</span>
+                <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">
+                  0
+                </span>
               </div>
               <div className="relative">
                 <Link href={"/"}>
@@ -80,7 +86,9 @@ const Navber = () => {
                     className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
                   />
                 </Link>
-                 <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">0</span>
+                <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">
+                  0
+                </span>
               </div>
             </div>
           </div>
