@@ -81,7 +81,7 @@ const TrandingPage = () => {
       </h1>
       <Carousel autoplay autoplaySpeed={3000}>
         <div>
-          <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
             {items.map((item) => (
               <div
                 key={item.id}
@@ -156,7 +156,7 @@ const TrandingPage = () => {
         </div>
         {/* slide 0.2  */}
         <div>
-          <div className="grid grid-cols-4 gap-4 px-6 py-6">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
             {shops.map((shop) => (
               <div
                 key={shop.id}

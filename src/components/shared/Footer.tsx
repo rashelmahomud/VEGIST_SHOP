@@ -26,7 +26,7 @@ const Footer = () => {
     "border-b border-dotted py-2 text-gray-600 hover:text-yellow-500 duration-100";
   return (
     <div className="bg-[#faf8ed]">
-      <div className="lg:px-36">
+      <div className="lg:px-36 p-3">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mx-auto p-2 py-10">
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
@@ -188,7 +188,7 @@ const Footer = () => {
           <h1 className="text-white font-semibold">
             Copyright © 2025 by spacingtech
           </h1>
-          <div className="flex gap-2">
+          <div className="lg:flex gap-2">
             <FontAwesomeIcon
               icon={faFacebook}
               className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
@@ -214,7 +214,7 @@ const Footer = () => {
               className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
             />
           </div>
-          <div className="flex gap-2 justify-end">
+          <div className="lg:flex gap-2 justify-end">
             <FontAwesomeIcon
               icon={faCcMastercard}
               className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"

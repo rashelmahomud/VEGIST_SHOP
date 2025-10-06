@@ -12,9 +12,9 @@ import Testimonial from "@/components/ui/Testimonial";
 export default function Home() {
   return (
     <div>
-      <Banner />
+       <Banner />
 
-      <div className="lg:px-36 mt-20">
+      <div className="lg:px-36 p-3 mt-20">
         <DiscountCard />
         <Categori />
         <TrandingPage />

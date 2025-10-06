@@ -102,7 +102,7 @@ const CustomerSayPage = () => {
         </div>
         {/* slide 0.2  */}
         <div>
-          <div className="grid grid-cols-2 gap-4 px-6 py-6 text-center">
+          <div className="grid lg:grid-cols-2 gap-4 px-6 py-6 text-center">
             {shops.map((shop) => (
               <div
                 key={shop.id}

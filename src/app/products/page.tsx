@@ -88,7 +88,7 @@ const ProductsPage = () => {
       <div>
         <div className="w-full mt-10">
           {/* Tab Headers */}
-          <div className="flex justify-center border-b border-gray-300">
+          <div className="lg:flex justify-center border-b border-gray-300">
             <button
               onClick={() => setActiveTab("1")}
               className={`px-4 py-2 text-sm font-medium ${
@@ -124,7 +124,7 @@ const ProductsPage = () => {
           {/* Tab Content */}
           <div className="p-4">
             {activeTab === "1" && (
-              <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
+              <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
                 {items.map((item) => (
                   <div
                     key={item.id}
@@ -202,7 +202,7 @@ const ProductsPage = () => {
             )}
 
             {activeTab === "2" && (
-              <div className="grid lg:grid-cols-4 gap-4 px-6 py-6">
+              <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
                 {items.reverse().map((item) => (
                   <div
                     key={item.id}

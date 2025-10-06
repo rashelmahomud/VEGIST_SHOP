@@ -34,6 +34,24 @@ const Categori = () => {
         slidesToShow={6} // show 5 items
         slidesToScroll={1} // scroll 1 by 1
         pauseOnHover={true}
+          responsive={[
+          {
+            breakpoint: 1280, // lg screens
+            settings: { slidesToShow: 4 },
+          },
+          {
+            breakpoint: 1024, // md screens
+            settings: { slidesToShow: 3 },
+          },
+          {
+            breakpoint: 768, // sm screens
+            settings: { slidesToShow: 2 },
+          },
+          {
+            breakpoint: 480, // mobile
+            settings: { slidesToShow: 2 },
+          },
+        ]}
       >
         {items.map((item) => (
           <div

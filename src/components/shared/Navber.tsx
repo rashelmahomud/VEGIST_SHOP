@@ -1,17 +1,37 @@
+"use client";
 import { faShopify } from "@fortawesome/free-brands-svg-icons";
+import { faHeadphones, faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import {
-  faHeadphones,
-  faHeart,
-  faUser,
-} from "@fortawesome/free-regular-svg-icons";
-import { faAngleDown, faSearch } from "@fortawesome/free-solid-svg-icons";
+  faAngleDown,
+  faCross,
+  faCrosshairs,
+  faList,
+  faMagnifyingGlass,
+  faSearch,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Modal } from "antd";
 import Search from "antd/es/input/Search";
 import Image from "next/image";
 import Link from "next/link";
-import Submenu from "./Submenu";
+import { useState } from "react";
 import SubCollection from "./SubCollection";
+import Submenu from "./Submenu";
+
 const Navber = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   const menuDesign =
     "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300 w-full";
   return (
@@ -23,23 +43,24 @@ const Navber = () => {
         orders from all item
       </h1>
       <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
-        <div className="grid lg:grid-cols-3 justify-center items-center">
-          <div className="">
-            <Image
-              src={"/assates/logo-1.svg"}
-              width={100}
-              height={100}
-              alt="image logo"
-            />
-          </div>
+        <div className="grid lg:grid-cols-3 grid-cols-2 items-center justify-center test-center align-items-center mx-auto">
+          <Image
+            src={"/assates/logo-1.svg"}
+            width={100}
+            height={100}
+            alt="image logo"
+          />
 
-          <div>
+          <div className="hidden lg:block">
             <Search
               placeholder="search your stor"
               size="large"
               enterButton={
                 <button>
-                  <FontAwesomeIcon icon={faSearch} className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5" />
+                  <FontAwesomeIcon
+                    icon={faSearch}
+                    className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5"
+                  />
                 </button>
               }
               variant="outlined"
@@ -47,13 +68,53 @@ const Navber = () => {
             />
           </div>
 
-          <div className="grid grid-cols-2 mx-auto mr-10 justify-center items-center">
+          <div className="grid grid-cols-2 mx-auto lg:mr-10 justify-center items-center">
             <div className="flex justify-center items-center gap-2">
+              {open ? (
+                <div className="lg:hidden block mt-5 text-gray-500 text-xl">
+                  <FontAwesomeIcon icon={faList} />
+                </div>
+              ) : (
+                <div className="lg:hidden block mt-5 text-gray-500 text-xl">
+                  <FontAwesomeIcon icon={faXmark} />
+                </div>
+              )}
               <FontAwesomeIcon
                 icon={faUser}
-                className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
+                className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 lg:mt-0 mt-5"
               />
-              <div>
+              <Modal
+                title="Basic Modal"
+                closable={{ "aria-label": "Custom Close Button" }}
+                open={isModalOpen}
+                onOk={handleOk}
+                onCancel={handleCancel}
+              >
+                <Search
+                  placeholder="search your stor"
+                  size="large"
+                  enterButton={
+                    <button>
+                      <FontAwesomeIcon
+                        icon={faSearch}
+                        className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5"
+                      />
+                    </button>
+                  }
+                  variant="outlined"
+                  className=""
+                />
+              </Modal>
+              <div className="lg:hidden block ">
+                <FontAwesomeIcon
+                  type="primary"
+                  onClick={showModal}
+                  icon={faMagnifyingGlass}
+                  className="text-gray-500 text-xl mt-5"
+                />
+              </div>
+              {/* // hidden small device  */}
+              <div className="lg:block hidden">
                 <Link href={"/"}>
                   <h1 className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
                     ACCOUNT
@@ -67,12 +128,12 @@ const Navber = () => {
               </div>
             </div>
 
-            <div className="flex gap-5 mx-5 justify-center items-center">
+            <div className="flex gap-5 mx-5 justify-center items-center lg:mt-0 mt-6">
               <div className="relative">
                 <Link href={"/"}>
                   <FontAwesomeIcon
                     icon={faHeart}
-                    className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
+                    className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
                   />
                 </Link>
                 <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">
@@ -83,7 +144,7 @@ const Navber = () => {
                 <Link href={"/"}>
                   <FontAwesomeIcon
                     icon={faShopify}
-                    className="text-3xl hover:text-yellow-500 duration-300 text-gray-500"
+                    className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
                   />
                 </Link>
                 <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">
@@ -95,7 +156,8 @@ const Navber = () => {
         </div>
       </div>
       <p className="border-b-1 mx-36 border-gray-200 mb-2"></p>
-      <div className="lg:flex justify-between items-center  lg:px-36 px-3">
+
+      <div className="lg:flex justify-between items-center lg:px-36 px-3">
         <ul className="grid lg:grid-cols-6 lg:gap-5 gap-2 divide-x-1 divide-gray-300">
           <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"} className="">
@@ -123,7 +185,6 @@ const Navber = () => {
           <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
             <Link href={"/"}>Shop</Link>
             <FontAwesomeIcon icon={faAngleDown} className="w-3" />
-            {/* <p className="absolute mt-10 w-[1000px] -ml-30 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300"> <Submenu /></p> */}
             <div className="absolute mt-10 invisible group-hover:opacity-100 group-hover:visible duration-300 z-1">
               <Submenu />
             </div>
