@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <div className="bg-[#faf8ed]">
       <div className="lg:px-36 p-3">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mx-auto p-2 py-10">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 grid-cols-1 mx-auto p-2 py-10">
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
@@ -185,10 +185,10 @@ const Footer = () => {
       </div>
       <div className="bg-yellow-500 p-4">
         <div className="lg:px-36 mx-auto grid lg:grid-cols-3">
-          <h1 className="text-white font-semibold">
+          <h1 className="text-white font-semibold  flex justify-center md:justify-start">
             Copyright © 2025 by Rashel Mahomud
           </h1>
-          <div className="flex gap-2 lg:my-0 my-3">
+          <div className="flex gap-2 lg:my-0 my-3 justify-center">
             <FontAwesomeIcon
               icon={faFacebook}
               className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "

@@ -20,6 +20,16 @@ const Testimonial = () => {
         slidesToShow={5} // show 5 items
         slidesToScroll={1} // scroll 1 by 1
         pauseOnHover={true}
+        responsive={[
+          {
+            breakpoint: 1280,
+            settings: {slidesToShow: 4}
+          },
+           {
+            breakpoint: 768, // sm screens
+            settings: { slidesToShow: 2 },
+          },
+        ]}
       >
         {images.map((src, i) => (
           <div key={i} className="px-2">
