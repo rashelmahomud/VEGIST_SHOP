@@ -64,13 +64,14 @@ const CustomerSay = () => {
             settings: { slidesToShow: 1 },
           },
         ]}
+        
       >
         {items.map((item) => (
           <div
             key={item.id}
-            className=" p-2 relative group border border-gray-200 mx-auto "
+            className=" p-2 relative group  mx-auto "
           >
-            <div className="mt-2 p-1 my-3">
+            <div className="mt-2 p-1 my-3 border border-gray-200">
               <FontAwesomeIcon
                 className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-1 ring-yellow-400 text-2xl"
                 icon={faQuoteLeft}

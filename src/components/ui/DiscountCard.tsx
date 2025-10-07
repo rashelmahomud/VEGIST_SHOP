@@ -3,7 +3,7 @@ import Image from "next/image";
 const DiscountCard = () => {
   return (
     <div className="lg:flex lg:gap-10 lg:justify-center lg:p-0 p-2">
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden mb-5">
         <Image
           src={"/assates/banner-1.webp"}
           width={620}
