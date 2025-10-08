@@ -37,134 +37,139 @@ const Navber = () => {
   };
 
   return (
-    <div className="">
-      <h1 className="text-center bg-gray-900 text-white p-4 font-semibold">
-        <span className="animate-ping text-yellow-500 duration-300 opacity-100 font-semibold mx-2">
-          Free shipping
-        </span>
-        orders from all item
-      </h1>
-      <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
-        <div className="grid lg:grid-cols-3 grid-cols-2 items-center justify-center test-center align-items-center mx-auto">
-          <Image
-            src={"/assates/logo-1.svg"}
-            width={100}
-            height={100}
-            alt="image logo"
-          />
+    <div>
+      <div className="">
+        <h1 className="text-center bg-gray-900 text-white p-4 font-semibold">
+          <span className="animate-ping text-yellow-500 duration-300 opacity-100 font-semibold mx-2">
+            Free shipping
+          </span>
+          orders from all item
+        </h1>
+      </div>
 
-          <div className="hidden lg:block">
-            <Search
-              placeholder="search your stor"
-              size="large"
-              enterButton={
-                <button>
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5"
-                  />
-                </button>
-              }
-              variant="outlined"
-              className=""
+      <div className="sticky top-0 bg-white z-40">
+        <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
+          <div className="grid lg:grid-cols-3 grid-cols-2 items-center justify-center test-center align-items-center mx-auto">
+            <Image
+              src={"/assates/logo-1.svg"}
+              width={100}
+              height={100}
+              alt="image logo"
             />
-          </div>
 
-          <div className="grid grid-cols-2 mx-auto lg:mr-10 justify-center items-center">
-            <div className="flex justify-center items-center gap-2">
-              {open ? (
-                <div className="lg:hidden block mt-5 text-gray-500 text-xl">
-                  <FontAwesomeIcon icon={faXmark} />
-                </div>
-              ) : (
-                <div
-                  className="lg:hidden block mt-5 text-gray-500 text-xl"
-                  onClick={showDrawer}
-                >
-                  <FontAwesomeIcon icon={faList} />
-                </div>
-              )}
-
-              <FontAwesomeIcon
-                icon={faUser}
-                className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 lg:mt-0 mt-5"
+            <div className="hidden lg:block">
+              <Search
+                placeholder="search your stor"
+                size="large"
+                enterButton={
+                  <button>
+                    <FontAwesomeIcon
+                      icon={faSearch}
+                      className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5"
+                    />
+                  </button>
+                }
+                variant="outlined"
+                className=""
               />
-              <Modal
-                title="Basic Modal"
-                closable={{ "aria-label": "Custom Close Button" }}
-                open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
-              >
-                <Search
-                  placeholder="search your stor"
-                  size="large"
-                  enterButton={
-                    <button>
-                      <FontAwesomeIcon
-                        icon={faSearch}
-                        className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5"
-                      />
-                    </button>
-                  }
-                  variant="outlined"
-                  className=""
-                />
-              </Modal>
-              <div className="lg:hidden block ">
-                <FontAwesomeIcon
-                  type="primary"
-                  onClick={showModal}
-                  icon={faMagnifyingGlass}
-                  className="text-gray-500 text-xl mt-5"
-                />
-              </div>
-              {/* // hidden small device  */}
-              <div className="lg:block hidden">
-                <Link href={"/"}>
-                  <h1 className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
-                    ACCOUNT
-                  </h1>
-                </Link>
-                <Link href={"/"}>
-                  <small className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
-                    Register | Login
-                  </small>
-                </Link>
-              </div>
             </div>
 
-            <div className="flex gap-5 mx-5 justify-center items-center lg:mt-0 mt-6">
-              <div className="relative">
-                <Link href={"/"}>
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
+            <div className="grid grid-cols-2 mx-auto lg:mr-10 justify-center items-center">
+              <div className="flex justify-center items-center gap-2">
+                {open ? (
+                  <div className="lg:hidden block mt-5 text-gray-500 text-xl">
+                    <FontAwesomeIcon icon={faXmark} />
+                  </div>
+                ) : (
+                  <div
+                    className="lg:hidden block mt-5 text-gray-500 text-xl"
+                    onClick={showDrawer}
+                  >
+                    <FontAwesomeIcon icon={faList} />
+                  </div>
+                )}
+
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 lg:mt-0 mt-5"
+                />
+                <Modal
+                  title="Basic Modal"
+                  closable={{ "aria-label": "Custom Close Button" }}
+                  open={isModalOpen}
+                  onOk={handleOk}
+                  onCancel={handleCancel}
+                >
+                  <Search
+                    placeholder="search your stor"
+                    size="large"
+                    enterButton={
+                      <button>
+                        <FontAwesomeIcon
+                          icon={faSearch}
+                          className="bg-gray-800 hover:bg-yellow-500 duration-100 text-white rounded-full w-1/2 text-xl p-2.5 -ml-5"
+                        />
+                      </button>
+                    }
+                    variant="outlined"
+                    className=""
                   />
-                </Link>
-                <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">
-                  0
-                </span>
+                </Modal>
+                <div className="lg:hidden block ">
+                  <FontAwesomeIcon
+                    type="primary"
+                    onClick={showModal}
+                    icon={faMagnifyingGlass}
+                    className="text-gray-500 text-xl mt-5"
+                  />
+                </div>
+                {/* // hidden small device  */}
+                <div className="lg:block hidden">
+                  <Link href={"/"}>
+                    <h1 className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
+                      ACCOUNT
+                    </h1>
+                  </Link>
+                  <Link href={"/"}>
+                    <small className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
+                      Register | Login
+                    </small>
+                  </Link>
+                </div>
               </div>
-              <div className="relative">
-                <Link href={"/"}>
-                  <FontAwesomeIcon
-                    icon={faShopify}
-                    className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
-                  />
-                </Link>
-                <span className="absolute bg-yellow-500 font-semibold w-4 h-4 right-0 top-0 rounded-full flex justify-center items-center text-white">
-                  0
-                </span>
+
+              <div className="flex gap-5 mx-5 justify-center items-center lg:mt-0 mt-6">
+                <div className="relative">
+                  <Link href={"/"}>
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
+                    />
+                  </Link>
+                  <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
+                    0
+                  </span>
+                </div>
+                <div className="relative">
+                  <Link href={"/"}>
+                    <FontAwesomeIcon
+                      icon={faShopify}
+                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
+                    />
+                  </Link>
+                  <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
+                    0
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <p className="border-b-1 mx-36 border-gray-200 mb-2"></p>
+        <p className="border-b-1 mx-36 border-gray-200 mb-2"></p>
 
-      <div className="lg:block hidden">
-        <NavDivise />
+        <div className="lg:block hidden">
+          <NavDivise />
+        </div>
       </div>
 
       {/* resonsive phone version  */}

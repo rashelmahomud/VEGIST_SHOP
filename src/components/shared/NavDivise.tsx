@@ -101,8 +101,9 @@ const NavDivise = () => {
             </Link>
           </ul>
         </li>
-        <li className="text-gray-500 hover:text-yellow-500 duration-200 font-semibold">
-          <Link href={"/"}>Buy vegist</Link>
+        <li className="text-gray-500 hover:text-yellow-500 duration-200 font-semibold relative">
+          <Link href={'/'}><span className="absolute w-10 h-5 text-center text-white bg-red-800 -top-4 left-15 text-sm">HOT</span></Link>
+          <Link href={"/"} >Buy vegist</Link>
         </li>
       </ul>
       <div className="lg:flex jusity-center items-center lg:mr-18 gap-5 lg:block hidden">
