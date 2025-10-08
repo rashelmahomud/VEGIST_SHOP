@@ -67,7 +67,7 @@ const Categori = () => {
                 className="border border-0.5 border-gray-300 rounded-full object-cover w-40 h-40 "
               />
             </Link>
-            <div className="absolute top-2 left-2 group-hover:bg-gray-800 group-hover:opacity-40 group-hover:text-white font-semibold group-hover:w-40 group-hover:h-40 group-hover:bg-gray-500 rounded-full duration-700 group-hover:scale-90 group-hover:rotate-180 group-hover:bg-gradient-to-tr group-hover:from-gray-800 group-hover:to-gray-500">
+            <div className="absolute top-2 left-2 group-hover:bg-gray-800 group-hover:opacity-40 group-hover:text-white font-semibold group-hover:w-40 group-hover:h-40 group-hover:bg-gray-500 rounded-full duration-700 group-hover:scale-90 group-hover:rotate-360 group-hover:bg-gradient-to-tr group-hover:from-gray-800 group-hover:to-gray-500">
               <p className="invisible group-hover:visible text-center mt-15 group-hover:opacity-100">
                 {item.title}
               </p>

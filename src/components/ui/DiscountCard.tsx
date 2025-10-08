@@ -15,7 +15,7 @@ const DiscountCard = () => {
           <h1 className="lg:text-4xl text-xl font-semibold mb-4 text-gray-700">
             Fresh fruit,vegetable on <br /> our product
           </h1>
-          <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500 duration-300">
+          <button className="py-2 px-6 bg-yellow-500 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500 duration-300">
             Shop Now
           </button>
         </div>
@@ -32,7 +32,7 @@ const DiscountCard = () => {
           <h1 className="lg:text-4xl text-xl font-semibold mb-4 text-gray-700">
             Vegetable eggplant <br /> 100% fresh food
           </h1>
-          <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500 duration-300">
+          <button className="py-2 px-6 bg-yellow-500 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500 duration-300">
             Shop Now
           </button>
         </div>

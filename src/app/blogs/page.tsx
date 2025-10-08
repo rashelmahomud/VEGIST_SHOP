@@ -1,8 +1,7 @@
+import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { faFileText } from "@fortawesome/free-regular-svg-icons/faFileText";
 import {
   faArrowRight,
-  faArrowRightArrowLeft,
-  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -44,7 +43,7 @@ const BlogsPage = () => {
       <h1 className="text-center text-3xl font-semibold text-gray-600 my-10">
         Recent News
       </h1>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-2">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-2 relative">
         {Blogs.map((blog) => (
           <div key={blog.id}>
             <Link href={"/"}>
@@ -56,12 +55,16 @@ const BlogsPage = () => {
                 className="lg:h-[300px]"
               />
             </Link>
+              <p className="absolute px-6 py-4 rounded-b-2xl -top-5 left-10 bg-yellow-500 text-white text-3xl font-semibold">{blog.id}</p> 
+              {/* blogs number  */}
+        
+           
             <div className="border border-gray-200 p-2">
               <div className="flex justify-between text-gray-500 my-2">
                 <div className="flex items-center">
                   <FontAwesomeIcon
                     className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                    icon={faTimes}
+                    icon={faFile}
                   />
                   May 13,2025
                 </div>
@@ -77,7 +80,7 @@ const BlogsPage = () => {
                 {blog.title}
               </h2>
               <p className="text-gray-500">{blog.dec}</p>
-              <button className="font-semibold mt-2">
+              <button className="font-semibold mt-2 text-gray-600">
                 <Link href={"/"} className="flex items-center">
                   Read More
                   <FontAwesomeIcon
@@ -87,6 +90,7 @@ const BlogsPage = () => {
                 </Link>
               </button>
             </div>
+          
           </div>
         ))}
       </div>

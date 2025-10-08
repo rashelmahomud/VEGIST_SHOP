@@ -6,7 +6,7 @@ const DealOfDay = () => {
   const secound = date.getSeconds();
 
   const dayDesign =
-    "flex flex-col items-center bg-yellow-500 p-3 rounded-lg text-white font-semibold my-4";
+    "flex flex-col items-center bg-yellow-500 p-3 px-5 rounded-lg text-white font-semibold my-4";
 
   return (
     <div className="bg-[url('/assates/dealbanner.webp')] h-[450px] bg-cover bg-no-repet bg-center bg-fixed lg:px-36 p-5 flex flex-col justify-center">

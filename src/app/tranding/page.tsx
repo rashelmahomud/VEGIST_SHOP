@@ -87,7 +87,7 @@ const TrandingPage = () => {
                 key={item.id}
                 className="flex flex-col justify-center rounded-full p-2 relative group"
               >
-                <Link href={"/"}>
+                <Link href={"/"} className="">
                   <Image
                     src={item.img}
                     alt="cat1"
