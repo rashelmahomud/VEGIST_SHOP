@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import {
+  faAngleUp,
   faCar,
   faDollar,
   faMicrophoneLines,
@@ -184,6 +185,14 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-yellow-500 p-4">
+        <div className=" absolute right-8">
+          <Link href={""}>
+            <FontAwesomeIcon
+              icon={faAngleUp}
+              className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+            />
+          </Link>
+        </div>
         <div className="lg:px-36 mx-auto grid lg:grid-cols-3">
           <h1 className="text-white font-semibold  flex justify-center md:justify-start">
             Copyright © 2025 by Rashel Mahomud
