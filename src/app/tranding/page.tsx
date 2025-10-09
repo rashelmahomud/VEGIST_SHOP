@@ -1,3 +1,4 @@
+import { Products } from "@/components/type/ProductType";
 import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping, faShop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,13 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TrandingPage = () => {
-  interface Products {
-    id: number;
-    title: string;
-    cost: string;
-    review: string;
-    img: string;
-  }
+
 
   const items: Products[] = [
     {
@@ -43,36 +38,35 @@ const TrandingPage = () => {
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
     },
-  ];
-  const shops: Products[] = [
-    {
-      id: 1,
+        {
+      id: 5,
       title: "fresh fish",
       cost: "$12.00",
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
     },
     {
-      id: 2,
+      id: 6,
       title: "fresh fish",
       cost: "$15.00",
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
     },
     {
-      id: 3,
+      id: 7,
       title: "fresh fish",
       cost: "$10.00",
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
     },
     {
-      id: 4,
+      id: 8,
       title: "fresh fish",
       cost: "$15.00",
       review: "no review",
       img: "/assates/shop/shop(10).webp",
     },
+
   ];
   return (
     <div className="mt-20 py-10">
@@ -82,12 +76,12 @@ const TrandingPage = () => {
       <Carousel autoplay autoplaySpeed={3000}>
         <div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
-            {items.map((item) => (
+            {items.slice(0,4).map((item) => (
               <div
                 key={item.id}
                 className="flex flex-col justify-center rounded-full p-2 relative group"
               >
-                <Link href={"/"} className="">
+                <Link href={`/tranding/${item.id}`} className="">
                   <Image
                     src={item.img}
                     alt="cat1"
@@ -97,14 +91,15 @@ const TrandingPage = () => {
                   />
                 </Link>
                 <div className="absolute group-hover:w-full group-hover:h-full duration-700">
-                  <Image
-                    src={"/assates/shop/shop(3).jpg"}
-                    alt="cat1"
-                    width={300}
-                    height={200}
-                    className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
-                  />
-
+                  <Link href={`/tranding/${item.id}`}>
+                    <Image
+                      src={"/assates/shop/shop(3).jpg"}
+                      alt="cat1"
+                      width={300}
+                      height={200}
+                      className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                    />
+                  </Link>
                   <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
                     <FontAwesomeIcon
                       icon={faEye}
@@ -157,14 +152,14 @@ const TrandingPage = () => {
         {/* slide 0.2  */}
         <div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
-            {shops.map((shop) => (
+            {items.slice(0,4).map((item) => (
               <div
-                key={shop.id}
+                key={item.id}
                 className="flex flex-col justify-center rounded-full p-2 relative group"
               >
-                <Link href={"/"}>
+                <Link href={`/tranding/${item.id}`}>
                   <Image
-                    src={shop.img}
+                    src={item.img}
                     alt="cat1"
                     width={300}
                     height={200}
@@ -172,14 +167,15 @@ const TrandingPage = () => {
                   />
                 </Link>
                 <div className="absolute group-hover:w-full group-hover:h-full duration-700">
-                  <Image
-                    src={"/assates/shop/shop(3).jpg"}
-                    alt="cat1"
-                    width={300}
-                    height={200}
-                    className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
-                  />
-
+                  <Link href={`/tranding/${item.id}`}>
+                    <Image
+                      src={"/assates/shop/shop(3).jpg"}
+                      alt="cat1"
+                      width={300}
+                      height={200}
+                      className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
+                    />
+                  </Link>
                   <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
                     <FontAwesomeIcon
                       icon={faEye}
@@ -197,9 +193,9 @@ const TrandingPage = () => {
                 </div>
                 <div className=" mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
-                    {shop.title}
+                    {item.title}
                   </h1>
-                  <p className="font-semibld text-gray-500">{shop.cost}</p>
+                  <p className="font-semibld text-gray-500">{item.cost}</p>
                   <div className="flex items-center gap-2">
                     <FontAwesomeIcon
                       icon={faStar}
@@ -221,7 +217,7 @@ const TrandingPage = () => {
                       icon={faStar}
                       className="w-3 text-yellow-600"
                     />
-                    <p className="font-semibld text-gray-500">{shop.review}</p>
+                    <p className="font-semibld text-gray-500">{item.review}</p>
                   </div>
                 </div>
               </div>

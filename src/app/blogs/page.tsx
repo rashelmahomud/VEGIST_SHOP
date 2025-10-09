@@ -58,7 +58,7 @@ const BlogsPage = () => {
               <p className="absolute px-6 py-4 rounded-b-2xl -top-5 left-10 bg-yellow-500 text-white text-3xl font-semibold">{blog.id}</p> 
               {/* blogs number  */}
         
-           
+
             <div className="border border-gray-200 p-2">
               <div className="flex justify-between text-gray-500 my-2">
                 <div className="flex items-center">

@@ -39,7 +39,7 @@ const Navber = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-center bg-gray-900 text-white p-4 font-semibold">
+        <h1 className="text-center bg-gray-900 text-white p-3 font-semibold">
           <span className="animate-ping text-yellow-500 duration-300 opacity-100 font-semibold mx-2">
             Free shipping
           </span>
