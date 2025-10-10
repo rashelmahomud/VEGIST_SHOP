@@ -26,15 +26,14 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
 
   const [count, setCount] = useState(1);
   const [need, setNeed] = useState("1KG");
-  const [country, setCountry] = useState("canada")
+  const [country, setCountry] = useState("canada");
 
-  const handelClick = (name:string) => {
+  const handelClick = (name: string) => {
     setNeed(name);
   };
-  const handelCountry = (country:string) => {
-    setCountry(country)
-  }
-
+  const handelCountry = (country: string) => {
+    setCountry(country);
+  };
 
   const items: Products[] = [
     {
@@ -118,12 +117,39 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 className="grid lg:grid-cols-2 grid-cols-1 gap-5 "
               >
                 <div>
-                  <Image
-                    src={productD.img}
-                    width={400}
-                    height={400}
-                    alt="image"
-                  />
+                  <div>
+                    <Image
+                      src={productD.img}
+                      width={400}
+                      height={400}
+                      alt="image"
+                    />
+                  </div>
+
+                  <div className="flex gap-10 mt-5">
+                    <Image
+                    className="border-1 border-gray-300 hover:border-yellow-500"
+                      src={'/assates/tendingProduct/tran (3).jpg'}
+                      width={100}
+                      height={50}
+                      alt="image"
+                    />
+                    <Image
+                    className="border-1 border-gray-300 hover:border-yellow-500"
+                      src={productD.img}
+                      width={100}
+                      height={50}
+                      alt="image"
+                    />
+                    <Image
+                    className="border-1 border-gray-300 hover:border-yellow-500"
+                      src={'/assates/tendingProduct/tran (2).jpg'}
+                      width={100}
+                      height={50}
+                      alt="image"
+                    />
+                 
+                  </div>
                 </div>
 
                 <div>
@@ -194,7 +220,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       </Link>
 
                       <Link
-                      onClick={() => handelClick("2KG")}
+                        onClick={() => handelClick("2KG")}
                         href={""}
                         className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 py-2"
                       >
@@ -202,7 +228,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       </Link>
 
                       <Link
-                      onClick={() => handelClick("3KG")}
+                        onClick={() => handelClick("3KG")}
                         href={""}
                         className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 py-2"
                       >
@@ -217,7 +243,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     <div className="flex gap-5 mt-3">
                       <button>
                         <Link
-                        onClick={() => handelCountry("canada")}
+                          onClick={() => handelCountry("canada")}
                           href={""}
                           className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 border active border-yellow-500 py-2"
                         >
@@ -226,7 +252,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       </button>
                       <button>
                         <Link
-                        onClick={() => handelCountry("india")}
+                          onClick={() => handelCountry("india")}
                           href={""}
                           className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 py-2"
                         >
@@ -235,7 +261,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       </button>
                       <button>
                         <Link
-                         onClick={() => handelCountry("germany")}
+                          onClick={() => handelCountry("germany")}
                           href={""}
                           className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 py-2"
                         >
@@ -292,9 +318,18 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       Share :
                     </p>
                     <div className="flex gap-3 text-gray-500">
-                      <FontAwesomeIcon icon={faFacebook} className="hover:text-yellow-500" />
-                      <FontAwesomeIcon icon={faX} className="hover:text-yellow-500"/>
-                      <FontAwesomeIcon icon={faPinterest} className="hover:text-yellow-500" />
+                      <FontAwesomeIcon
+                        icon={faFacebook}
+                        className="hover:text-yellow-500"
+                      />
+                      <FontAwesomeIcon
+                        icon={faX}
+                        className="hover:text-yellow-500"
+                      />
+                      <FontAwesomeIcon
+                        icon={faPinterest}
+                        className="hover:text-yellow-500"
+                      />
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
