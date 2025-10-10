@@ -261,11 +261,11 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       </button>
                     </p>
                   </div>
-                  <div className="text-center flex justify-between p-2">
+                  <div className="flex gap-5 p-2">
                     <button>
                       <Link
                         href={""}
-                        className="px-14 py-2 text-white text-semibold bg-yellow-500 rounded-full"
+                        className="px-14 py-3 text-white text-semibold bg-yellow-500 rounded-full"
                       >
                         Add to cart
                       </Link>
@@ -273,7 +273,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     <button className="text-gray-600">
                       <Link
                         href={""}
-                        className="px-14 py-2 text-white text-semibold bg-black rounded-full"
+                        className="px-14 py-3 text-white text-semibold bg-gray-800 rounded-full"
                       >
                         Buy it now
                       </Link>
@@ -287,32 +287,32 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   <div className="text-gray-700 mb-3">
                     <p>SKU: 123456</p>
                   </div>
-                  <div className="flex gap-5">
+                  <div className="flex items-center gap-5 ">
                     <p className="text-xl font-semibold text-gray-500 mb-2">
-                      Share
+                      Share :
                     </p>
-                    <div>
-                      <FontAwesomeIcon icon={faFacebook} />
-                      <FontAwesomeIcon icon={faX} />
-                      <FontAwesomeIcon icon={faPinterest} />
+                    <div className="flex gap-3 text-gray-500">
+                      <FontAwesomeIcon icon={faFacebook} className="hover:text-yellow-500" />
+                      <FontAwesomeIcon icon={faX} className="hover:text-yellow-500"/>
+                      <FontAwesomeIcon icon={faPinterest} className="hover:text-yellow-500" />
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex items-center gap-2">
                     <FontAwesomeIcon
                       icon={faCcMastercard}
-                      className="w-10 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
+                      className="w-10 py-1 px-2 rounded-md bg-white border border-gray-300 duration-300"
                     />
                     <FontAwesomeIcon
                       icon={faPaypal}
-                      className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
+                      className="w-10 px-2 py-1 rounded-md bg-white border border-gray-300 duration-300"
                     />
                     <FontAwesomeIcon
                       icon={faCcVisa}
-                      className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
+                      className="w-10 px-2 py-1 rounded-md bg-white border border-gray-300 duration-300"
                     />
                     <FontAwesomeIcon
                       icon={faDollar}
-                      className="w-10 px-2 py-1 rounded-md bg-white hover:bg-yellow-500 duration-300"
+                      className="w-10 px-2 py-1 rounded-md bg-white border border-gray-300 duration-300"
                     />
                   </div>
                 </div>
