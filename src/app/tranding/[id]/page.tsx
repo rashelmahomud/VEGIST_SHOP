@@ -6,12 +6,15 @@ import {
   faFacebook,
   faPaypal,
   faPinterest,
+  faResolving,
 } from "@fortawesome/free-brands-svg-icons";
 import { faHeart, faStar, faTruck } from "@fortawesome/free-regular-svg-icons";
 import {
   faDollar,
+  faLifeRing,
   faMinus,
   faPlus,
+  faRing,
   faWarning,
   faX,
 } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +22,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Image } from "antd";
 import Link from "next/link";
 import React, { useState } from "react";
+import TrandingPage from "../page";
 
 const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = React.use(params);
@@ -27,11 +31,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const [count, setCount] = useState(1);
   const [need, setNeed] = useState("1KG");
   const [country, setCountry] = useState("canada");
-  const [img, setImg] = useState('')
-
-  const handelImage = (img: string) => {
-    setImg(img)
-  }
+  const [active, setActive] = useState("1");
 
   const handelClick = (name: string) => {
     setNeed(name);
@@ -133,28 +133,26 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
 
                   <div className="flex gap-10 mt-5">
                     <Image
-                    onClick={() => handelImage('assates/tendingProduct/tran (3).jpg')}
-                    className="border-1 border-gray-300 hover:border-yellow-500"
-                      src={'/assates/tendingProduct/tran (3).jpg'}
+                      className="border-1 border-gray-300 hover:border-yellow-500"
+                      src={"/assates/tendingProduct/tran (3).jpg"}
                       width={100}
                       height={100}
                       alt="image"
                     />
                     <Image
-                    className="border-1 border-gray-300 hover:border-yellow-500"
+                      className="border-1 border-gray-300 hover:border-yellow-500"
                       src={productD.img}
                       width={100}
                       height={100}
                       alt="image"
                     />
                     <Image
-                    className="border-1 border-gray-300 hover:border-yellow-500"
-                      src={'/assates/tendingProduct/tran (2).jpg'}
+                      className="border-1 border-gray-300 hover:border-yellow-500"
+                      src={"/assates/tendingProduct/tran (2).jpg"}
                       width={100}
                       height={100}
                       alt="image"
                     />
-                 
                   </div>
                 </div>
 
@@ -395,6 +393,104 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <div className="flex gap-10 justify-center mb-5">
+          <button className="border rounded-full py-2 px-3 border-gray-400">
+            <Link onClick={() => setActive("1")} href={""}>
+              DESCRIPTION
+            </Link>
+          </button>
+          <button className="hover:border rounded-full py-2 px-3 border-gray-400">
+            <Link onClick={() => setActive("2")} href={""}>
+              ADDITIONAL INFORMATION
+            </Link>
+          </button>
+          <button className="hover:border rounded-full py-2 px-3 border-gray-400">
+            <Link onClick={() => setActive("3")} href={""}>
+              REVIEWS
+            </Link>
+          </button>
+        </div>
+        <div className="lg:px-36 p-3">
+          <div>
+            {active === "1" && (
+              <div>
+                <div>
+                  <h1 className="text-2xl font-semibold mb-2 text-gray-600">More Detail</h1>
+                  <ul>
+                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry
+                    </li>
+                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                      Lorem Ipsum has been the ‘s standard dummy text. Lorem
+                      Ipsumum is simply dummy text.
+                    </li>
+                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />type here your detail one by one li more add</li>
+                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                      has been the industry’s standard dummy text ever since.
+                      Lorem Ips
+                    </li>
+                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry.
+                    </li>
+                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the ‘s standard
+                      dummy text. Lorem Ipsum has been the industry’s standard
+                      dummy text ever since. Lorem Ipsum is simply dummy text.
+                    </li>
+                  </ul>
+                  <div>
+                    <h1 className="text-2xl font-semibold text-gray-700 mb-3">
+                      Key Specification
+                    </h1>
+                    <ul>
+                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry
+                      </li>
+                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                        Lorem Ipsum has been the ‘s standard dummy text. Lorem
+                        Ipsumum is simply dummy text.
+                      </li>
+                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the ‘s
+                        standard dummy text. Lorem Ipsum has been the industry’s
+                        standard dummy text ever since. Lorem Ipsum is simply
+                        dummy text.
+                      </li>
+                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                        has been the industry’s standard dummy text ever since.
+                        Lorem Ips.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {active === "2" && (
+              <div>
+                <h1>Hello how are you Two</h1>
+              </div>
+            )}
+          </div>
+          <div>
+            {active === "3" && (
+              <div>
+                <h1>Hello how are you Three</h1>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="lg:px-36 p-3">
+        <TrandingPage />
       </div>
     </div>
   );
