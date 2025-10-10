@@ -16,7 +16,7 @@ import {
   faX,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+import { Image } from "antd";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -27,6 +27,11 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const [count, setCount] = useState(1);
   const [need, setNeed] = useState("1KG");
   const [country, setCountry] = useState("canada");
+  const [img, setImg] = useState('')
+
+  const handelImage = (img: string) => {
+    setImg(img)
+  }
 
   const handelClick = (name: string) => {
     setNeed(name);
@@ -121,31 +126,32 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     <Image
                       src={productD.img}
                       width={400}
-                      height={400}
+                      height={500}
                       alt="image"
                     />
                   </div>
 
                   <div className="flex gap-10 mt-5">
                     <Image
+                    onClick={() => handelImage('assates/tendingProduct/tran (3).jpg')}
                     className="border-1 border-gray-300 hover:border-yellow-500"
                       src={'/assates/tendingProduct/tran (3).jpg'}
                       width={100}
-                      height={50}
+                      height={100}
                       alt="image"
                     />
                     <Image
                     className="border-1 border-gray-300 hover:border-yellow-500"
                       src={productD.img}
                       width={100}
-                      height={50}
+                      height={100}
                       alt="image"
                     />
                     <Image
                     className="border-1 border-gray-300 hover:border-yellow-500"
                       src={'/assates/tendingProduct/tran (2).jpg'}
                       width={100}
-                      height={50}
+                      height={100}
                       alt="image"
                     />
                  
