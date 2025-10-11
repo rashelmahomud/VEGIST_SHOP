@@ -6,7 +6,6 @@ import {
   faFacebook,
   faPaypal,
   faPinterest,
-  faResolving,
 } from "@fortawesome/free-brands-svg-icons";
 import { faHeart, faStar, faTruck } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -19,7 +18,7 @@ import {
   faX,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Image } from "antd";
+import { Image, Rate } from "antd";
 import Link from "next/link";
 import React, { useState } from "react";
 import TrandingPage from "../page";
@@ -32,6 +31,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const [need, setNeed] = useState("1KG");
   const [country, setCountry] = useState("canada");
   const [active, setActive] = useState("1");
+  const [openCollaps, setOpenCollaps] = useState("");
 
   const handelClick = (name: string) => {
     setNeed(name);
@@ -417,26 +417,54 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
             {active === "1" && (
               <div>
                 <div>
-                  <h1 className="text-2xl font-semibold mb-2 text-gray-600">More Detail</h1>
+                  <h1 className="text-2xl font-semibold mb-2 text-gray-600">
+                    More Detail
+                  </h1>
                   <ul>
-                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                    <li className="p-2 text-gray-600">
+                      <FontAwesomeIcon
+                        icon={faRing}
+                        className="mr-3 text-gray-400 text-sm"
+                      />
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry
                     </li>
-                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                    <li className="p-2 text-gray-600">
+                      <FontAwesomeIcon
+                        icon={faRing}
+                        className="mr-3 text-gray-400 text-sm"
+                      />
                       Lorem Ipsum has been the ‘s standard dummy text. Lorem
                       Ipsumum is simply dummy text.
                     </li>
-                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />type here your detail one by one li more add</li>
-                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                    <li className="p-2 text-gray-600">
+                      <FontAwesomeIcon
+                        icon={faRing}
+                        className="mr-3 text-gray-400 text-sm"
+                      />
+                      type here your detail one by one li more add
+                    </li>
+                    <li className="p-2 text-gray-600">
+                      <FontAwesomeIcon
+                        icon={faRing}
+                        className="mr-3 text-gray-400 text-sm"
+                      />
                       has been the industry’s standard dummy text ever since.
                       Lorem Ips
                     </li>
-                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                    <li className="p-2 text-gray-600">
+                      <FontAwesomeIcon
+                        icon={faRing}
+                        className="mr-3 text-gray-400 text-sm"
+                      />
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry.
                     </li>
-                    <li className="p-2 text-gray-600"><FontAwesomeIcon icon={faRing} className="mr-3 text-gray-400 text-sm" />
+                    <li className="p-2 text-gray-600">
+                      <FontAwesomeIcon
+                        icon={faRing}
+                        className="mr-3 text-gray-400 text-sm"
+                      />
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the ‘s standard
                       dummy text. Lorem Ipsum has been the industry’s standard
@@ -448,22 +476,38 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       Key Specification
                     </h1>
                     <ul>
-                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                      <li className="p-2 text-gray-500 text-sm">
+                        <FontAwesomeIcon
+                          icon={faRing}
+                          className="mr-2 text-gray-500"
+                        />
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry
                       </li>
-                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                      <li className="p-2 text-gray-500 text-sm">
+                        <FontAwesomeIcon
+                          icon={faRing}
+                          className="mr-2 text-gray-500"
+                        />
                         Lorem Ipsum has been the ‘s standard dummy text. Lorem
                         Ipsumum is simply dummy text.
                       </li>
-                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                      <li className="p-2 text-gray-500 text-sm">
+                        <FontAwesomeIcon
+                          icon={faRing}
+                          className="mr-2 text-gray-500"
+                        />
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the ‘s
                         standard dummy text. Lorem Ipsum has been the industry’s
                         standard dummy text ever since. Lorem Ipsum is simply
                         dummy text.
                       </li>
-                      <li className="p-2 text-gray-500 text-sm"><FontAwesomeIcon icon={faRing} className="mr-2 text-gray-500" />
+                      <li className="p-2 text-gray-500 text-sm">
+                        <FontAwesomeIcon
+                          icon={faRing}
+                          className="mr-2 text-gray-500"
+                        />
                         has been the industry’s standard dummy text ever since.
                         Lorem Ips.
                       </li>
@@ -476,14 +520,84 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
           <div>
             {active === "2" && (
               <div>
-                <h1>Hello how are you Two</h1>
+                <div className="flex">
+                  <span className="font-semibold text-gray-700 border p-2 w-1/2 border-gray-300">
+                    vendor:
+                  </span>
+                  <p className="text-gray-500 border p-2 w-full border-gray-300">
+                    vegist
+                  </p>
+                </div>
+                <div className="flex">
+                  <span className="font-semibold text-gray-700 border p-2 w-1/2 border-gray-300">
+                    size:
+                  </span>
+                  <p className="text-gray-500 p-2 w-full border border-gray-300">
+                    1kg, 2kg, 3kg
+                  </p>
+                </div>
+                <div className="flex">
+                  <span className="font-semibold text-gray-700 border p-2 w-1/2 border-gray-300">
+                    Meterial:
+                  </span>
+                  <p className="text-gray-500 p-2 w-full border border-gray-300">
+                    canada, india, germany
+                  </p>
+                </div>
+                <div className="flex">
+                  <span className="font-semibold text-gray-700 border p-2 w-1/2 border-gray-300">
+                    SKU:
+                  </span>
+                  <p className="text-gray-500 p-2 w-full border border-gray-300">
+                    123456
+                  </p>
+                </div>
               </div>
             )}
           </div>
           <div>
             {active === "3" && (
               <div>
-                <h1>Hello how are you Three</h1>
+                <h1 className="text-2xl font-semibold text-gray-600 text-center">
+                  Customer Reviews
+                </h1>
+                <div className="flex justify-center gap-10 my-10 items-center">
+                  <div className="border-r-1 p-3 border-gray-300">
+                    <Rate disabled />
+                    <p className="text-sm text-gray-500">
+                      Be the first to write a review
+                    </p>
+                  </div>
+                  <div>
+                    <button>
+                      <Link
+                        href={""}
+                        className="py-3 px-5 text-white font-semibold bg-yellow-500 rounded-full"
+                      >
+                        Write a review
+                      </Link>
+                    </button>
+                    <div></div>
+                  </div>
+                
+                </div>
+                  <div className="flex flex-col justify-center items-center">
+                 <div>   <h1 className="text-2xl font-semibold text-gray-500">Write a review</h1>
+                    <h4 className="text-center my-2 text-gray-500">Rating</h4>
+                    <Rate />
+                    <h4 className="text-center my-3 text-gray-500">Review Title</h4></div>
+                 <div>
+                  <div className="w-full">
+                    <input type="text" placeholder="Give your review a little" className="w-96 py-2 px-4 border border-gray-300" />
+                    <h2 className="text-center text-gray-500 my-3">review</h2>
+                    <textarea className="border border-gray-300 w-full p-2" placeholder="write your comments here" />
+                  </div>
+                  <div className="flex gap-10 justify-center mt-3">
+                    <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg"><Link href={''}>Cancel Review</Link></button>
+                    <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg"><Link href={''}>Submite Review</Link></button>
+                  </div>
+                 </div>
+                  </div>
               </div>
             )}
           </div>
