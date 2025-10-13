@@ -50,12 +50,15 @@ const Navber = () => {
       <div className="sticky top-0 bg-white z-40">
         <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
           <div className="grid lg:grid-cols-3 grid-cols-2 items-center justify-center test-center align-items-center mx-auto">
-            <Image
-              src={"/assates/logo-1.svg"}
-              width={100}
-              height={100}
-              alt="image logo"
-            />
+            <Link href={"/"}>
+              {" "}
+              <Image
+                src={"/assates/logo-1.svg"}
+                width={100}
+                height={100}
+                alt="image logo"
+              />
+            </Link>
 
             <div className="hidden lg:block">
               <Search
