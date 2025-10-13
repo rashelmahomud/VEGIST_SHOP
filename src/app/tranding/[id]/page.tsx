@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { Products } from "@/components/type/ProductType";
 import {
   faCcMastercard,
@@ -10,7 +10,6 @@ import {
 import { faHeart, faStar, faTruck } from "@fortawesome/free-regular-svg-icons";
 import {
   faDollar,
-  faLifeRing,
   faMinus,
   faPlus,
   faRing,
@@ -20,24 +19,31 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Image, Rate } from "antd";
 import Link from "next/link";
-import React, { useState } from "react";
 import TrandingPage from "../page";
+import React, { useState } from "react";
 
 const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = React.use(params);
-  const { id } = resolvedParams;
-
   const [count, setCount] = useState(1);
   const [need, setNeed] = useState("1KG");
   const [country, setCountry] = useState("canada");
   const [active, setActive] = useState("1");
-  const [openCollaps, setOpenCollaps] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const { id } = resolvedParams;
 
   const handelClick = (name: string) => {
     setNeed(name);
   };
   const handelCountry = (country: string) => {
     setCountry(country);
+  };
+
+  const reviewOpen = () => {
+    setOpen(true);
+  };
+  const cancelReview = () => {
+    setOpen(false);
   };
 
   const items: Products[] = [
@@ -571,7 +577,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     </p>
                   </div>
                   <div>
-                    <button>
+                    <button onClick={() => reviewOpen()}>
                       <Link
                         href={""}
                         className="lg:py-3 py-1 lg:px-5 px-2 text-white font-semibold bg-yellow-500 rounded-full"
@@ -582,40 +588,50 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   </div>
                 </div>
                 {/* // hidden subject  */}
-                <div className="flex flex-col justify-center items-center">
-                  <div>
-                    <h1 className="text-2xl font-semibold text-gray-500">
-                      Write a review
-                    </h1>
-                    <h4 className="text-center my-2 text-gray-500">Rating</h4>
-                    <Rate />
-                    <h4 className="text-center my-3 text-gray-500">
-                      Review Title
-                    </h4>
-                  </div>
-                  <div>
-                    <div className="w-full">
-                      <input
-                        type="text"
-                        placeholder="Give your review a little"
-                        className="w-96 py-2 px-4 border border-gray-300"
-                      />
-                      <h2 className="text-center text-gray-500 my-3">review</h2>
-                      <textarea
-                        className="border border-gray-300 w-full p-2"
-                        placeholder="write your comments here"
-                      />
+                {/* review part  */}
+                {open ? (
+                  <div className="flex flex-col justify-center items-center">
+                    <div>
+                      <h1 className="text-2xl font-semibold text-gray-500">
+                        Write a review
+                      </h1>
+                      <h4 className="text-center my-2 text-gray-500">Rating</h4>
+                      <Rate />
+                      <h4 className="text-center my-3 text-gray-500">
+                        Review Title
+                      </h4>
                     </div>
-                    <div className="flex gap-10 justify-center mt-3">
-                      <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg">
-                        <Link href={""}>Cancel Review</Link>
-                      </button>
-                      <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg">
-                        <Link href={""}>Submite Review</Link>
-                      </button>
+                    <div>
+                      <div className="w-full">
+                        <input
+                          type="text"
+                          placeholder="Give your review a little"
+                          className="w-96 py-2 px-4 border border-gray-300"
+                        />
+                        <h2 className="text-center text-gray-500 my-3">
+                          review
+                        </h2>
+                        <textarea
+                          className="border border-gray-300 w-full p-2"
+                          placeholder="write your comments here"
+                        />
+                      </div>
+                      <div className="flex gap-10 justify-center mt-3">
+                        <button
+                          className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg"
+                          onClick={() => cancelReview()}
+                        >
+                          <Link href={""}>Cancel Review</Link>
+                        </button>
+                        <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg">
+                          <Link href={""}>Submite Review</Link>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  ""
+                )}
               </div>
             )}
           </div>

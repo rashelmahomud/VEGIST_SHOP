@@ -1,14 +1,13 @@
 import { Products } from "@/components/type/ProductType";
 import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
-import { faBagShopping, faShop } from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 
 const TrandingPage = () => {
-
-
+   
   const items: Products[] = [
     {
       id: 1,
@@ -38,7 +37,7 @@ const TrandingPage = () => {
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
     },
-        {
+    {
       id: 5,
       title: "fresh fish",
       cost: "$12.00",
@@ -66,7 +65,6 @@ const TrandingPage = () => {
       review: "no review",
       img: "/assates/shop/shop(10).webp",
     },
-
   ];
   return (
     <div className="mt-20 py-10">
@@ -76,7 +74,7 @@ const TrandingPage = () => {
       <Carousel autoplay autoplaySpeed={3000}>
         <div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
-            {items.slice(0,4).map((item) => (
+            {items.slice(0, 4).map((item) => (
               <div
                 key={item.id}
                 className="flex flex-col justify-center rounded-full p-2 relative group"
@@ -101,10 +99,15 @@ const TrandingPage = () => {
                     />
                   </Link>
                   <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
-                    <FontAwesomeIcon
-                      icon={faEye}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
-                    />
+
+                    {/* showing details  */}
+                    <Link href={''} type="primary">
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                      />
+                    </Link>
+
                     <FontAwesomeIcon
                       icon={faHeart}
                       className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
@@ -152,7 +155,7 @@ const TrandingPage = () => {
         {/* slide 0.2  */}
         <div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
-            {items.slice(0,4).map((item) => (
+            {items.slice(0, 4).map((item) => (
               <div
                 key={item.id}
                 className="flex flex-col justify-center rounded-full p-2 relative group"
@@ -179,15 +182,15 @@ const TrandingPage = () => {
                   <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
                     <FontAwesomeIcon
                       icon={faEye}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     />
                     <FontAwesomeIcon
                       icon={faHeart}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     />
                     <FontAwesomeIcon
                       icon={faBagShopping}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     />
                   </div>
                 </div>
