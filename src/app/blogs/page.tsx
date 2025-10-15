@@ -46,7 +46,7 @@ const BlogsPage = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-2 relative">
         {Blogs.map((blog) => (
           <div key={blog.id}>
-            <Link href={"/"}>
+            <Link href={`/blogs/${blog.id}`}>
               <Image
                 src={blog.image}
                 alt="img"
