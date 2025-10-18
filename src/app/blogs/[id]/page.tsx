@@ -5,6 +5,8 @@ import {
   faFileText,
   faUser,
 } from "@fortawesome/free-regular-svg-icons";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons/faQuestionCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,51 +48,52 @@ const Blogs: BlogsType[] = [
 export default function BlogDetail({ params }: BlogsDetailsType) {
   const { id } = React.use(params);
 
-  const blog = Blogs.find((blog) => blog.id.toString() === id);
+  const b = Blogs.find((blog) => blog.id.toString() === id);
 
   return (
     <div>
-      <div className="flex bg-gray-50 p-3 gap-5 items-center justify-center">
+      <div className="flex bg-gray-50 py-5 gap-5 items-center justify-center">
         <Link href={"/"}> Home</Link>
         <Link href={"/"}> News</Link>
         <Link href={"/"}>Fresh organics brand...</Link>
       </div>
-      <div className="lg:px-36 flex gap-10 p-3 mx-auto p-6">
-        <div className="basis-1/2">
-          <div className="lg:px-36 my-10">
-            <div className="flex  p-2 relative">
-              {Blogs.map((blog) => (
-                <div key={blog.id} className="">
-                  <Link href={''}>
-                    <Image
-                      src={blog.image}
-                      alt="img"
-                      width={50}
-                      height={50}
-                      className="lg:h-[100px]"
-                    />
-                  </Link>
-                  {/* blogs number  */}
+      <div className="lg:px-36 flex p-3 mx-auto my-10">
+        <div className="basis-1/3 ">
+          <h1 className="p-2 text-xl">Recent Posts</h1>
+          <div className="flex flex-col p-2 relative">
+            {Blogs.map((blog) => (
+              <div key={blog.id} className="flex gap-3 items-center">
+                <Link href={""}>
+                  <Image src={blog.image} alt="img" width={100} height={50} />
+                </Link>
+                {/* blogs number  */}
 
-                    <div className=" text-gray-500 my-2">
-                      <div className="flex items-center">
-                        <FontAwesomeIcon
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                          icon={faFile}
-                        />
-                        May 13,2025
-                      </div>
-                      <p>{blog.title}</p>
-                    </div>
-                
+                <div className="text-gray-400 my-2">
+                  <div className="flex items-center">
+                    <FontAwesomeIcon
+                      className="w-10 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                      icon={faFile}
+                    />
+                    May 13,2025
+                  </div>
+                  <p className="mt-2 text-gray-500">{blog.title}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="basic-1/5 space-y-3">
-          {/* <Image src={blog?.image} height={600} width={1000} alt="image" /> */}
-          <p className="text-xl font-semibold text-gray-500">{blog?.title}</p>
+        <div className="basis-2/3 space-y-3">
+          <Image
+            src={
+              b?.image ||
+              "/assates/recent-news/blog-2_f16054cd-c759-43fc-a870-37322e322142.webp"
+            }
+            height={600}
+            width={1000}
+            alt="image"
+          />
+
+          <p className="text-xl font-semibold text-gray-500">{b?.title}</p>
           <div className="flex justify-between text-gray-500 my-2">
             <div className="flex items-center">
               <FontAwesomeIcon
@@ -114,7 +117,27 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
               0 Comments
             </div>
           </div>
-          <p className="text-gray-500">{blog?.description}</p>
+          <p className="text-gray-500">{b?.description}</p>
+          <div className="flex gap-5">
+            <Image
+              src={"/assates/recent-news/my.webp"}
+              width={150}
+              height={100}
+              alt="image"
+            />
+            <div className="text-gray-500">
+              <p>{b?.dec}</p> <br />
+              <p>{b?.dec}</p>
+            </div>
+          </div>
+          <p className="text-gray-500">{b?.description}</p>
+          <p className="text-green-600">{b?.dec}</p>
+          <p className="text-gray-500">{b?.description}</p>
+          <div className="bg-gray-200 p-4 text-center">
+            <FontAwesomeIcon icon={faQuoteLeft} className="text-4xl text-gray-500" />
+            <p className="text-gray-500 text-xl">Fresh organics brand and picnic</p>
+            <p className="text-green-600">Spacing Tech</p>
+          </div>
         </div>
       </div>
     </div>
