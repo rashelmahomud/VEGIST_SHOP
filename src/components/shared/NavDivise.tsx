@@ -44,7 +44,7 @@ const NavDivise = () => {
               <Link href={"/"}>
                 <li className={menuDesign}>contact</li>
               </Link>
-              <Link href={"/"}>
+              <Link href={"/blogs"}>
                 <li className={menuDesign}>blogs</li>
               </Link>
               <Link href={"/"}>
@@ -72,7 +72,7 @@ const NavDivise = () => {
           </div>
         </li>
         <li className="text-gray-500 hover:text-yellow-500 duration-200 font-semibold">
-          <Link href={"/"}>Blogs</Link>
+          <Link href={"/blogs"}>Blogs</Link>
         </li>
         <li className="group text-gray-500 flex gap-1 hover:text-yellow-500 duration-200 relative duration-300 font-semibold">
           <Link href={"/"}>Pages</Link>

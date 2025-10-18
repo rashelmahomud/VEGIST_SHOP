@@ -9,119 +9,118 @@ import { useState } from "react";
 
 const ProductsPage = () => {
   const [activeTab, setActiveTab] = useState("1");
-  
 
   const items: ProductsType[] = [
-     {
-       id: 1,
-       title: "Sp. red fresh guava",
-       cost: "$10.00",
-       review: "no review",
-       img: "/assates/tendingProduct/tran (1).jpg",
-       discount: "30%",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 2,
-       title: "Fresh Vegitable",
-       cost: "$13.00",
-       review: "no review",
-       img: "/assates/tendingProduct/tran (2).jpg",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 3,
-       title: "Orange juice naturale",
-       cost: "$30.00",
-       review: "no review",
-       img: "/assates/tendingProduct/tran (3).jpg",
-       discount: "30%",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 4,
-       title: "fresh mango",
-       cost: "$20.00",
-       review: "no review",
-       img: "/assates/tendingProduct/tran (4).jpg",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 5,
-       title: "fresh fish",
-       cost: "$12.00",
-       review: "no review",
-       img: "/assates/shop/shop(5).jpg",
-       discount: "20%",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 6,
-       title: "fresh fish",
-       cost: "$15.00",
-       review: "no review",
-       img: "/assates/tendingProduct/copi.jpg",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 7,
-       title: "fresh fish",
-       cost: "$10.00",
-       review: "no review",
-       img: "/assates/shop/shop(9).jpg",
-       discount: "30%",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-     {
-       id: 8,
-       title: "fresh fish",
-       cost: "$15.00",
-       review: "no review",
-       img: "/assates/shop/shop(10).webp",
-       discount: "30%",
-       images: [
-         "/assates/shop/shop(1).jpg",
-         "/assates/shop/shop(2).jpg",
-         "/assates/shop/shop(3).jpg",
-         "/assates/shop/shop(4).jpg",
-       ],
-     },
-   ];
+    {
+      id: 1,
+      title: "Sp. red fresh guava",
+      cost: "$10.00",
+      review: "no review",
+      img: "/assates/tendingProduct/tran (1).jpg",
+      discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 2,
+      title: "Fresh Vegitable",
+      cost: "$13.00",
+      review: "no review",
+      img: "/assates/tendingProduct/tran (2).jpg",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 3,
+      title: "Orange juice naturale",
+      cost: "$30.00",
+      review: "no review",
+      img: "/assates/tendingProduct/tran (3).jpg",
+      discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 4,
+      title: "fresh mango",
+      cost: "$20.00",
+      review: "no review",
+      img: "/assates/tendingProduct/tran (4).jpg",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 5,
+      title: "fresh fish",
+      cost: "$12.00",
+      review: "no review",
+      img: "/assates/shop/shop(5).jpg",
+      discount: "20%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 6,
+      title: "fresh fish",
+      cost: "$15.00",
+      review: "no review",
+      img: "/assates/tendingProduct/copi.jpg",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 7,
+      title: "fresh fish",
+      cost: "$10.00",
+      review: "no review",
+      img: "/assates/shop/shop(9).jpg",
+      discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+    {
+      id: 8,
+      title: "fresh fish",
+      cost: "$15.00",
+      review: "no review",
+      img: "/assates/shop/shop(10).webp",
+      discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
+    },
+  ];
   return (
     <div className="lg:px-36">
       <h1 className="text-4xl font-semibold text-gray-800 my-10 text-center">
@@ -257,7 +256,7 @@ const ProductsPage = () => {
                     key={item.id}
                     className="flex flex-col justify-center rounded-full p-2 relative group"
                   >
-                    <Link href={"/"}>
+                    <Link href={`/products/${item.id}`}>
                       <Image
                         src={item.img}
                         alt="cat1"
@@ -274,13 +273,15 @@ const ProductsPage = () => {
                       )}
                     </Link>
                     <div className="absolute group-hover:w-full group-hover:h-full duration-700">
-                      <Image
-                        src={"/assates/shop/shop(3).jpg"}
-                        alt="cat1"
-                        width={300}
-                        height={200}
-                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
-                      />
+                      <Link href={`/products/${item.id}`}>
+                        <Image
+                          src={"/assates/shop/shop(3).jpg"}
+                          alt="cat1"
+                          width={300}
+                          height={200}
+                          className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
+                        />
+                      </Link>
                       <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
@@ -339,7 +340,7 @@ const ProductsPage = () => {
                     key={item.id}
                     className="flex flex-col justify-center rounded-full p-2 relative group"
                   >
-                    <Link href={"/"}>
+                    <Link href={`/produts/${item.id}`}>
                       <Image
                         src={item.img}
                         alt="cat1"
@@ -356,13 +357,15 @@ const ProductsPage = () => {
                       )}
                     </Link>
                     <div className="absolute group-hover:w-full group-hover:h-full duration-700">
-                      <Image
-                        src={"/assates/shop/shop(3).jpg"}
-                        alt="cat1"
-                        width={300}
-                        height={200}
-                        className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
-                      />
+                      <Link href={`/products/${item.id}`}>
+                        <Image
+                          src={"/assates/shop/shop(3).jpg"}
+                          alt="cat1"
+                          width={300}
+                          height={200}
+                          className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
+                        />
+                      </Link>
                       <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}

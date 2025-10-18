@@ -18,3 +18,11 @@
     discount?: string;
     images:string[]
   }
+
+    export interface BlogsType {
+    id: number;
+    title: string;
+    dec: string;
+    image: string;
+    description: string;
+  }
