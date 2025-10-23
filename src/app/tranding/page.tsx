@@ -1,13 +1,27 @@
+"use client";
+
 import { Products } from "@/components/type/ProductType";
-import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  faEye,
+  faHeart,
+  faBagShopping,
+} from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FavoritePage from "../favorite/page";
+import { useFavorite } from "@/context/FavoriteContext";
+
+// interface TrandingPageProps {
+//   favorite: Products[];
+//   setFavorite: React.Dispatch<React.SetStateAction<Products[]>>;
+// }
 
 const TrandingPage = () => {
-   
+// const TrandingPage = ({ favorite, setFavorite }: TrandingPageProps) => {
+
   const items: Products[] = [
     {
       id: 1,
@@ -18,7 +32,7 @@ const TrandingPage = () => {
     },
     {
       id: 2,
-      title: "Fresh Vegitable",
+      title: "Fresh Vegetable",
       cost: "$13.00",
       review: "no review",
       img: "/assates/tendingProduct/tran (2).jpg",
@@ -32,195 +46,176 @@ const TrandingPage = () => {
     },
     {
       id: 4,
-      title: "fresh mango",
+      title: "Fresh mango",
       cost: "$20.00",
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
     },
     {
       id: 5,
-      title: "fresh fish",
+      title: "Fresh fish",
       cost: "$12.00",
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
     },
     {
       id: 6,
-      title: "fresh fish",
+      title: "Coffee beans",
       cost: "$15.00",
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
     },
     {
       id: 7,
-      title: "fresh fish",
+      title: "Seafood platter",
       cost: "$10.00",
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
     },
     {
       id: 8,
-      title: "fresh fish",
+      title: "Fresh shrimp",
       cost: "$15.00",
       review: "no review",
       img: "/assates/shop/shop(10).webp",
     },
   ];
+  // const {favorite} = useContext(FavoriteContext)
+
+  // ✅ Handle Heart Click
+  const { favorites, toggleFavorite } = useFavorite();
+
+  // const handleHeart = (item: Products) => {
+  //   const isFavorite = favorites.some((fav) => fav.id === item.id);
+  //   if (isFavorite) {
+  //     // Remove from favorites
+  //     toggleFavorite(favorites.filter((fav) => fav.id !== item.id));
+  //   } else {
+  //     // Add to favorites
+  //      toggleFavorite([...favorites, item]);
+  //   }
+  // };
+
+
   return (
     <div className="mt-20 py-10">
       <h1 className="text-4xl font-semibold text-gray-600 text-center mb-2">
-        Trending products
+        Trending Products
       </h1>
+
       <Carousel autoplay autoplaySpeed={3000}>
+        {/* Slide 1 */}
         <div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
             {items.slice(0, 4).map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col justify-center rounded-full p-2 relative group"
+                className="flex flex-col justify-center rounded-lg p-2 relative group"
               >
-                <Link href={`/tranding/${item.id}`} className="">
+                <Link href={`/tranding/${item.id}`}>
                   <Image
                     src={item.img}
-                    alt="cat1"
+                    alt={item.title}
                     width={300}
                     height={200}
                     className="rounded-lg object-cover"
                   />
                 </Link>
-                <div className="absolute group-hover:w-full group-hover:h-full duration-700">
-                  <Link href={`/tranding/${item.id}`}>
-                    <Image
-                      src={"/assates/shop/shop(3).jpg"}
-                      alt="cat1"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
-                    />
-                  </Link>
-                  <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
 
-                    {/* showing details  */}
-                    <Link href={''} type="primary">
-                      <FontAwesomeIcon
-                        icon={faEye}
-                        className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
-                      />
-                    </Link>
-
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
-                    />
-                    <FontAwesomeIcon
-                      icon={faBagShopping}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
-                    />
-                  </div>
+                {/* Hover Layer */}
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-lg flex justify-center items-center gap-4">
+                  <FontAwesomeIcon
+                    icon={faEye}
+                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                  />
+                  <FontAwesomeIcon
+                    onClick={() => toggleFavorite(item)}
+                    icon={faHeart}
+                    className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
+                      favorites.some((fav) => fav.id === item.id)
+                        ? "text-red-500"
+                        : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                    }`}
+                  />
+                  <FontAwesomeIcon
+                    icon={faBagShopping}
+                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                  />
                 </div>
 
-                <div className=" mt-2 p-1">
+                <div className="mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
                     {item.title}
                   </h1>
-                  <p className="font-semibld text-gray-500">{item.cost}</p>
-                  <div className="flex gap-2 items-center">
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <p className="font-semibld text-gray-500">{item.review}</p>
+                  <p className="font-semibold text-gray-500">{item.cost}</p>
+                  <div className="flex gap-1 items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        className="w-3 text-yellow-600"
+                      />
+                    ))}
+                    <p className="ml-1 text-gray-500">{item.review}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        {/* slide 0.2  */}
+
+        {/* Slide 2 */}
         <div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 px-6 py-6">
-            {items.slice(0, 4).map((item) => (
+            {items.slice(4, 8).map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col justify-center rounded-full p-2 relative group"
+                className="flex flex-col justify-center rounded-lg p-2 relative group"
               >
                 <Link href={`/tranding/${item.id}`}>
                   <Image
                     src={item.img}
-                    alt="cat1"
+                    alt={item.title}
                     width={300}
                     height={200}
-                    className="rounded-lg object-cover "
+                    className="rounded-lg object-cover"
                   />
                 </Link>
-                <div className="absolute group-hover:w-full group-hover:h-full duration-700">
-                  <Link href={`/tranding/${item.id}`}>
-                    <Image
-                      src={"/assates/shop/shop(3).jpg"}
-                      alt="cat1"
-                      width={300}
-                      height={200}
-                      className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100"
-                    />
-                  </Link>
-                  <div className="flex gap-10 absolute bottom-30 left-10 invisible group-hover:visible duration-300">
-                    <FontAwesomeIcon
-                      icon={faEye}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                    />
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                    />
-                    <FontAwesomeIcon
-                      icon={faBagShopping}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                    />
-                  </div>
+
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-lg flex justify-center items-center gap-4">
+                  <FontAwesomeIcon
+                    icon={faEye}
+                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                  />
+                  <FontAwesomeIcon
+                    onClick={() => toggleFavorite(item)}
+                    icon={faHeart}
+                    className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
+                      favorites.some((fav) => fav.id === item.id)
+                        ? "text-red-500"
+                        : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                    }`}
+                  />
+                  <FontAwesomeIcon
+                    icon={faBagShopping}
+                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                  />
                 </div>
-                <div className=" mt-2 p-1">
+
+                <div className="mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
                     {item.title}
                   </h1>
-                  <p className="font-semibld text-gray-500">{item.cost}</p>
-                  <div className="flex items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="w-3 text-yellow-600"
-                    />
-                    <p className="font-semibld text-gray-500">{item.review}</p>
+                  <p className="font-semibold text-gray-500">{item.cost}</p>
+                  <div className="flex gap-1 items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        className="w-3 text-yellow-600"
+                      />
+                    ))}
+                    <p className="ml-1 text-gray-500">{item.review}</p>
                   </div>
                 </div>
               </div>

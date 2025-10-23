@@ -4,6 +4,7 @@ import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Navber from "@/components/shared/Navber";
 import Footer from "@/components/shared/Footer";
+import { FavoriteProvider } from "@/context/FavoriteContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,10 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+ {
+
+  
   return (
     <html lang="en" className="scroll-smooth" >
       <body
@@ -36,9 +40,9 @@ export default function RootLayout({
         //  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navber />
-        <div>
+        <FavoriteProvider>
           <AntdRegistry>{children}</AntdRegistry>
-        </div>
+        </FavoriteProvider>
         <Footer />
       </body>
     </html>

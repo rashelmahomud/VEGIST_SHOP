@@ -1,9 +1,21 @@
+import { useEffect, useState } from "react";
+
 const DealOfDay = () => {
-  const date = new Date();
-  const day = date.getDay();
-  const hours = date.getHours();
-  const minite = date.getMinutes();
-  const secound = date.getSeconds();
+  const [time,setTime] = useState<Date | null>(null)
+
+
+
+  useEffect(() => {
+    setTime(new Date());
+    const timer = setInterval(() => setTime(new Date), 1000)
+    return () => clearInterval(timer)
+  },[])
+
+  if(!time) return null
+  const day = time.getDay();
+  const hours = time.getHours();
+  const minite = time.getMinutes();
+  const secound = time.getSeconds();
 
   const dayDesign =
     "flex flex-col items-center bg-yellow-500 p-3 px-5 rounded-lg text-white font-semibold my-4";

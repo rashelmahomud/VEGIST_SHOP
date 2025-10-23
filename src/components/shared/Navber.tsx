@@ -143,7 +143,7 @@ const Navber = () => {
 
               <div className="flex gap-5 mx-5 justify-center items-center lg:mt-0 mt-6">
                 <div className="relative">
-                  <Link href={"/"}>
+                  <Link href={"/favorite"}>
                     <FontAwesomeIcon
                       icon={faHeart}
                       className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
