@@ -11,17 +11,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import FavoritePage from "../favorite/page";
 import { useFavorite } from "@/context/FavoriteContext";
 
-// interface TrandingPageProps {
-//   favorite: Products[];
-//   setFavorite: React.Dispatch<React.SetStateAction<Products[]>>;
-// }
-
 const TrandingPage = () => {
-// const TrandingPage = ({ favorite, setFavorite }: TrandingPageProps) => {
-
   const items: Products[] = [
     {
       id: 1,
@@ -80,22 +72,7 @@ const TrandingPage = () => {
       img: "/assates/shop/shop(10).webp",
     },
   ];
-  // const {favorite} = useContext(FavoriteContext)
-
-  // ✅ Handle Heart Click
   const { favorites, toggleFavorite } = useFavorite();
-
-  // const handleHeart = (item: Products) => {
-  //   const isFavorite = favorites.some((fav) => fav.id === item.id);
-  //   if (isFavorite) {
-  //     // Remove from favorites
-  //     toggleFavorite(favorites.filter((fav) => fav.id !== item.id));
-  //   } else {
-  //     // Add to favorites
-  //      toggleFavorite([...favorites, item]);
-  //   }
-  // };
-
 
   return (
     <div className="mt-20 py-10">
@@ -123,26 +100,36 @@ const TrandingPage = () => {
                 </Link>
 
                 {/* Hover Layer */}
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-lg flex justify-center items-center gap-4">
-                  <FontAwesomeIcon
-                    icon={faEye}
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                  />
-                  <FontAwesomeIcon
-                    onClick={() => toggleFavorite(item)}
-                    icon={faHeart}
-                    className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
-                      favorites.some((fav) => fav.id === item.id)
-                        ? "text-red-500"
-                        : "text-gray-500 hover:text-white hover:bg-yellow-500"
-                    }`}
-                  />
-                  <FontAwesomeIcon
-                    icon={faBagShopping}
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                  />
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-lg">
+                  <Link href={`/tranding/${item.id}`}>
+                    <Image
+                      src={"/assates/shop/shop(1).jpg"}
+                      alt={item.title}
+                      width={300}
+                      height={200}
+                      className="rounded-lg object-cover relative"
+                    />
+                  </Link>
+                  <div className="flex gap-4 left-20 absolute top-50">
+                    <FontAwesomeIcon
+                      icon={faEye}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    />
+                    <FontAwesomeIcon
+                      onClick={() => toggleFavorite(item)}
+                      icon={faHeart}
+                      className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
+                        favorites.some((fav) => fav.id === item.id)
+                          ? "text-red-500"
+                          : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                      }`}
+                    />
+                    <FontAwesomeIcon
+                      icon={faBagShopping}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    />
+                  </div>
                 </div>
-
                 <div className="mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
                     {item.title}
@@ -182,26 +169,36 @@ const TrandingPage = () => {
                   />
                 </Link>
 
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-lg flex justify-center items-center gap-4">
-                  <FontAwesomeIcon
-                    icon={faEye}
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                  />
-                  <FontAwesomeIcon
-                    onClick={() => toggleFavorite(item)}
-                    icon={faHeart}
-                    className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
-                      favorites.some((fav) => fav.id === item.id)
-                        ? "text-red-500"
-                        : "text-gray-500 hover:text-white hover:bg-yellow-500"
-                    }`}
-                  />
-                  <FontAwesomeIcon
-                    icon={faBagShopping}
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                  />
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-lg ">
+                  <Link href={`/tranding/${item.id}`}>
+                    <Image
+                      src={"/assates/shop/shop(2).jpg"}
+                      alt={item.title}
+                      width={300}
+                      height={200}
+                      className="rounded-lg object-cover relative"
+                    />
+                  </Link>
+                  <div className="flex gap-4 left-20 absolute top-50">
+                    <FontAwesomeIcon
+                      icon={faEye}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    />
+                    <FontAwesomeIcon
+                      onClick={() => toggleFavorite(item)}
+                      icon={faHeart}
+                      className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
+                        favorites.some((fav) => fav.id === item.id)
+                          ? "text-red-500"
+                          : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                      }`}
+                    />
+                    <FontAwesomeIcon
+                      icon={faBagShopping}
+                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    />
+                  </div>
                 </div>
-
                 <div className="mt-2 p-1">
                   <h1 className="text-xl font-semibold text-gray-500">
                     {item.title}

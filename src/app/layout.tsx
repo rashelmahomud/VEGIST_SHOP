@@ -39,8 +39,9 @@ export default function RootLayout({
          
         //  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navber />
         <FavoriteProvider>
+        <Navber />
+        
           <AntdRegistry>{children}</AntdRegistry>
         </FavoriteProvider>
         <Footer />

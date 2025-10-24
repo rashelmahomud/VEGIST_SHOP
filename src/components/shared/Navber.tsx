@@ -15,10 +15,17 @@ import Link from "next/link";
 import { useState } from "react";
 import type { DrawerProps } from "antd";
 import NavDivise from "./NavDivise";
+import { useFavorite } from "@/context/FavoriteContext";
 const Navber = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
+  const {favorites} = useFavorite();
+
+
+
+  
+
   const showModal = () => {
     setIsModalOpen(true);
   };
