@@ -16,11 +16,13 @@ import { useState } from "react";
 import type { DrawerProps } from "antd";
 import NavDivise from "./NavDivise";
 import { useFavorite } from "@/context/FavoriteContext";
+import { useCart } from "@/context/CartContext";
 const Navber = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
   const { favorites } = useFavorite();
+  const {cart} = useCart();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -157,14 +159,14 @@ const Navber = () => {
                   </span>
                 </div>
                 <div className="relative">
-                  <Link href={"/"}>
+                  <Link href={"/cart"}>
                     <FontAwesomeIcon
                       icon={faShopify}
                       className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
                     />
                   </Link>
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
-                    0
+                    {cart.length}
                   </span>
                 </div>
               </div>

@@ -21,6 +21,7 @@ import { Image, Rate } from "antd";
 import Link from "next/link";
 import TrandingPage from "../page";
 import React, { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
 const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = React.use(params);
@@ -29,6 +30,8 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const [country, setCountry] = useState("canada");
   const [active, setActive] = useState("1");
   const [open, setOpen] = useState(false);
+
+ 
 
   const { id } = resolvedParams;
 
@@ -105,9 +108,14 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
     },
   ];
 
+   const {handelCart} = useCart();
+
+
+
   const productDetails = items.filter(
     (item) => item.id.toString() === id.toString()
   );
+  
 
   return (
     <div>
@@ -300,7 +308,8 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   <div className="flex gap-5 p-2 lg:justify-start justify-center">
                     <button>
                       <Link
-                        href={""}
+                      onClick={() => handelCart(productD)}
+                        href={``}
                         className="lg:px-14 px-3 py-3 text-white text-semibold bg-yellow-500 rounded-full"
                       >
                         Add to cart

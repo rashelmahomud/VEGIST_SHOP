@@ -8,7 +8,6 @@ import Link from "next/link";
 
 const FavoritePage = () => {
   const { favorites, toggleFavorite } = useFavorite();
-  console.log(favorites, "favorites");
 
   return (
     <div className="lg:px-36 p-3 my-10">

@@ -5,15 +5,16 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Navber from "@/components/shared/Navber";
 import Footer from "@/components/shared/Footer";
 import { FavoriteProvider } from "@/context/FavoriteContext";
+import { CartContext } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: "400",
+  subsets: ["latin"],
+});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -28,22 +29,21 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>)
- {
-
-  
+}>) {
   return (
-    <html lang="en" className="scroll-smooth" >
+    <html lang="en" className="scroll-smooth">
       <body
-         className={roboto.className}
-         
+        className={roboto.className}
+
         //  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FavoriteProvider>
-        <Navber />
-        
-          <AntdRegistry>{children}</AntdRegistry>
-        </FavoriteProvider>
+        <CartContext>
+          <FavoriteProvider>
+            <Navber />
+
+            <AntdRegistry>{children}</AntdRegistry>
+          </FavoriteProvider>
+        </CartContext>
         <Footer />
       </body>
     </html>

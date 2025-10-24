@@ -111,10 +111,12 @@ const TrandingPage = () => {
                     />
                   </Link>
                   <div className="flex gap-4 left-20 absolute top-50">
-                    <FontAwesomeIcon
-                      icon={faEye}
-                      className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
-                    />
+                    <Link href={""}>
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                      />
+                    </Link>
                     <FontAwesomeIcon
                       onClick={() => toggleFavorite(item)}
                       icon={faHeart}
