@@ -12,8 +12,11 @@ const CartContexts = createContext<CartContextType | undefined>(undefined);
 export const CartContext = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<Products[]>([]);
 
+
   const handelCart = (product: Products) => {
-   setCart((prevCart) => [...prevCart, product]);
+  
+    setCart((prevCart) => [...prevCart, product]);
+
   };
 
   return (
