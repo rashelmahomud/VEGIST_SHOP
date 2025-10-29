@@ -23,7 +23,7 @@ const Navber = () => {
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
   const { favorites } = useFavorite();
 
-  const { cart } = useCart();
+  const {cart } = useCart();
 
   const showModal = () => {
     setIsModalOpen(true);
