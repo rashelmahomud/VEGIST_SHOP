@@ -94,6 +94,10 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
     (item) => item.id.toString() === id.toString()
   );
 
+  if(!productDetails){
+    return <p>Loading ....</p>
+  }
+
   const currentProduct = cart.find(
     (item: any) => item.id === productDetails?.id
   );

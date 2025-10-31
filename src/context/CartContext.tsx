@@ -7,8 +7,8 @@ type CartItem = Products & { quantity: number };
 type CartContextType = {
   cart: CartItem[];
   handelCart: (product: Products) => void;
-  removeCart: any;
-  totalPrice: any;
+  removeCart: (product: Products) => void;
+  totalPrice: number;
   handelIncrement: any;
   handelDicrement: any;
 };
@@ -19,28 +19,30 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const handelCart = (product: Products) => {
-    setCart((prevCart): any => {
-      const existing = prevCart.find((item) => item.id === product.id);
+    setCart((cart): any => {
+      const existing = cart.find((item) => item.id === product.id);
       if (existing) {
-        return prevCart.map((item) =>
+        return cart.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        return [...prevCart, { ...product, quantity: 1 }];
+        return [...cart, { ...product, quantity: 1 }];
       }
     });
   };
 
   const removeCart = (product: Products) => {
-    setCart((prev) => prev.filter((item) => item.id !== product.id));
+    setCart((cart) => cart.filter((item) => item.id !== product.id));
   };
 
   const totalPrice = useMemo(() => {
-    return cart.reduce((acc, item: any) => acc + item.cost * item.quantity, 0);
+    return cart.reduce((acc, item) => acc + item.cost * item.quantity, 0);
   }, [cart]);
 
+
+  // count product part
   const handelIncrement = (product: number): void => {
     setCart((prevCart) =>
       prevCart.map((item): any =>
