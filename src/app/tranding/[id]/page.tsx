@@ -318,7 +318,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   </button>
                   <button className="text-gray-600">
                     <Link
-                      href={""}
+                      href={"/cart"}
                       className="lg:px-14 px-3 py-3 text-white text-semibold bg-gray-800 rounded-full"
                     >
                       Buy it now

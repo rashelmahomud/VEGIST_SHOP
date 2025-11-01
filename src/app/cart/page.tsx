@@ -22,7 +22,7 @@ export default function CartPage() {
     <div className="lg:px-36 p-3 my-10">
       <div>
         <h1 className="text-2xl font-semibold mb-4">🛒 Your Cart</h1>
-        <div className="flex gap-10 border border-gray-300 p-3">
+        <div className="lg:flex gap-10 border border-gray-300 p-3">
           <div>
             {cart.length === 0 ? (
               <p>No items in cart.</p>
@@ -31,7 +31,7 @@ export default function CartPage() {
                 {cart.map((item) => (
                   <div
                     key={item.id}
-                    className="flex items-center gap-10 border border-gray-100 p-4 rounded-xl text-xl"
+                    className="lg:flex items-center gap-10 border border-gray-100 p-4 rounded-xl text-xl"
                   >
                     <Image
                       src={item.img}
