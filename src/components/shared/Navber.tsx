@@ -23,7 +23,7 @@ const Navber = () => {
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
   const { favorites } = useFavorite();
 
-  const {cart } = useCart();
+  const { cart } = useCart();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -46,10 +46,13 @@ const Navber = () => {
     <div>
       <div className="">
         <h1 className="text-center bg-gray-900 text-white p-3 font-semibold">
-          <span className="animate-ping text-yellow-500 duration-300 opacity-100 font-semibold mx-2">
-            Free shipping
+          <span className="relative inline-block text-yellow-400 font-bold mx-2">
+            <span className="absolute inset-0 rounded-full bg-yellow-400 opacity-50 animate-ping [animation-delay:500ms]"></span>
+            <span className="relative animate-bounce [animation-delay:1s]">
+              Free Shipping
+            </span>
           </span>
-          orders from all item
+          on all orders!
         </h1>
       </div>
 
@@ -162,7 +165,6 @@ const Navber = () => {
                 <div className="relative">
                   <Link href={"/cart"}>
                     <FontAwesomeIcon
-                    
                       icon={faShopify}
                       className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
                     />
@@ -170,9 +172,7 @@ const Navber = () => {
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
                     {cart.length}
                   </span>
-              
                 </div>
-                
               </div>
             </div>
           </div>

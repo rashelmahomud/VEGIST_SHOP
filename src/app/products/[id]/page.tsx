@@ -1,5 +1,6 @@
 "use client";
 import { ProductsType } from "@/components/type/ProductType";
+import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
