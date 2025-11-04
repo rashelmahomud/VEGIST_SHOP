@@ -2,7 +2,7 @@
 import { Products } from "@/components/type/ProductType";
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 
-type CartItem = Products & { quantity: number };
+type CartItem = Products & { quantity: number  };
 
 type CartContextType = {
   cart: CartItem[];
@@ -11,12 +11,19 @@ type CartContextType = {
   totalPrice: number;
   handelIncrement: any;
   handelDicrement: any;
+  kg:number;
+  setKg:(kg:number) => void;
+  country:string;
+  setCountry:(country:string) => void;
+  handelClick:any
 };
 
 const CartContexts = createContext<CartContextType | undefined>(undefined);
 
 export const CartContext = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [kg, setKg] = useState(1);
+   const [country, setCountry] = useState("");
 
   const handelCart = (product: Products) => {
     setCart((cart): any => {
@@ -32,6 +39,13 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
       }
     });
   };
+  const handelClick = (productId: number, selectedKg: number) => {
+  setCart((prevCart) =>
+    prevCart.filter((item) => item.id === productId ? { ...item, kg: selectedKg } : item )
+  );
+  setKg(selectedKg);
+};
+
 
   const removeCart = (product: Products) => {
     setCart((cart) => cart.filter((item) => item.id !== product.id));
@@ -70,6 +84,12 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
         totalPrice,
         handelIncrement,
         handelDicrement,
+        kg,
+        setKg,
+        country,
+        setCountry,
+        handelClick
+
       }}
     >
       {children}

@@ -25,8 +25,7 @@ import { useCart } from "@/context/CartContext";
 
 const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = React.use(params);
-  const [need, setNeed] = useState("1KG");
-  const [country, setCountry] = useState("canada");
+
   const [active, setActive] = useState("1");
   const [open, setOpen] = useState(false);
   const items: Products[] = [
@@ -36,6 +35,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 10.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 2,
@@ -43,6 +43,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 13.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (2).jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 3,
@@ -50,6 +51,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 30.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (3).jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 4,
@@ -57,6 +59,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 20.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 5,
@@ -64,6 +67,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 12.0,
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 6,
@@ -71,6 +75,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 15.0,
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 7,
@@ -78,6 +83,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 10.0,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 8,
@@ -85,26 +91,34 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 15.0,
       review: "no review",
       img: "/assates/shop/shop(10).webp",
+      kgs: [1, 2, 3, 4, 5],
     },
   ];
+
   const { id } = resolvedParams;
-  const { handelCart, cart, handelIncrement, handelDicrement } = useCart();
+  const {
+    handelCart,
+    cart,
+    handelIncrement,
+    handelDicrement,
+    kg,
+    country,
+    setCountry,
+    handelClick,
+  } = useCart();
 
   const productDetails = items.find(
     (item) => item.id.toString() === id.toString()
   );
 
-  if(!productDetails){
-    return <p>Loading ....</p>
+  if (!productDetails) {
+    return <p>Loading ....</p>;
   }
 
   const currentProduct = cart.find(
     (item: any) => item.id === productDetails?.id
   );
 
-  const handelClick = (name: string) => {
-    setNeed(name);
-  };
   const handelCountry = (country: string) => {
     setCountry(country);
   };
@@ -207,7 +221,11 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 </div>
                 <div className="flex gap-2 text-gray-600 my-3">
                   <p className="flex gap-3">
-                  ${((productDetails?.cost || 0) * (currentProduct?.quantity || 1)).toFixed(2)}
+                    $
+                    {(
+                      (productDetails?.cost || 0) *
+                      (currentProduct?.quantity || 1)
+                    ).toFixed(2)}
                     <span className="line-through text-gray-500">$44.00</span>
                   </p>
                   <button className="bg-red-600  rounded-full px-2 items-center font-semibold text-white">
@@ -220,34 +238,20 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   standard dummy text ever since the 1500s.
                 </p>
 
+                {/* how kg needs for your */}
                 <div className="text-gray-500">
-                  <p>
-                    <strong>Size :</strong> {need}
-                  </p>
+                  <p>Size : {kg}kg</p>
                   <div className="flex gap-5 mt-3">
-                    <Link
-                      onClick={() => handelClick("1KG")}
-                      href={""}
-                      className="bg-gray-200 hover:border hover:border-yellow-500 active border border-yellow-500 rounded-full px-3 py-2"
-                    >
-                      1KG
-                    </Link>
-
-                    <Link
-                      onClick={() => handelClick("2KG")}
-                      href={""}
-                      className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 py-2"
-                    >
-                      2KG
-                    </Link>
-
-                    <Link
-                      onClick={() => handelClick("3KG")}
-                      href={""}
-                      className="bg-gray-200 hover:border hover:border-yellow-500 rounded-full px-3 py-2"
-                    >
-                      3KG
-                    </Link>
+                    {productDetails.kgs.map((kg) => (
+                      <Link
+                        key={kg}
+                        onClick={() => handelClick(currentProduct?.id, kg)}
+                        href={""}
+                        className="bg-gray-200 hover:border hover:border-yellow-500 active border border-yellow-500 rounded-full px-3 py-2"
+                      >
+                        {kg}kg
+                      </Link>
+                    ))}
                   </div>
                 </div>
                 <div className="mt-3 text-gray-600">

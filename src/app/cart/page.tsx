@@ -8,7 +8,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function CartPage() {
-  const { cart, removeCart, totalPrice } = useCart();
+  const { cart, removeCart, totalPrice,kg,country } = useCart();
+  console.log(kg)
+
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -41,8 +43,8 @@ export default function CartPage() {
                     />
 
                     <h3 className="font-semibold">{item.title}</h3>
-                    <p>size:</p>
-                    <p>metarial:</p>
+                    <p>size:{kg}kg</p>
+                    <p>metarial:{country}</p>
 
                     <p>Cost: {item.cost * item.quantity}</p>
                     <p>Item: {item.quantity}</p>

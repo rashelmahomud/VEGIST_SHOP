@@ -6,6 +6,7 @@
     cost: number;
     review: string;
     img: string;
+    kgs:number[];
   }
 
 
