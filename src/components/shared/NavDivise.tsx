@@ -53,6 +53,9 @@ const NavDivise = () => {
               <Link href={"/"}>
                 <li className={menuDesign}>vegist</li>
               </Link>
+              <Link href={"/order"}>
+                <li className={menuDesign}>Order</li>
+              </Link>
             </ul>
           {/* </Drawer> */}
         </li>

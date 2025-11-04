@@ -15,7 +15,9 @@ type CartContextType = {
   setKg:(kg:number) => void;
   country:string;
   setCountry:(country:string) => void;
-  handelClick:any
+  handelClick:any,
+  formData:any,
+  setFormData:any
 };
 
 const CartContexts = createContext<CartContextType | undefined>(undefined);
@@ -24,6 +26,12 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [kg, setKg] = useState(1);
    const [country, setCountry] = useState("");
+     const [formData, setFormData] = useState({
+       name: "",
+       email: "",
+       phone: "",
+       address: ""
+     });
 
   const handelCart = (product: Products) => {
     setCart((cart): any => {
@@ -88,7 +96,9 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
         setKg,
         country,
         setCountry,
-        handelClick
+        handelClick,
+        formData,
+        setFormData
 
       }}
     >

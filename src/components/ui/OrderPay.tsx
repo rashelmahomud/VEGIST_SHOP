@@ -3,21 +3,19 @@ import React, { useState } from "react";
 
 export default function OrderPaymentForm() {
   const [open, setOpen] = useState(false);
-  const { totalPrice } = useCart();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-  });
+  const { totalPrice,cart,formData,setFormData } = useCart();
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const total = totalPrice + 130;
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({...formData, totalPrice});
+    console.log({...formData, total });
     alert("Order submitted successfully!");
     
   };
@@ -64,8 +62,14 @@ export default function OrderPaymentForm() {
           className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           required
         />
+        {
+          cart.map((item) => <div key={item.id}>
+            <p className="w-full p-2 border rounded-md bg-gray-50 text-gray-700">{item.title + " " + item.quantity}</p>
+          </div>)
+        }
+     
         <div className="w-full p-2 border rounded-md bg-gray-50 text-gray-700">
-          <p className="font-semibold">Total Price: ${totalPrice + 130}</p>
+          <p className="font-semibold">Total Price: ${total}</p>
         </div>
         {open ? (
           <button
