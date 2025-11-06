@@ -13,7 +13,7 @@
   export interface ProductsType {
     id: number;
     title: string;
-    cost: string;
+    cost: number;
     review: string;
     img: string;
     discount?: string;

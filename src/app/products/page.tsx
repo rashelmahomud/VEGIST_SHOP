@@ -14,7 +14,7 @@ const ProductsPage = () => {
     {
       id: 1,
       title: "Sp. red fresh guava",
-      cost: "$10.00",
+      cost: 10.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
       discount: "30%",
@@ -28,7 +28,7 @@ const ProductsPage = () => {
     {
       id: 2,
       title: "Fresh Vegitable",
-      cost: "$13.00",
+      cost: 13.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (2).jpg",
       images: [
@@ -41,7 +41,7 @@ const ProductsPage = () => {
     {
       id: 3,
       title: "Orange juice naturale",
-      cost: "$30.00",
+      cost: 30.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (3).jpg",
       discount: "30%",
@@ -55,7 +55,7 @@ const ProductsPage = () => {
     {
       id: 4,
       title: "fresh mango",
-      cost: "$20.00",
+      cost: 20.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
       images: [
@@ -68,7 +68,7 @@ const ProductsPage = () => {
     {
       id: 5,
       title: "fresh fish",
-      cost: "$12.00",
+      cost: 12.00,
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
       discount: "20%",
@@ -82,7 +82,7 @@ const ProductsPage = () => {
     {
       id: 6,
       title: "fresh fish",
-      cost: "$15.00",
+      cost: 15.00,
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
       images: [
@@ -95,7 +95,7 @@ const ProductsPage = () => {
     {
       id: 7,
       title: "fresh fish",
-      cost: "$10.00",
+      cost: 10.00,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
       discount: "30%",
@@ -109,7 +109,7 @@ const ProductsPage = () => {
     {
       id: 8,
       title: "fresh fish",
-      cost: "$15.00",
+      cost: 15.00,
       review: "no review",
       img: "/assates/shop/shop(10).webp",
       discount: "30%",

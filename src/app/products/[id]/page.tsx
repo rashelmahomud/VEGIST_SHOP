@@ -1,6 +1,5 @@
 "use client";
 import { ProductsType } from "@/components/type/ProductType";
-import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -13,14 +12,14 @@ const ProductId = ({ params }: ProductDetailsType) => {
   const { id } = React.use(params);
 
   const [active, setActive] = useState(0);
-  const [selectedsize, setSelectedSize] = useState("1kg");
+  const [selectedsize, setSelectedSize] = useState('1kg');
   const [count, setCount] = useState(1);
 
   const items: ProductsType[] = [
     {
       id: 1,
       title: "Sp. red fresh guava",
-      cost: "$10.00",
+      cost: 10.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
       discount: "30%",
@@ -34,7 +33,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 2,
       title: "Fresh Vegitable",
-      cost: "$13.00",
+      cost: 13.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (2).jpg",
       images: [
@@ -47,7 +46,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 3,
       title: "Orange juice naturale",
-      cost: "$30.00",
+      cost: 30.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (3).jpg",
       discount: "30%",
@@ -61,7 +60,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 4,
       title: "fresh mango",
-      cost: "$20.00",
+      cost: 20.00,
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
       images: [
@@ -74,7 +73,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 5,
       title: "fresh fish",
-      cost: "$12.00",
+      cost: 12.00,
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
       discount: "20%",
@@ -88,7 +87,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 6,
       title: "fresh fish",
-      cost: "$15.00",
+      cost: 15.00,
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
       images: [
@@ -101,7 +100,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 7,
       title: "fresh fish",
-      cost: "$10.00",
+      cost: 10.00,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
       discount: "30%",
@@ -115,7 +114,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
     {
       id: 8,
       title: "fresh fish",
-      cost: "$15.00",
+      cost: 15.00,
       review: "no review",
       img: "/assates/shop/shop(10).webp",
       discount: "30%",
@@ -196,7 +195,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
             <p className="text-gray-600">{product.review}</p>
             <div className="flex gap-5 items-center">
               <p className="text-xl font-bold text-yellow-600">
-                {product.cost}
+                Price: ${product.cost}
               </p>
               {product.discount && (
                 <p className="bg-yellow-200 px-5 py-1 rounded-full">
@@ -212,12 +211,12 @@ const ProductId = ({ params }: ProductDetailsType) => {
             <div>
               {/* size  */}
 
-              <p className="text-xl">Select Size:</p>
+              <p className="text-xl">Select Size: {selectedsize}</p>
               <div className="flex gap-8">
                 {sizes.map((size, index) => (
                   <button
                     key={index}
-                    onClick={() => setActive(index)}
+                    onClick={() => setSelectedSize(size)}
                     className={`border rounded-md border-gray-300 p-2 my-1 ${
                       active.toString() === size
                         ? "bg-gray-500 text-3xl"
