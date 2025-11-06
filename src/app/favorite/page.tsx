@@ -1,5 +1,6 @@
 "use client";
 import { useFavorite } from "@/context/FavoriteContext";
+import { useProductFavorite } from "@/context/FovoritesProductContext";
 import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,16 +9,17 @@ import Link from "next/link";
 
 const FavoritePage = () => {
   const { favorites, toggleFavorite } = useFavorite();
+  const {productsFavorite,toggleProductsFavorites} = useProductFavorite();
 
   return (
     <div className="lg:px-36 p-3 my-10">
       <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">
         ❤️ Your Favorites
       </h2>
-      {favorites?.length > 0 && (
+      {productsFavorite?.length > 0 && (
         <div className="mt-10 px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {favorites.map((item: any) => (
+            {productsFavorite.map((item: any) => (
                   <div
                 key={item.id}
                 className="flex flex-col justify-center rounded-lg p-2 relative group"
@@ -49,10 +51,10 @@ const FavoritePage = () => {
                       className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     />
                     <FontAwesomeIcon
-                      onClick={() => toggleFavorite(item)}
+                      onClick={() => toggleProductsFavorites(item)}
                       icon={faHeart}
                       className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
-                        favorites.some((fav) => fav.id === item.id)
+                        productsFavorite.some((fav) => fav.id === item.id)
                           ? "text-red-500"
                           : "text-gray-500 hover:text-white hover:bg-yellow-500"
                       }`}

@@ -1,5 +1,7 @@
 "use client";
 import { ProductsType } from "@/components/type/ProductType";
+import { useFavorite } from "@/context/FavoriteContext";
+import { useProductFavorite } from "@/context/FovoritesProductContext";
 import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,12 +11,13 @@ import { useState } from "react";
 
 const ProductsPage = () => {
   const [activeTab, setActiveTab] = useState("1");
+  const { productsFavorite, toggleProductsFavorites } = useProductFavorite();
 
   const items: ProductsType[] = [
     {
       id: 1,
       title: "Sp. red fresh guava",
-      cost: 10.00,
+      cost: 10.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
       discount: "30%",
@@ -28,7 +31,7 @@ const ProductsPage = () => {
     {
       id: 2,
       title: "Fresh Vegitable",
-      cost: 13.00,
+      cost: 13.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (2).jpg",
       images: [
@@ -41,7 +44,7 @@ const ProductsPage = () => {
     {
       id: 3,
       title: "Orange juice naturale",
-      cost: 30.00,
+      cost: 30.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (3).jpg",
       discount: "30%",
@@ -55,7 +58,7 @@ const ProductsPage = () => {
     {
       id: 4,
       title: "fresh mango",
-      cost: 20.00,
+      cost: 20.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
       images: [
@@ -68,7 +71,7 @@ const ProductsPage = () => {
     {
       id: 5,
       title: "fresh fish",
-      cost: 12.00,
+      cost: 12.0,
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
       discount: "20%",
@@ -82,7 +85,7 @@ const ProductsPage = () => {
     {
       id: 6,
       title: "fresh fish",
-      cost: 15.00,
+      cost: 15.0,
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
       images: [
@@ -95,7 +98,7 @@ const ProductsPage = () => {
     {
       id: 7,
       title: "fresh fish",
-      cost: 10.00,
+      cost: 10.0,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
       discount: "30%",
@@ -109,7 +112,7 @@ const ProductsPage = () => {
     {
       id: 8,
       title: "fresh fish",
-      cost: 15.00,
+      cost: 15.0,
       review: "no review",
       img: "/assates/shop/shop(10).webp",
       discount: "30%",
@@ -203,9 +206,15 @@ const ProductsPage = () => {
                           icon={faEye}
                         />
                         <FontAwesomeIcon
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                          onClick={() => toggleProductsFavorites(item)}
+                          className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
+                            productsFavorite.some((fav) => fav.id === item.id)
+                              ? "text-red-500"
+                              : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                          }`}
                           icon={faHeart}
                         />
+
                         <FontAwesomeIcon
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                           icon={faBagShopping}
@@ -285,15 +294,20 @@ const ProductsPage = () => {
                       <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                         />
                         <FontAwesomeIcon
+                          onClick={() => toggleProductsFavorites(item)}
                           icon={faHeart}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                          className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${
+                            productsFavorite.some((fav) => fav.id === item.id)
+                              ? "text-red-500"
+                              : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                          }`}
                         />
                         <FontAwesomeIcon
                           icon={faBagShopping}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                         />
                       </div>
                     </div>
@@ -369,15 +383,20 @@ const ProductsPage = () => {
                       <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                         />
                         <FontAwesomeIcon
+                          onClick={() => toggleProductsFavorites(item)}
                           icon={faHeart}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                          className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${
+                            productsFavorite.some((fav) => fav.id === item.id)
+                              ? "text-red-500"
+                              : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                          }`}
                         />
                         <FontAwesomeIcon
                           icon={faBagShopping}
-                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full  "
+                          className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                         />
                       </div>
                     </div>
