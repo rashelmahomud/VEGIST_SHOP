@@ -1,6 +1,6 @@
 "use client";
 
-import { Products } from "@/components/type/ProductType";
+import {  ProductsType } from "@/components/type/ProductType";
 import { Carousel } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,72 +14,128 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFavorite } from "@/context/FavoriteContext";
 
 const TrandingPage = () => {
-  const items: Products[] = [
-    {
-      id: 1,
-      title: "Sp. red fresh guava",
-      cost: 10.0,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (1).jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 2,
-      title: "Fresh Vegetable",
-      cost: 13.0,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (2).jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 3,
-      title: "Orange juice naturale",
-      cost: 30.0,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (3).jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 4,
-      title: "Fresh mango",
-      cost: 20.0,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (4).jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 5,
-      title: "Fresh fish",
-      cost: 12.0,
-      review: "no review",
-      img: "/assates/shop/shop(5).jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 6,
-      title: "Coffee beans",
-      cost: 15.0,
-      review: "no review",
-      img: "/assates/tendingProduct/copi.jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 7,
-      title: "Seafood platter",
-      cost: 10.0,
-      review: "no review",
-      img: "/assates/shop/shop(9).jpg",
-      kgs: [1, 2, 3, 4, 5],
-    },
-    {
-      id: 8,
-      title: "Fresh shrimp",
-      cost: 15.0,
-      review: "no review",
-      img: "/assates/shop/shop(10).webp",
-      kgs: [1, 2, 3, 4, 5],
-    },
-  ];
+ const items: ProductsType[] = [
+     {
+       id: 1,
+       title: "Sp. red fresh guava",
+       cost: 10.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (1).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 2,
+       title: "Fresh Vegitable",
+       cost: 13.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (2).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 3,
+       title: "Orange juice naturale",
+       cost: 30.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (3).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 4,
+       title: "fresh mango",
+       cost: 20.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (4).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 5,
+       title: "fresh fish",
+       cost: 12.0,
+       review: "no review",
+       img: "/assates/shop/shop(5).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 6,
+       title: "fresh fish",
+       cost: 15.0,
+       review: "no review",
+       img: "/assates/tendingProduct/copi.jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 7,
+       title: "fresh fish",
+       cost: 10.0,
+       review: "no review",
+       img: "/assates/shop/shop(9).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 8,
+       title: "fresh fish",
+       cost: 15.0,
+       review: "no review",
+       img: "/assates/shop/shop(10).webp",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+   ];
   const { favorites, toggleFavorite } = useFavorite();
 
   return (

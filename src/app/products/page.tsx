@@ -20,13 +20,14 @@ const ProductsPage = () => {
       cost: 10.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
-      discount: "30%",
+      discount: "10%",
       images: [
         "/assates/shop/shop(1).jpg",
         "/assates/shop/shop(2).jpg",
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 2,
@@ -40,6 +41,7 @@ const ProductsPage = () => {
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 3,
@@ -54,6 +56,7 @@ const ProductsPage = () => {
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 4,
@@ -67,6 +70,7 @@ const ProductsPage = () => {
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 5,
@@ -74,13 +78,13 @@ const ProductsPage = () => {
       cost: 12.0,
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
-      discount: "20%",
       images: [
         "/assates/shop/shop(1).jpg",
         "/assates/shop/shop(2).jpg",
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 6,
@@ -88,12 +92,14 @@ const ProductsPage = () => {
       cost: 15.0,
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
+      discount: "20%",
       images: [
         "/assates/shop/shop(1).jpg",
         "/assates/shop/shop(2).jpg",
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 7,
@@ -101,13 +107,13 @@ const ProductsPage = () => {
       cost: 10.0,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
-      discount: "30%",
       images: [
         "/assates/shop/shop(1).jpg",
         "/assates/shop/shop(2).jpg",
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
     {
       id: 8,
@@ -115,13 +121,14 @@ const ProductsPage = () => {
       cost: 15.0,
       review: "no review",
       img: "/assates/shop/shop(10).webp",
-      discount: "30%",
+      discount: "15%",
       images: [
         "/assates/shop/shop(1).jpg",
         "/assates/shop/shop(2).jpg",
         "/assates/shop/shop(3).jpg",
         "/assates/shop/shop(4).jpg",
       ],
+      kgs: [1, 2, 3, 4, 5],
     },
   ];
   return (

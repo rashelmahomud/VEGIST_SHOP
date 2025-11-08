@@ -1,20 +1,20 @@
 'use client';
 
-import { Products } from "@/components/type/ProductType";
+import {  ProductsType } from "@/components/type/ProductType";
 import { createContext, useContext, useState, ReactNode } from "react";
 
 
 type FavoriteContextType = {
-  favorites: Products[];
-  toggleFavorite: (product: Products) => void;
+  favorites: ProductsType[];
+  toggleFavorite: (product: ProductsType) => void;
 };
 
 const FavoriteContext = createContext<FavoriteContextType | undefined>(undefined);
 
 export const FavoriteProvider = ({ children }: { children: ReactNode }) => {
-  const [favorites, setFavorites] = useState<Products[]>([]);
+  const [favorites, setFavorites] = useState<ProductsType[]>([]);
 
-  const toggleFavorite = (product: Products) => {
+  const toggleFavorite = (product: ProductsType) => {
     setFavorites(prev => {
       const exists = prev.find(item => item.id === product.id);
       if (exists) {

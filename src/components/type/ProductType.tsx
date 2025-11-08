@@ -1,13 +1,13 @@
 
 
-  export interface Products {
-    id: number;
-    title: string;
-    cost: number;
-    review: string;
-    img: string;
-    kgs:number[];
-  }
+  // export interface Products {
+  //   id: number;
+  //   title: string;
+  //   cost: number;
+  //   review: string;
+  //   img: string;
+  //   kgs:number[];
+  // }
 
 
   export interface ProductsType {
@@ -16,6 +16,7 @@
     cost: number;
     review: string;
     img: string;
+    kgs:number[];
     discount?: string;
     images:string[]
   }

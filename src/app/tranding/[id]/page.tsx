@@ -1,5 +1,5 @@
 "use client";
-import { Products } from "@/components/type/ProductType";
+import { ProductsType } from "@/components/type/ProductType";
 import {
   faCcMastercard,
   faCcVisa,
@@ -28,13 +28,20 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
 
   const [active, setActive] = useState("1");
   const [open, setOpen] = useState(false);
-  const items: Products[] = [
+  const items: ProductsType[] = [
     {
       id: 1,
       title: "Sp. red fresh guava",
       cost: 10.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (1).jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -43,6 +50,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 13.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (2).jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -51,6 +65,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 30.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (3).jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -59,6 +80,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 20.0,
       review: "no review",
       img: "/assates/tendingProduct/tran (4).jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -67,6 +95,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 12.0,
       review: "no review",
       img: "/assates/shop/shop(5).jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -75,6 +110,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 15.0,
       review: "no review",
       img: "/assates/tendingProduct/copi.jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -83,6 +125,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 10.0,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
     {
@@ -91,6 +140,13 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       cost: 15.0,
       review: "no review",
       img: "/assates/shop/shop(10).webp",
+       discount: "30%",
+      images: [
+        "/assates/shop/shop(1).jpg",
+        "/assates/shop/shop(2).jpg",
+        "/assates/shop/shop(3).jpg",
+        "/assates/shop/shop(4).jpg",
+      ],
       kgs: [1, 2, 3, 4, 5],
     },
   ];
@@ -242,7 +298,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 <div className="text-gray-500">
                   <p>Size : {kg}kg</p>
                   <div className="flex gap-5 mt-3">
-                    {productDetails.kgs.map((kg) => (
+                    {productDetails?.kgs?.map((kg) => (
                       <Link
                         key={kg}
                         onClick={() => handelClick(currentProduct?.id, kg)}

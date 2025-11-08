@@ -1,5 +1,6 @@
 "use client";
 import { ProductsType } from "@/components/type/ProductType";
+import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -10,127 +11,142 @@ interface ProductDetailsType {
 
 const ProductId = ({ params }: ProductDetailsType) => {
   const { id } = React.use(params);
+  const {handelCart,cart, handelDicrement, handelIncrement} = useCart();
 
   const [active, setActive] = useState(0);
   const [selectedsize, setSelectedSize] = useState('1kg');
-  const [count, setCount] = useState(1);
 
-  const items: ProductsType[] = [
-    {
-      id: 1,
-      title: "Sp. red fresh guava",
-      cost: 10.00,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (1).jpg",
-      discount: "30%",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 2,
-      title: "Fresh Vegitable",
-      cost: 13.00,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (2).jpg",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 3,
-      title: "Orange juice naturale",
-      cost: 30.00,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (3).jpg",
-      discount: "30%",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 4,
-      title: "fresh mango",
-      cost: 20.00,
-      review: "no review",
-      img: "/assates/tendingProduct/tran (4).jpg",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 5,
-      title: "fresh fish",
-      cost: 12.00,
-      review: "no review",
-      img: "/assates/shop/shop(5).jpg",
-      discount: "20%",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 6,
-      title: "fresh fish",
-      cost: 15.00,
-      review: "no review",
-      img: "/assates/tendingProduct/copi.jpg",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 7,
-      title: "fresh fish",
-      cost: 10.00,
-      review: "no review",
-      img: "/assates/shop/shop(9).jpg",
-      discount: "30%",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-    {
-      id: 8,
-      title: "fresh fish",
-      cost: 15.00,
-      review: "no review",
-      img: "/assates/shop/shop(10).webp",
-      discount: "30%",
-      images: [
-        "/assates/shop/shop(1).jpg",
-        "/assates/shop/shop(2).jpg",
-        "/assates/shop/shop(3).jpg",
-        "/assates/shop/shop(4).jpg",
-      ],
-    },
-  ];
+ const items: ProductsType[] = [
+     {
+       id: 1,
+       title: "Sp. red fresh guava",
+       cost: 10.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (1).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 2,
+       title: "Fresh Vegitable",
+       cost: 13.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (2).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 3,
+       title: "Orange juice naturale",
+       cost: 30.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (3).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 4,
+       title: "fresh mango",
+       cost: 20.0,
+       review: "no review",
+       img: "/assates/tendingProduct/tran (4).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 5,
+       title: "fresh fish",
+       cost: 12.0,
+       review: "no review",
+       img: "/assates/shop/shop(5).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 6,
+       title: "fresh fish",
+       cost: 15.0,
+       review: "no review",
+       img: "/assates/tendingProduct/copi.jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 7,
+       title: "fresh fish",
+       cost: 10.0,
+       review: "no review",
+       img: "/assates/shop/shop(9).jpg",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+     {
+       id: 8,
+       title: "fresh fish",
+       cost: 15.0,
+       review: "no review",
+       img: "/assates/shop/shop(10).webp",
+        discount: "30%",
+       images: [
+         "/assates/shop/shop(1).jpg",
+         "/assates/shop/shop(2).jpg",
+         "/assates/shop/shop(3).jpg",
+         "/assates/shop/shop(4).jpg",
+       ],
+       kgs: [1, 2, 3, 4, 5],
+     },
+   ];
 
   // fake size
   const sizes = ["1kg", "2Kg", "3kg"];
 
   const product = items.find((item) => item.id.toString() === id);
+
+    const currentProduct = cart.find(
+    (item: any) => item.id === product?.id
+  );
 
   if (!product) {
     return <p>Product not found !</p>;
@@ -231,16 +247,16 @@ const ProductId = ({ params }: ProductDetailsType) => {
               <div>
                 <h1 className="text-xl mt-3 text-gray-500">Quentity:</h1>
                 <button
-                  onClick={() => count < 10 && setCount(count + 1)}
+                  onClick={() => handelIncrement(product.id)}
                   className="text-2xl border w-12 h-12 rounded-full border-gray-500 gap-10 cursor-pointer hover:bg-yellow-500 hover:text-white"
                 >
                   +
                 </button>
                 <span className="mx-3 text-2xl font-semibold text-gray-500">
-                  {count}
+                  {currentProduct?.quantity || 0}
                 </span>
                 <button
-                  onClick={() => count > 1 && setCount(count - 1)}
+                  onClick={() => handelDicrement(product.id)}
                   className="text-2xl border w-12 h-12 rounded-full border-gray-500 gap-10 cursor-pointer hover:bg-yellow-500 hover:text-white"
                 >
                   -
@@ -249,7 +265,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
               {/* button buy and add to cart  */}
               <div className="flex gap-10 mt-3">
                 <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg">
-                  <Link href={""}>Add to Cart</Link>
+                  <Link onClick={() => handelCart(product)} href={""}>Add to Cart</Link>
                 </button>
                 <button className="bg-green-500 text-white font-semibold py-2 px-4 rounded-lg">
                   <Link href={""}>By Now</Link>

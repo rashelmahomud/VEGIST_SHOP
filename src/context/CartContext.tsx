@@ -1,13 +1,13 @@
 "use client";
-import { Products } from "@/components/type/ProductType";
+import {  ProductsType } from "@/components/type/ProductType";
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 
-type CartItem = Products & { quantity: number  };
+type CartItem = ProductsType & { quantity: number  };
 
 type CartContextType = {
   cart: CartItem[];
-  handelCart: (product: Products) => void;
-  removeCart: (product: Products) => void;
+  handelCart: (product: ProductsType) => void;
+  removeCart: (product: ProductsType) => void;
   totalPrice: number;
   handelIncrement: any;
   handelDicrement: any;
@@ -33,7 +33,7 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
        address: ""
      });
 
-  const handelCart = (product: Products) => {
+  const handelCart = (product: ProductsType) => {
     setCart((cart): any => {
       const existing = cart.find((item) => item.id === product.id);
       if (existing) {
@@ -55,7 +55,7 @@ export const CartContext = ({ children }: { children: ReactNode }) => {
 };
 
 
-  const removeCart = (product: Products) => {
+  const removeCart = (product: ProductsType) => {
     setCart((cart) => cart.filter((item) => item.id !== product.id));
   };
 
