@@ -162,7 +162,7 @@ const Navber = () => {
                   </Link>
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
                     {/* {favorites.length} */}
-                    {productsFavorite.length}
+                    {productsFavorite.length + favorites.length}
                   </span>
                 </div>
                 <div className="relative">

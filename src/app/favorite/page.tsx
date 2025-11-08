@@ -11,15 +11,21 @@ const FavoritePage = () => {
   const { favorites, toggleFavorite } = useFavorite();
   const {productsFavorite,toggleProductsFavorites} = useProductFavorite();
 
+
+  const allFavorites = [...(favorites || []), ...(productsFavorite || [])]
+
+
   return (
     <div className="lg:px-36 p-3 my-10">
-      <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">
+     
+      {allFavorites?.length > 0 ? (
+        
+        <div className="mt-10 px-6">
+           <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">
         ❤️ Your Favorites
       </h2>
-      {productsFavorite?.length > 0 && (
-        <div className="mt-10 px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {productsFavorite.map((item: any) => (
+            {allFavorites.map((item: any) => (
                   <div
                 key={item.id}
                 className="flex flex-col justify-center rounded-lg p-2 relative group"
@@ -51,7 +57,7 @@ const FavoritePage = () => {
                       className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     />
                     <FontAwesomeIcon
-                      onClick={() => toggleProductsFavorites(item)}
+                      onClick={() => toggleProductsFavorites ? toggleProductsFavorites(item) : toggleFavorite(item)}
                       icon={faHeart}
                       className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
                         productsFavorite.some((fav) => fav.id === item.id)
@@ -85,7 +91,7 @@ const FavoritePage = () => {
             ))}
           </div>
         </div>
-      )}
+      ): <p className="text-xl font-semibold text-red-500 text-center">"YOU DON'T HAVE ANY DATA..."</p>}
     </div>
   );
 };

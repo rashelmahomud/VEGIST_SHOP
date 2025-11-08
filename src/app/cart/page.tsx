@@ -9,7 +9,6 @@ import { useState } from "react";
 
 export default function CartPage() {
   const { cart, removeCart, totalPrice,kg,country } = useCart();
-  console.log(kg)
 
   const [open, setOpen] = useState(false);
 
