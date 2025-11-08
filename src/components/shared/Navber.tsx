@@ -17,13 +17,11 @@ import type { DrawerProps } from "antd";
 import NavDivise from "./NavDivise";
 import { useFavorite } from "@/context/FavoriteContext";
 import { useCart } from "@/context/CartContext";
-import { useProductFavorite } from "@/context/FovoritesProductContext";
 const Navber = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
   const { favorites } = useFavorite();
-  const {productsFavorite} = useProductFavorite();
 
   const { cart } = useCart();
 
@@ -162,7 +160,7 @@ const Navber = () => {
                   </Link>
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
                     {/* {favorites.length} */}
-                    {productsFavorite.length + favorites.length}
+                    {favorites.length}
                   </span>
                 </div>
                 <div className="relative">

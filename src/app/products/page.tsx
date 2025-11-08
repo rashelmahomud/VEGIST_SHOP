@@ -1,7 +1,6 @@
 "use client";
 import { ProductsType } from "@/components/type/ProductType";
 import { useFavorite } from "@/context/FavoriteContext";
-import { useProductFavorite } from "@/context/FovoritesProductContext";
 import { faEye, faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +10,7 @@ import { useState } from "react";
 
 const ProductsPage = () => {
   const [activeTab, setActiveTab] = useState("1");
-  const { productsFavorite, toggleProductsFavorites } = useProductFavorite();
+  const {favorites,toggleFavorite} = useFavorite();
 
   const items: ProductsType[] = [
     {
@@ -213,9 +212,9 @@ const ProductsPage = () => {
                           icon={faEye}
                         />
                         <FontAwesomeIcon
-                          onClick={() => toggleProductsFavorites(item)}
+                          onClick={() => toggleFavorite(item)}
                           className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
-                            productsFavorite.some((fav) => fav.id === item.id)
+                            favorites.some((fav) => fav.id === item.id)
                               ? "text-red-500"
                               : "text-gray-500 hover:text-white hover:bg-yellow-500"
                           }`}
@@ -304,10 +303,10 @@ const ProductsPage = () => {
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                         />
                         <FontAwesomeIcon
-                          onClick={() => toggleProductsFavorites(item)}
+                          onClick={() => toggleFavorite(item)}
                           icon={faHeart}
                           className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${
-                            productsFavorite.some((fav) => fav.id === item.id)
+                            favorites.some((fav) => fav.id === item.id)
                               ? "text-red-500"
                               : "text-gray-500 hover:text-white hover:bg-yellow-500"
                           }`}
@@ -393,10 +392,10 @@ const ProductsPage = () => {
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                         />
                         <FontAwesomeIcon
-                          onClick={() => toggleProductsFavorites(item)}
+                          onClick={() => toggleFavorite(item)}
                           icon={faHeart}
                           className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${
-                            productsFavorite.some((fav) => fav.id === item.id)
+                            favorites.some((fav) => fav.id === item.id)
                               ? "text-red-500"
                               : "text-gray-500 hover:text-white hover:bg-yellow-500"
                           }`}

@@ -6,7 +6,6 @@ import Navber from "@/components/shared/Navber";
 import Footer from "@/components/shared/Footer";
 import { FavoriteProvider } from "@/context/FavoriteContext";
 import { CartContext } from "@/context/CartContext";
-import { FovoritesProductContext } from "@/context/FovoritesProductContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,13 +38,11 @@ export default function RootLayout({
         //  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CartContext>
-          <FovoritesProductContext>
             <FavoriteProvider>
               <Navber />
 
               <AntdRegistry>{children}</AntdRegistry>
             </FavoriteProvider>
-          </FovoritesProductContext>
         </CartContext>
         <Footer />
       </body>
