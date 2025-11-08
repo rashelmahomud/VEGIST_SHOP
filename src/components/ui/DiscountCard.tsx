@@ -20,7 +20,7 @@ const DiscountCard = () => {
           </button>
         </div>
       </div>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden mb-5">
         <Image
           src={"/assates/banner-3.webp"}
           width={620}

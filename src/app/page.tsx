@@ -14,12 +14,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-
       <div className="lg:px-36 p-3 mt-20">
         <DiscountCard />
-
         <Categori />
-
         <TrandingPage />
       </div>
       <div>
