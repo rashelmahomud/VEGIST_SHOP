@@ -144,7 +144,7 @@ const Navber = () => {
                       ACCOUNT
                     </h1>
                   </Link>
-                  <Link href={"/"}>
+                  <Link href={"/login"}>
                     <small className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
                       Register | Login
                     </small>
