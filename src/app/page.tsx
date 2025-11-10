@@ -14,12 +14,12 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <div className="lg:px-36 p-3 mt-20">
+      <div className="lg:px-36 p-3 pt-20 dark:bg-black">
         <DiscountCard />
         <Categori />
         <TrandingPage />
       </div>
-      <div>
+      <div className="dark:bg-black">
         <DealOfDay />
         <ProductsPage />
         <CustomerSayPage />

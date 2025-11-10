@@ -24,9 +24,9 @@ import Link from "next/link";
 
 const Footer = () => {
   const fDesign =
-    "border-b border-dotted py-2 text-gray-600 hover:text-yellow-500 duration-100";
+    "border-b border-dotted py-2 text-gray-600 dark:text-gray-200 hover:text-yellow-500 duration-100";
   return (
-    <div className="bg-[#faf8ed]">
+    <div className="bg-[#faf8ed] dark:bg-black">
       <div className="lg:px-36 p-3">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 grid-cols-1 mx-auto p-2 py-10">
           <div className="flex items-center gap-5">
@@ -34,28 +34,28 @@ const Footer = () => {
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faCar}
             />
-            <p className="font-semibold text-gray-600">Free Delivery</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">Free Delivery</p>
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faCashApp}
             />
-            <p className="font-semibold text-gray-600">Cash On Delivery</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">Cash On Delivery</p>
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faReacteurope}
             />
-            <p className="font-semibold text-gray-600">30 Days Return</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">30 Days Return</p>
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faMicrophoneLines}
             />
-            <p className="font-semibold text-gray-600">Online Support</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">Online Support</p>
           </div>
         </div>
 
@@ -67,7 +67,7 @@ const Footer = () => {
               width={120}
               height={120}
             />
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-200">
               Lorem ipsum iasds simply dummy text of the <br /> printing and
               typesetting industry.
             </p>
@@ -79,7 +79,7 @@ const Footer = () => {
             />
             <div>
               <h2 className="text-xl font-semibold text-yellow-500">Address</h2>
-              <p className="text-gray-500">
+              <p className="text-gray-500 dark:text-gray-200">
                 38 block street arean licard <br />
                 hamonia road sydney, australia
               </p>
@@ -94,7 +94,7 @@ const Footer = () => {
               <h2 className="font-semibold text-yellow-500 text-xl mb-2">
                 Get in touch
               </h2>
-              <p className="text-gray-500">
+              <p className="text-gray-500 dark:text-gray-200">
                 (+880 1835199061) <br />
                 support@demo.com
               </p>

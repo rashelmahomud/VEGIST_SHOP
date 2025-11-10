@@ -132,7 +132,7 @@ const ProductsPage = () => {
   ];
   return (
     <div className="lg:px-36">
-      <h1 className="text-4xl font-semibold text-gray-800 my-10 text-center">
+      <h1 className="text-4xl font-semibold text-gray-800 dark:text-gray-200 my-10 text-center">
         Our products
       </h1>
       <div>
@@ -144,7 +144,7 @@ const ProductsPage = () => {
               className={`px-4 py-2 text-sm font-medium ${
                 activeTab === "1"
                   ? "border-b-2 border-blue-500 text-blue-600"
-                  : "text-gray-500 hover:text-gray-700"
+                  : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
               }`}
             >
               SPECIAL PRODUCT
@@ -154,7 +154,7 @@ const ProductsPage = () => {
               className={`px-4 py-2 text-sm font-medium ${
                 activeTab === "2"
                   ? "border-b-2 border-blue-500 text-blue-600"
-                  : "text-gray-500 hover:text-gray-700"
+                  : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
               }`}
             >
               BEST PRODUTS
@@ -164,7 +164,7 @@ const ProductsPage = () => {
               className={`px-4 py-2 text-sm font-medium ${
                 activeTab === "3"
                   ? "border-b-2 border-blue-500 text-blue-600"
-                  : "text-gray-500 hover:text-gray-700"
+                  : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
               }`}
             >
               BESTSELLING
@@ -229,10 +229,10 @@ const ProductsPage = () => {
                     </div>
 
                     <div className=" mt-2 p-1">
-                      <h1 className="text-xl font-semibold text-gray-500">
+                      <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
                         {item.title}
                       </h1>
-                      <p className="font-semibld text-gray-500">{item.cost}</p>
+                      <p className="font-semibld text-gray-500 dark:text-gray-200">Cost: {item.cost}</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <FontAwesomeIcon
@@ -255,7 +255,7 @@ const ProductsPage = () => {
                         icon={faStar}
                         className="text-sm text-yellow-600"
                       />
-                      <p className="font-semibld text-gray-500">
+                      <p className="font-semibld text-gray-500 dark:text-gray-200">
                         {item.review}
                       </p>
                     </div>
@@ -319,10 +319,10 @@ const ProductsPage = () => {
                     </div>
 
                     <div className=" mt-2 p-1">
-                      <h1 className="text-xl font-semibold text-gray-500">
+                      <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
                         {item.title}
                       </h1>
-                      <p className="font-semibld text-gray-500">{item.cost}</p>
+                      <p className="font-semibld text-gray-500 dark:text-gray-200">Cost: {item.cost}</p>
                       <div className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faStar}
@@ -344,7 +344,7 @@ const ProductsPage = () => {
                           icon={faStar}
                           className="text-sm text-yellow-600"
                         />
-                        <p className="font-semibld text-gray-500">
+                        <p className="font-semibld text-gray-500 dark:text-gray-200">
                           {item.review}
                         </p>
                       </div>
@@ -408,10 +408,10 @@ const ProductsPage = () => {
                     </div>
 
                     <div className=" mt-2 p-1">
-                      <h1 className="text-xl font-semibold text-gray-500">
+                      <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
                         {item.title}
                       </h1>
-                      <p className="font-semibld text-gray-500">{item.cost}</p>
+                      <p className="font-semibld text-gray-500 dark:text-gray-200">cost: ${item.cost}</p>
                       <div className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faStar}
@@ -433,7 +433,7 @@ const ProductsPage = () => {
                           icon={faStar}
                           className="text-sm text-yellow-600"
                         />
-                        <p className="font-semibld text-gray-500">
+                        <p className="font-semibld text-gray-500 dark:text-gray-200">
                           {item.review}
                         </p>
                       </div>

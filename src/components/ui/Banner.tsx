@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="mt-2">
+    <div className="mt-1">
       <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={5000}>
         <div className="relative">
           <Image

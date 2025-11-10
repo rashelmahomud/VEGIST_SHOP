@@ -11,7 +11,7 @@ const Testimonial = () => {
     "/assates/testi/6.webp",
   ];
   return (
-    <div className="w-full lg:my-20 my-5 lg:px-36">
+    <div className="w-full lg:py-20 my-0.5 lg:px-36">
       <Carousel
         dots={false}
         autoplay

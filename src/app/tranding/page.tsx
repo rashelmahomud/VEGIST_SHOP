@@ -140,7 +140,7 @@ const TrandingPage = () => {
 
   return (
     <div className="mt-20 py-10">
-      <h1 className="text-4xl font-semibold text-gray-600 text-center mb-2">
+      <h1 className="text-4xl font-semibold text-gray-600 dark:text-gray-200 text-center mb-2">
         Trending Products
       </h1>
 
@@ -197,10 +197,10 @@ const TrandingPage = () => {
                   </div>
                 </div>
                 <div className="mt-2 p-1">
-                  <h1 className="text-xl font-semibold text-gray-500">
+                  <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
                     {item.title}
                   </h1>
-                  <p className="font-semibold text-gray-500">{item.cost}</p>
+                  <p className="font-semibold text-gray-500 dark:text-gray-200">Cost: {item.cost}</p>
                   <div className="flex gap-1 items-center">
                     {[...Array(5)].map((_, i) => (
                       <FontAwesomeIcon
@@ -209,7 +209,7 @@ const TrandingPage = () => {
                         className="w-3 text-yellow-600"
                       />
                     ))}
-                    <p className="ml-1 text-gray-500">{item.review}</p>
+                    <p className="ml-1 text-gray-500 dark:text-gray-200">{item.review}</p>
                   </div>
                 </div>
               </div>
@@ -266,10 +266,10 @@ const TrandingPage = () => {
                   </div>
                 </div>
                 <div className="mt-2 p-1">
-                  <h1 className="text-xl font-semibold text-gray-500">
+                  <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
                     {item.title}
                   </h1>
-                  <p className="font-semibold text-gray-500">{item.cost}</p>
+                  <p className="font-semibold text-gray-500 dark:text-gray-200">Cost: {item.cost}</p>
                   <div className="flex gap-1 items-center">
                     {[...Array(5)].map((_, i) => (
                       <FontAwesomeIcon
@@ -278,7 +278,7 @@ const TrandingPage = () => {
                         className="w-3 text-yellow-600"
                       />
                     ))}
-                    <p className="ml-1 text-gray-500">{item.review}</p>
+                    <p className="ml-1 text-gray-500 dark:text-gray-200">{item.review}</p>
                   </div>
                 </div>
               </div>

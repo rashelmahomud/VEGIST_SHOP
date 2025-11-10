@@ -1,6 +1,11 @@
 "use client";
 import { faShopify } from "@fortawesome/free-brands-svg-icons";
-import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHeart,
+  faMoon,
+  faSun,
+  faUser,
+} from "@fortawesome/free-regular-svg-icons";
 import {
   faList,
   faMagnifyingGlass,
@@ -17,12 +22,15 @@ import type { DrawerProps } from "antd";
 import NavDivise from "./NavDivise";
 import { useFavorite } from "@/context/FavoriteContext";
 import { useCart } from "@/context/CartContext";
+import { useTheme } from "@/context/themeContext";
 const Navber = () => {
+  const menuDesign =
+    "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300 w-full";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
   const { favorites } = useFavorite();
-
+  const { theme, toggleTheme } = useTheme();
   const { cart } = useCart();
 
   const showModal = () => {
@@ -45,7 +53,7 @@ const Navber = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-center bg-gray-900 text-white p-3 font-semibold">
+        <h1 className="text-center bg-gray-900 text-white py-3 font-semibold">
           <span className="relative inline-block text-yellow-400 font-bold mx-2">
             <span className="absolute inset-0 rounded-full bg-yellow-400 opacity-50 animate-ping [animation-delay:500ms]"></span>
             <span className="relative animate-bounce [animation-delay:1s]">
@@ -56,8 +64,8 @@ const Navber = () => {
         </h1>
       </div>
 
-      <div className="sticky top-0 bg-white z-40">
-        <div className="container mx-auto py-4 px-2 m-3 lg:px-30">
+      <div className="sticky top-0 z-40 bg-white dark:bg-black " >
+        <div className="container mx-auto py-6 px-2 lg:px-30">
           <div className="grid lg:grid-cols-3 grid-cols-2 items-center justify-center test-center align-items-center mx-auto">
             <Link href={"/"}>
               {" "}
@@ -103,7 +111,7 @@ const Navber = () => {
 
                 <FontAwesomeIcon
                   icon={faUser}
-                  className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 lg:mt-0 mt-5"
+                  className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
                 />
                 <Modal
                   title="Basic Modal"
@@ -127,7 +135,7 @@ const Navber = () => {
                     className=""
                   />
                 </Modal>
-                <div className="lg:hidden block ">
+                <div className="lg:hidden block">
                   <FontAwesomeIcon
                     type="primary"
                     onClick={showModal}
@@ -138,12 +146,12 @@ const Navber = () => {
                 {/* // hidden small device  */}
                 <div className="lg:block hidden">
                   <Link href={"/"}>
-                    <h1 className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
+                    <h1 className="hover:text-yellow-500 duration-300 font-semibold text-gray-500 dark:text-gray-200">
                       ACCOUNT
                     </h1>
                   </Link>
                   <Link href={"/login"}>
-                    <small className="hover:text-yellow-500 duration-300 font-semibold text-gray-500">
+                    <small className="hover:text-yellow-500 duration-300 font-semibold text-gray-500 dark:text-gray-200">
                       Register | Login
                     </small>
                   </Link>
@@ -155,7 +163,7 @@ const Navber = () => {
                   <Link href={"/favorite"}>
                     <FontAwesomeIcon
                       icon={faHeart}
-                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
+                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200"
                     />
                   </Link>
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
@@ -167,12 +175,22 @@ const Navber = () => {
                   <Link href={"/cart"}>
                     <FontAwesomeIcon
                       icon={faShopify}
-                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500"
+                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200"
                     />
                   </Link>
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
                     {cart.length}
                   </span>
+                  {/* theme dark light  */}
+                  <div>
+                    <Link href={""} onClick={toggleTheme}>
+                      {theme === "light" ? (
+                        <FontAwesomeIcon icon={faMoon} />
+                      ) : (
+                        <FontAwesomeIcon icon={faSun} />
+                      )}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
