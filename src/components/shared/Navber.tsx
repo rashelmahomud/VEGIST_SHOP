@@ -182,7 +182,7 @@ const Navber = () => {
                     {cart.length}
                   </span>
                   {/* theme dark light  */}
-                  <div>
+                  <div className="text-gray-500 dark:text-gray-200">
                     <Link href={""} onClick={toggleTheme}>
                       {theme === "light" ? (
                         <FontAwesomeIcon icon={faMoon} />

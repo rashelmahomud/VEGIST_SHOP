@@ -10,7 +10,7 @@ const FavoritePage = () => {
   const { favorites, toggleFavorite } = useFavorite();
 
   return (
-    <div className="lg:px-36 p-3 my-10">
+    <div className="lg:px-36 p-3 py-10 dark:bg-black">
       {favorites?.length > 0 ? (
         <div className="mt-10 px-6">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">

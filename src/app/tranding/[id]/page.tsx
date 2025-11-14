@@ -187,7 +187,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-black">
       <div className="bg-[url('/assates/detailsBanner.webp')] flex justify-center text-yellow-600 items-center bg-cover bg-no-repert h-30">
         <span>
           <Link href={"/"}>Home</Link>
@@ -237,7 +237,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
               </div>
 
               <div>
-                <h1 className="text-xl font-semibold text-gray-600">
+                <h1 className="text-xl font-semibold text-gray-600 dark:text-gray-200">
                   {productDetails?.title}
                 </h1>
                 <p className="border-b border-gray-200 my-3"></p>
@@ -264,18 +264,18 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                       className="w-3 text-yellow-600"
                     />
                   </div>
-                  <p> 2 reviews</p>
+                  <p className="dark:text-gray-200"> 2 reviews</p>
                 </div>
                 <div>
                   <div className="flex gap-2 mb-3 relative">
-                    <strong className="pr-2 text-gray-600 ">
+                    <strong className="pr-2 text-gray-600 dark:text-gray-200">
                       Availability:
                     </strong>
                     <span className="w-4 h-4 bg-green-600 rounded-full p-2 mt-1"></span>
                     <p>12 in stock</p>
                   </div>
                 </div>
-                <div className="flex gap-2 text-gray-600 my-3">
+                <div className="flex gap-2 text-gray-600 dark:text-gray-200 my-3">
                   <p className="flex gap-3">
                     $
                     {(
@@ -288,14 +288,14 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     20%
                   </button>
                 </div>
-                <p className="text-gray-500 mb-2">
+                <p className="text-gray-500 dark:text-gray-200 mb-2">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s.
                 </p>
 
                 {/* how kg needs for your */}
-                <div className="text-gray-500">
+                <div className="text-gray-500 dark:text-gray-200">
                   <p>Size : {kg}kg</p>
                   <div className="flex gap-5 mt-3">
                     {productDetails?.kgs?.map((kg) => (
@@ -303,7 +303,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                         key={kg}
                         onClick={() => handelClick(currentProduct?.id, kg)}
                         href={""}
-                        className="bg-gray-200 hover:border hover:border-yellow-500 active border border-yellow-500 rounded-full px-3 py-2"
+                        className="bg-gray-200 dark:text-black hover:border hover:border-yellow-500 active border border-yellow-500 rounded-full px-3 py-2"
                       >
                         {kg}kg
                       </Link>
@@ -312,7 +312,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 </div>
                 <div className="mt-3 text-gray-600">
                   <p>
-                    <strong>Meterial :</strong> {country}
+                    <strong className="dark:text-gray-200">Meterial :</strong> {country}
                   </p>
                   <div className="flex gap-5 mt-3">
                     <button>
@@ -345,7 +345,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   </div>
                 </div>
                 <div className="flex lg:justify-start justify-center my-5 gap-5">
-                  <h1 className="text-xl font-semibold text-gray-600">
+                  <h1 className="text-xl font-semibold text-gray-600 dark:text-gray-200">
                     Quantity :
                   </h1>
                   {/* count section  */}
@@ -437,7 +437,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
             {/* ============== map area */}
           </div>
           <div className="basis-1/3 lg:mt-0 mt-3">
-            <div className="text-center bg-gray-50 p-8">
+            <div className="text-center bg-gray-50 dark:bg-black dark:border dark:border-gray-600 p-8">
               <FontAwesomeIcon
                 icon={faTruck}
                 className="text-4xl bg-white text-yellow-500 p-3 rounded-full"
@@ -448,7 +448,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 your location.
               </p>
             </div>
-            <div className="text-center bg-gray-50 p-8 my-5">
+            <div className="text-center bg-gray-50 dark:bg-black dark:border dark:border-gray-600 p-8 my-5">
               <FontAwesomeIcon
                 icon={faDollar}
                 className="text-4xl bg-white text-yellow-500 p-3 rounded-full"
@@ -459,7 +459,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 refund within 7 days including the delivery fee.
               </p>
             </div>
-            <div className="text-center bg-gray-50 p-8">
+            <div className="text-center bg-gray-50 dark:bg-black dark:border dark:border-gray-600 p-8">
               <FontAwesomeIcon
                 icon={faWarning}
                 className="text-4xl bg-white text-yellow-500 p-3 rounded-full"
@@ -474,17 +474,17 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
       <div>
         <div className="lg:flex gap-10 justify-center mb-5">
-          <button className="border rounded-full py-2 px-3 border-gray-400">
+          <button className="border rounded-full py-2 px-3 border-gray-400 dark:text-gray-200">
             <Link onClick={() => setActive("1")} href={""}>
               DESCRIPTION
             </Link>
           </button>
-          <button className="hover:border rounded-full py-2 px-3 border-gray-400">
+          <button className="hover:border rounded-full py-2 px-3 border-gray-400 dark:text-gray-200">
             <Link onClick={() => setActive("2")} href={""}>
               ADDITIONAL INFORMATION
             </Link>
           </button>
-          <button className="hover:border rounded-full py-2 px-3 border-gray-400">
+          <button className="hover:border rounded-full py-2 px-3 border-gray-400 dark:text-gray-200">
             <Link onClick={() => setActive("3")} href={""}>
               REVIEWS
             </Link>
@@ -495,53 +495,53 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
             {active === "1" && (
               <div>
                 <div>
-                  <h1 className="text-2xl font-semibold mb-2 text-gray-600">
+                  <h1 className="text-2xl font-semibold mb-2 text-gray-600 dark:text-gray-200">
                     More Detail
                   </h1>
                   <ul>
-                    <li className="p-2 text-gray-600">
+                    <li className="p-2 text-gray-600 dark:text-gray-200">
                       <FontAwesomeIcon
                         icon={faRing}
-                        className="mr-3 text-gray-400 text-sm"
+                        className="mr-3 text-gray-400 dark:text-gray-200 text-sm"
                       />
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry
                     </li>
-                    <li className="p-2 text-gray-600">
+                    <li className="p-2 text-gray-600 dark:text-gray-200">
                       <FontAwesomeIcon
                         icon={faRing}
-                        className="mr-3 text-gray-400 text-sm"
+                        className="mr-3 text-gray-400 dark:text-gray-200 text-sm"
                       />
                       Lorem Ipsum has been the ‘s standard dummy text. Lorem
                       Ipsumum is simply dummy text.
                     </li>
-                    <li className="p-2 text-gray-600">
+                    <li className="p-2 text-gray-600 dark:text-gray-200">
                       <FontAwesomeIcon
                         icon={faRing}
-                        className="mr-3 text-gray-400 text-sm"
+                        className="mr-3 text-gray-400 dark:text-gray-200 text-sm"
                       />
                       type here your detail one by one li more add
                     </li>
-                    <li className="p-2 text-gray-600">
+                    <li className="p-2 text-gray-600 dark:text-gray-200">
                       <FontAwesomeIcon
                         icon={faRing}
-                        className="mr-3 text-gray-400 text-sm"
+                        className="mr-3 text-gray-400 dark:text-gray-200 text-sm"
                       />
                       has been the industry’s standard dummy text ever since.
                       Lorem Ips
                     </li>
-                    <li className="p-2 text-gray-600">
+                    <li className="p-2 text-gray-600 dark:text-gray-200">
                       <FontAwesomeIcon
                         icon={faRing}
-                        className="mr-3 text-gray-400 text-sm"
+                        className="mr-3 text-gray-400 dark:text-gray-200 text-sm"
                       />
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry.
                     </li>
-                    <li className="p-2 text-gray-600">
+                    <li className="p-2 text-gray-600 dark:text-gray-200">
                       <FontAwesomeIcon
                         icon={faRing}
-                        className="mr-3 text-gray-400 text-sm"
+                        className="mr-3 text-gray-400 dark:text-gray-200 text-sm"
                       />
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the ‘s standard
@@ -550,19 +550,19 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     </li>
                   </ul>
                   <div>
-                    <h1 className="text-2xl font-semibold text-gray-700 mb-3">
+                    <h1 className="text-2xl font-semibold text-gray-700 dark:text-gray-200 mb-3">
                       Key Specification
                     </h1>
                     <ul>
-                      <li className="p-2 text-gray-500 text-sm">
+                      <li className="p-2 text-gray-500 dark:text-gray-200 text-sm">
                         <FontAwesomeIcon
                           icon={faRing}
-                          className="mr-2 text-gray-500"
+                          className="mr-2 text-gray-500 dark:text-gray-200"
                         />
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry
                       </li>
-                      <li className="p-2 text-gray-500 text-sm">
+                      <li className="p-2 text-gray-500 dark:text-gray-200 text-sm">
                         <FontAwesomeIcon
                           icon={faRing}
                           className="mr-2 text-gray-500"
@@ -570,10 +570,10 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                         Lorem Ipsum has been the ‘s standard dummy text. Lorem
                         Ipsumum is simply dummy text.
                       </li>
-                      <li className="p-2 text-gray-500 text-sm">
+                      <li className="p-2 text-gray-500 dark:text-gray-200 text-sm">
                         <FontAwesomeIcon
                           icon={faRing}
-                          className="mr-2 text-gray-500"
+                          className="mr-2 text-gray-500 dark:text-gray-200"
                         />
                         Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the ‘s
@@ -581,10 +581,10 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                         standard dummy text ever since. Lorem Ipsum is simply
                         dummy text.
                       </li>
-                      <li className="p-2 text-gray-500 text-sm">
+                      <li className="p-2 text-gray-500 dark:text-gray-200 text-sm">
                         <FontAwesomeIcon
                           icon={faRing}
-                          className="mr-2 text-gray-500"
+                          className="mr-2 text-gray-500 dark:text-gray-200"
                         />
                         has been the industry’s standard dummy text ever since.
                         Lorem Ips.

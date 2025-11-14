@@ -20,10 +20,10 @@ export default function CartPage() {
     setOpen(false);
   };
   return (
-    <div className="lg:px-36 p-3 my-10">
+    <div className="lg:px-36 p-3 py-10 dark:bg-black">
       <div>
         <h1 className="text-2xl font-semibold mb-4">🛒 Your Cart</h1>
-        <div className="lg:flex gap-10 border border-gray-300 p-3">
+        <div className="lg:flex gap-10 border border-gray-300 dark:border-gray-700 p-3">
           <div>
             {cart.length === 0 ? (
               <p>No items in cart.</p>
@@ -32,7 +32,7 @@ export default function CartPage() {
                 {cart.map((item) => (
                   <div
                     key={item.id}
-                    className="lg:flex items-center gap-10 border border-gray-100 p-4 rounded-xl text-xl"
+                    className="lg:flex items-center gap-10 border border-gray-100 dark:border-gray-500 p-4 rounded-xl text-xl dark:text-gray-200"
                   >
                     <Image
                       src={item.img}
@@ -54,22 +54,22 @@ export default function CartPage() {
             )}
           </div>
 
-          <div className="bg-white shadow-lg rounded-2xl p-6 max-w-sm mx-auto border border-gray-100">
+          <div className="bg-white dark:bg-black shadow-lg rounded-2xl p-6 max-w-sm mx-auto border border-gray-100 dark:border-gray-500">
             <h1 className="text-center text-2xl font-bold text-yellow-500 tracking-wide">
               WELCOME BOSS 🛒
             </h1>
 
-            <div className="mt-6 space-y-3 text-gray-700">
+            <div className="mt-6 space-y-3 text-gray-700 dark:text-gray-200">
               <p className="flex justify-between text-base">
                 <span className="font-semibold">Total Price:</span>
-                <span className="text-gray-900 font-bold">${totalPrice}</span>
+                <span className="text-gray-900 dark:text-gray-200 font-bold">${totalPrice}</span>
               </p>
               <p className="flex justify-between text-base">
                 <span className="font-semibold">Delivery Cost:</span>
-                <span className="text-gray-900 font-bold">$130</span>
+                <span className="font-bold">$130</span>
               </p>
               <hr className="my-3 border-gray-200" />
-              <p className="flex justify-between text-lg font-semibold text-gray-900">
+              <p className="flex justify-between text-lg font-semibold text-gray-900 dark:text-gray-200">
                 <span>Grand Total:</span>
                 <span className="text-yellow-500">${totalPrice + 130}</span>
               </p>
