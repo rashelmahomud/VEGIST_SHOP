@@ -55,12 +55,12 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
 
   return (
     <div>
-      <div className="flex bg-gray-50 py-5 gap-5 items-center justify-center">
+      <div className="flex bg-gray-50 dark:bg-black dark:text-gray-200 py-5 gap-5 items-center justify-center">
         <Link href={"/"}> Home</Link>
         <Link href={"/"}> News</Link>
         <Link href={"/"}>Fresh organics brand...</Link>
       </div>
-      <div className="lg:px-36 flex gap-5 p-3 mx-auto my-10">
+      <div className="lg:px-36 flex gap-5 p-3 mx-auto my-10 dark:bg-black">
         <div className="basis-1/3 ">
           <div>
             <Input.Search placeholder="email@exmple.com" variant="underlined" />
@@ -77,7 +77,7 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
                 <div className="text-gray-400 my-2">
                   <div className="flex items-center">
                     <FontAwesomeIcon
-                      className="w-10 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                      className="w-10 bg-white text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                       icon={faFile}
                     />
                     May 13,2025
@@ -91,7 +91,7 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
           </div>
           <div className="p-2">
             <h1 className="my-10 font-semibold text-gray-500">Categoris</h1>
-            <ul className="space-y-3 text-gray-500">
+            <ul className="space-y-3 text-gray-500 dark:text-gray-200">
               <li>
                 <Link href={""}>Fresh fruits</Link>
               </li>
@@ -112,22 +112,22 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
           <div className="p-2">
             <h1 className="my-10 font-semibold text-gray-500">Tags</h1>
             <ul className="flex gap-2">
-              <li className="border border-gray-500 p-1 font-semibold text-gray-500">
+              <li className="border border-gray-500 p-1 font-semibold text-gray-500 dark:text-gray-200">
                 <Link href={""}>DINNER</Link>
               </li>
-              <li className="border border-gray-500 p-1 font-semibold text-gray-500">
+              <li className="border border-gray-500 p-1 font-semibold text-gray-500 dark:text-gray-200">
                 <Link href={""}>GROCERY</Link>
               </li>
-              <li className="border border-gray-500 p-1 font-semibold text-gray-500">
+              <li className="border border-gray-500 p-1 font-semibold text-gray-500 dark:text-gray-200">
                 <Link href={""}>ORGANIC</Link>
               </li>
-              <li className="border border-gray-500 p-1 font-semibold text-gray-500">
+              <li className="border border-gray-500 p-1 font-semibold text-gray-500 dark:text-gray-200">
                 <Link href={""}>PASTA</Link>
               </li>
             </ul>
           </div>
           <div className="p-2">
-            <h1 className="text-xl font-semibold text-gray-500">Newsletter</h1>
+            <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">Newsletter</h1>
             <Input placeholder="email@exmple.com" style={{ width: "300px" }} />
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
             alt="image"
           />
 
-          <p className="text-xl font-semibold text-gray-500">{b?.title}</p>
+          <p className="text-xl font-semibold text-gray-500 dark:text-gray-200">{b?.title}</p>
           <div className="flex justify-between text-gray-500 my-2">
             <div className="flex items-center">
               <FontAwesomeIcon
@@ -160,13 +160,13 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
             </div>
             <div className="flex items-center">
               <FontAwesomeIcon
-                className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                className="w-10 p-2 bg-white text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faFileText}
               />
               0 Comments
             </div>
           </div>
-          <p className="text-gray-500">{b?.description}</p>
+          <p className="text-gray-500 dark:text-gray-200">{b?.description}</p>
           <div className="flex gap-5">
             <Image
               src={"/assates/recent-news/my.webp"}
@@ -174,14 +174,14 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
               height={100}
               alt="image"
             />
-            <div className="text-gray-500">
+            <div className="text-gray-500 dark:text-gray-200">
               <p>{b?.dec}</p> <br />
               <p>{b?.dec}</p>
             </div>
           </div>
-          <p className="text-gray-500">{b?.description}</p>
-          <p className="text-green-600">{b?.dec}</p>
-          <p className="text-gray-500">{b?.description}</p>
+          <p className="text-gray-500 dark:text-gray-200">{b?.description}</p>
+          <p className="text-green-600 dark:text-gray-200">{b?.dec}</p>
+          <p className="text-gray-500 dark:text-gray-200">{b?.description}</p>
           <div className="bg-gray-200 p-4 text-center">
             <FontAwesomeIcon
               icon={faQuoteLeft}
