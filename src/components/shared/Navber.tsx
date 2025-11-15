@@ -28,6 +28,7 @@ const Navber = () => {
     "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300 w-full";
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
   const { favorites } = useFavorite();
   const { theme, toggleTheme } = useTheme();
@@ -64,7 +65,7 @@ const Navber = () => {
         </h1>
       </div>
 
-      <div className="sticky top-0 z-40 bg-white dark:bg-black " >
+      <div className="sticky top-0 z-40 bg-white dark:bg-black ">
         <div className="container mx-auto py-6 px-2 lg:px-30">
           <div className="grid lg:grid-cols-3 grid-cols-2 items-center justify-center test-center align-items-center mx-auto">
             <Link href={"/"}>
@@ -109,10 +110,56 @@ const Navber = () => {
                   </div>
                 )}
 
-                <FontAwesomeIcon
+                {/* <div>
+                {openMenu ?     <Link onClick={handelmenu} href={''}> <FontAwesomeIcon
                   icon={faUser}
                   className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
-                />
+                /></Link>: "0"}
+            
+               </div> */}
+                <div onClick={() => setOpenMenu(!openMenu)}>
+                  {openMenu ? (
+                    <div className="relative">
+                      <Link href={""}>
+                        <FontAwesomeIcon
+                          icon={faUser}
+                          className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
+                        />
+                        <ul className="absolute bg-gray-200 p-3 space-y-2 text-center text-sm mt-5">
+                          <li>
+                            <Link href={"/order"}>order</Link>
+                          </li>
+                          <li>user</li>
+                          <li>imortent</li>
+                          <li>setting</li>
+                          {/* theme dark light  */}
+                          <li>
+                            <div>
+                              <Link href={""} onClick={toggleTheme}>
+                                {theme === "light" ? (
+                                  <FontAwesomeIcon icon={faMoon} />
+                                ) : (
+                                  <FontAwesomeIcon
+                                    icon={faSun}
+                                    
+                                  />
+                                )}
+                              </Link>
+                            </div>
+                          </li>
+                        </ul>
+                      </Link>
+                    </div>
+                  ) : (
+                    <Link href={""}>
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
+                      />
+                    </Link>
+                  )}
+                </div>
+
                 <Modal
                   title="Basic Modal"
                   closable={{ "aria-label": "Custom Close Button" }}
@@ -181,16 +228,6 @@ const Navber = () => {
                   <span className="absolute bg-yellow-500 font-semibold lg:w-4 lg:h-4 w-3 h-3 right-0 top-0 rounded-full flex justify-center items-center text-white">
                     {cart.length}
                   </span>
-                  {/* theme dark light  */}
-                  <div className="text-gray-500 dark:text-gray-200">
-                    <Link href={""} onClick={toggleTheme}>
-                      {theme === "light" ? (
-                        <FontAwesomeIcon icon={faMoon} />
-                      ) : (
-                        <FontAwesomeIcon icon={faSun} />
-                      )}
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>
