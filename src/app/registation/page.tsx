@@ -50,7 +50,7 @@ const RegistrationPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-slate-900 to-emerald-900 p-6">
-      <div className="max-w-md w-full bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 backdrop-blur-md">
+      <div className="max-w-md w-full bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 backdrop-blur-md dark:bg-black">
         <h2 className="text-2xl font-bold text-white mb-2 text-center">Create Account</h2>
         <p className="text-sm text-slate-300 mb-6 text-center">
           Register to access your personalized dashboard.

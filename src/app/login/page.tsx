@@ -42,7 +42,7 @@ const LoginPage: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-indigo-900 to-emerald-900 p-6">
       <div className="max-w-3xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/6 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-        <div className="hidden md:flex flex-col items-center justify-center p-8 space-y-6 bg-[linear-gradient(135deg,#0f172a55,#0b122955)]">
+        <div className="hidden md:flex flex-col items-center justify-center p-8 space-y-6 bg-[linear-gradient(135deg,#0f172a55,#0b122955)] dark:bg-black">
           <div className="w-28 h-28 rounded-xl bg-gradient-to-br from-yellow-400 via-orange-400 to-pink-500 flex items-center justify-center shadow-xl">
             <span className="text-white font-extrabold text-2xl tracking-tight">RS</span>
           </div>
@@ -69,7 +69,7 @@ const LoginPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-8 md:p-10 flex flex-col justify-center">
+        <div className="p-8 md:p-10 flex flex-col justify-center dark:bg-black">
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-white">Sign in</h2>
             <p className="text-sm text-slate-300 mt-1">
@@ -143,7 +143,7 @@ const LoginPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3 dark:text-gray-200">
               <button type="button" className="rounded-xl py-2 text-sm border border-white/8">
                 Google
               </button>
