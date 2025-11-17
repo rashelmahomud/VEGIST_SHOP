@@ -13,7 +13,7 @@ const FavoritePage = () => {
     <div className="lg:px-36 p-3 py-10 dark:bg-black">
       {favorites?.length > 0 ? (
         <div className="mt-10 px-6">
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">
+          <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200 mb-4 text-center">
             ❤️ Your Favorites
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -64,10 +64,10 @@ const FavoritePage = () => {
                   </div>
                 </div>
                 <div className="mt-2 p-1">
-                  <h1 className="text-xl font-semibold text-gray-500">
+                  <h1 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
                     {item.title}
                   </h1>
-                  <p className="font-semibold text-gray-500">{item.cost}</p>
+                  <p className="font-semibold text-gray-500 dark:text-gray-200">cost: {item.cost}</p>
                   <div className="flex gap-1 items-center">
                     {[...Array(5)].map((_, i) => (
                       <FontAwesomeIcon

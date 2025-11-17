@@ -110,53 +110,33 @@ const Navber = () => {
                   </div>
                 )}
 
-                {/* <div>
-                {openMenu ?     <Link onClick={handelmenu} href={''}> <FontAwesomeIcon
-                  icon={faUser}
-                  className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
-                /></Link>: "0"}
-            
-               </div> */}
-                <div onClick={() => setOpenMenu(!openMenu)}>
-                  {openMenu ? (
-                    <div className="relative">
-                      <Link href={""}>
-                        <FontAwesomeIcon
-                          icon={faUser}
-                          className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
-                        />
-                        <ul className="absolute bg-gray-200 p-3 space-y-2 text-center text-sm mt-5">
-                          <li>
-                            <Link href={"/order"}>order</Link>
-                          </li>
-                          <li>user</li>
-                          <li>imortent</li>
-                          <li>setting</li>
-                          {/* theme dark light  */}
-                          <li>
-                            <div>
-                              <Link href={""} onClick={toggleTheme}>
-                                {theme === "light" ? (
-                                  <FontAwesomeIcon icon={faMoon} />
-                                ) : (
-                                  <FontAwesomeIcon
-                                    icon={faSun}
-                                    
-                                  />
-                                )}
-                              </Link>
-                            </div>
-                          </li>
-                        </ul>
-                      </Link>
-                    </div>
-                  ) : (
-                    <Link href={""}>
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
-                      />
-                    </Link>
+                <div
+                  onClick={() => setOpenMenu(!openMenu)}
+                  className="relative"
+                >
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
+                  />
+                  {openMenu && (
+                    <ul className="absolute bg-gray-200 p-3 space-y-2 text-center text-sm mt-5">
+                      <li>
+                        <Link href="/order">order</Link>
+                      </li>
+                      <li>user</li>
+                      <li>imortent</li>
+                      <li>setting</li>
+                      {/* theme dark light  */}
+                      <li>
+                        <button onClick={toggleTheme}>
+                          {theme === "light" ? (
+                            <FontAwesomeIcon icon={faMoon} />
+                          ) : (
+                            <FontAwesomeIcon icon={faSun} />
+                          )}
+                        </button>
+                      </li>
+                    </ul>
                   )}
                 </div>
 

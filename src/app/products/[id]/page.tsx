@@ -226,7 +226,7 @@ const ProductId = ({ params }: ProductDetailsType) => {
               <div>
                 {/* size  */}
 
-                <p className="text-xl">Select Size: {selectedsize}</p>
+                <p className="text-xl dark:text-gray-200">Select Size: {selectedsize}</p>
                 <div className="flex gap-8">
                   {sizes.map((size, index) => (
                     <button

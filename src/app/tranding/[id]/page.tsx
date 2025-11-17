@@ -349,7 +349,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                     Quantity :
                   </h1>
                   {/* count section  */}
-                  <div className="border px-3 py-1 rounded-full hover:border-yellow-500">
+                  <div className="border px-3 py-1 rounded-full hover:border-yellow-500 dark:text-gray-200">
                     <button onClick={() => handelIncrement(productDetails?.id)}>
                       <FontAwesomeIcon icon={faPlus} />
                     </button>
