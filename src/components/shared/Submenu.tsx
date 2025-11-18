@@ -3,7 +3,7 @@ import Link from "next/link";
 const Submenu = () => {
   const menuDesign = "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300";
   return (
-    <div className="flex  bg-gray-50">
+    <div className="flex  bg-gray-50 dark:bg-black dark:border border-gray-100">
       <ul className=" text-center p-5 lg:w-[500px] text-left">
         <Link href={"/"}>
           <li className={menuDesign}>Fresh Frouts</li>

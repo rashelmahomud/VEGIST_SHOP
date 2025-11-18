@@ -39,7 +39,7 @@ const BlogsPage = () => {
   ];
 
   return (
-    <div className="lg:px-36 my-10">
+    <div className="lg:px-36 py-10 dark:bg-black">
       <h1 className="text-center text-3xl font-semibold text-gray-600 dark:text-gray-200 my-10">
         Recent News
       </h1>

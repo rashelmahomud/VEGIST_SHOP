@@ -13,7 +13,6 @@ import { Input } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { blob } from "stream/consumers";
 
 interface BlogsDetailsType {
   params: Promise<{ id: string }>;
@@ -57,14 +56,14 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
     <div>
       <div className="flex bg-gray-50 dark:bg-black dark:text-gray-200 py-5 gap-5 items-center justify-center">
         <Link href={"/"}> Home</Link>
-        <Link href={"/"}> News</Link>
+        <Link href={"/blogs"}> News</Link>
         <Link href={"/"}>Fresh organics brand...</Link>
       </div>
       <div className="lg:px-36 flex gap-5 p-3 mx-auto my-10 dark:bg-black">
         <div className="basis-1/3 ">
           <div>
-            <Input.Search placeholder="email@exmple.com" variant="underlined" />
-            <h1 className="p-2 text-xl">Recent Posts</h1>
+            <Input.Search placeholder="email@exmple.com" variant="underlined" className="dark:bg-gray-200" />
+            <h1 className="p-2 text-xl dark:text-gray-200">Recent Posts</h1>
           </div>
           <div className="flex flex-col p-2 relative">
             {Blogs.map((blog) => (
@@ -75,14 +74,14 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
                 {/* blogs number  */}
 
                 <div className="text-gray-400 my-2">
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-2">
                     <FontAwesomeIcon
-                      className="w-10 bg-white text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                      className="w-10 bg-white text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full dark:bg-black"
                       icon={faFile}
                     />
                     May 13,2025
                   </div>
-                  <p className="mt-2 text-gray-700">
+                  <p className="mt-2 text-gray-700 dark:text-gray-200">
                     <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
                   </p>
                 </div>
@@ -90,7 +89,7 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
             ))}
           </div>
           <div className="p-2">
-            <h1 className="my-10 font-semibold text-gray-500">Categoris</h1>
+            <h1 className="my-10 font-semibold text-gray-500 dark:text-gray-200">Categoris</h1>
             <ul className="space-y-3 text-gray-500 dark:text-gray-200">
               <li>
                 <Link href={""}>Fresh fruits</Link>
@@ -110,7 +109,7 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
             </ul>
           </div>
           <div className="p-2">
-            <h1 className="my-10 font-semibold text-gray-500">Tags</h1>
+            <h1 className="my-10 font-semibold text-gray-500 dark:text-gray-200">Tags</h1>
             <ul className="flex gap-2">
               <li className="border border-gray-500 p-1 font-semibold text-gray-500 dark:text-gray-200">
                 <Link href={""}>DINNER</Link>
@@ -144,26 +143,26 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
 
           <p className="text-xl font-semibold text-gray-500 dark:text-gray-200">{b?.title}</p>
           <div className="flex justify-between text-gray-500 my-2">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <FontAwesomeIcon
                 className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faFile}
               />
-              May 13,2025
+              <span className="dark:text-gray-200">May 13,2025</span>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <FontAwesomeIcon
                 className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faUser}
               />
-              By Spacing Teach
+              <span className="dark:text-gray-200">By Spacing Teach</span>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <FontAwesomeIcon
                 className="w-10 p-2 bg-white text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faFileText}
               />
-              0 Comments
+              <span className="dark:text-gray-200">0 Comments</span>
             </div>
           </div>
           <p className="text-gray-500 dark:text-gray-200">{b?.description}</p>
