@@ -26,6 +26,8 @@ import { useTheme } from "@/context/themeContext";
 const Navber = () => {
   const menuDesign =
     "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300 w-full";
+
+    const searchDesign = 'dark:bg-gray-50'
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -123,7 +125,7 @@ const Navber = () => {
                       <li>
                         <Link href="/order">order</Link>
                       </li>
-                      <li>user</li>
+                      <li>Admin</li>
                       <li>imortent</li>
                       <li>setting</li>
                       {/* theme dark light  */}

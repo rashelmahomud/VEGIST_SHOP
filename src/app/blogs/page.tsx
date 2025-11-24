@@ -8,6 +8,7 @@ import Link from "next/link";
 
 const BlogsPage = () => {
 
+
   const Blogs: BlogsType[] = [
     {
       id: 1,

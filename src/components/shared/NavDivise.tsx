@@ -76,8 +76,8 @@ const NavDivise = () => {
             <Link href={"/"}>
               <li className={menuDesign}>Privet Policy</li>
             </Link>
-            <Link href={"/"}>
-              <li className={menuDesign}>Privet Policy</li>
+            <Link href={"/tranding"}>
+              <li className={menuDesign}>Tranding</li>
             </Link>
             <Link href={"/"}>
               <li className={menuDesign}>Return Policy</li>

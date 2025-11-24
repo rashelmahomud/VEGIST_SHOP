@@ -23,6 +23,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const getTime = new Date();
+  const getFullYear = getTime.getFullYear();
+
   const fDesign =
     "border-b border-dotted py-2 text-gray-600 dark:text-gray-200 hover:text-yellow-500 duration-100";
   return (
@@ -34,28 +37,36 @@ const Footer = () => {
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faCar}
             />
-            <p className="font-semibold text-gray-600 dark:text-gray-200">Free Delivery</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">
+              Free Delivery
+            </p>
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faCashApp}
             />
-            <p className="font-semibold text-gray-600 dark:text-gray-200">Cash On Delivery</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">
+              Cash On Delivery
+            </p>
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faReacteurope}
             />
-            <p className="font-semibold text-gray-600 dark:text-gray-200">30 Days Return</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">
+              30 Days Return
+            </p>
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
               className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
               icon={faMicrophoneLines}
             />
-            <p className="font-semibold text-gray-600 dark:text-gray-200">Online Support</p>
+            <p className="font-semibold text-gray-600 dark:text-gray-200">
+              Online Support
+            </p>
           </div>
         </div>
 
@@ -195,7 +206,7 @@ const Footer = () => {
         </div>
         <div className="lg:px-36 mx-auto grid lg:grid-cols-3">
           <h1 className="text-white font-semibold  flex justify-center md:justify-start">
-            Copyright © 2025 by Rashel Mahomud
+            Copyright © 2025-{getFullYear} by Rashel Mahomud
           </h1>
           <div className="flex gap-2 lg:my-0 my-3 justify-center">
             <FontAwesomeIcon
