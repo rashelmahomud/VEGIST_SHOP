@@ -29,6 +29,8 @@ const Footer = () => {
   const fDesign =
     "border-b border-dotted py-2 text-gray-600 dark:text-gray-200 hover:text-yellow-500 duration-100";
 
+    const fDesign2 = "bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+
 
 const footerLinks = [
   {
@@ -96,7 +98,7 @@ const paymentIcons = [
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 grid-cols-1 mx-auto p-2 py-10">
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
-              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+              className={fDesign2}
               icon={faCar}
             />
             <p className="font-semibold text-gray-600 dark:text-gray-200">
@@ -105,7 +107,7 @@ const paymentIcons = [
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
-              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+               className={fDesign2}
               icon={faCashApp}
             />
             <p className="font-semibold text-gray-600 dark:text-gray-200">
@@ -114,7 +116,7 @@ const paymentIcons = [
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
-              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+               className={fDesign2}
               icon={faReacteurope}
             />
             <p className="font-semibold text-gray-600 dark:text-gray-200">
@@ -123,7 +125,7 @@ const paymentIcons = [
           </div>
           <div className="flex items-center gap-5">
             <FontAwesomeIcon
-              className="bg-yellow-500 border rounded-full p-4 text-white border-5 border-white ring-2 ring-yellow-400 text-4xl"
+                className={fDesign2}
               icon={faMicrophoneLines}
             />
             <p className="font-semibold text-gray-600 dark:text-gray-200">
