@@ -41,7 +41,7 @@ const BlogsPage = () => {
 
   return (
     <div className="lg:px-36 py-10 dark:bg-black">
-      <h1 className="text-center text-3xl font-semibold text-gray-600 dark:text-gray-200 my-10">
+      <h1 className="text-center text-3xl font-semibold text-gray-600 dark:text-gray-400 my-10">
         Recent News
       </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-2 relative">
@@ -63,30 +63,30 @@ const BlogsPage = () => {
 
             <div className="border border-gray-200 p-2">
               <div className="flex justify-between text-gray-500 my-2">
-                <div className="flex items-center gap-2 dark:text-gray-200">
+                <div className="flex items-center gap-2 dark:text-gray-400">
                   <FontAwesomeIcon
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    className="w-10 p-2 bg-white dark:bg-gray-300 text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     icon={faFile}
                   />
                   May 13,2025
                 </div>
-                <div className="flex items-center gap-2 dark:text-gray-200">
+                <div className="flex items-center gap-2 dark:text-gray-400">
                   <FontAwesomeIcon
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    className="w-10 p-2 bg-white dark:bg-gray-300 text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     icon={faFileText}
                   />
                   0 Comments
                 </div>
               </div>
-              <h2 className="text-xl font-semibold text-gray-500 dark:text-gray-200">
+              <h2 className="text-xl font-semibold text-gray-500 dark:text-gray-400">
                 {blog.title}
               </h2>
-              <p className="text-gray-500 dark:text-gray-200">{blog.dec}</p>
-              <button className="font-semibold mt-2 text-gray-600 dark:text-gray-200">
+              <p className="text-gray-500 dark:text-gray-400">{blog.dec}</p>
+              <button className="font-semibold mt-2 text-gray-600 dark:text-gray-300">
                 <Link href={"/"} className="flex items-center gap-3">
                   Read More
                   <FontAwesomeIcon
-                    className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                    className="w-10 p-2 bg-white dark:bg-gray-300 text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                     icon={faArrowRight}
                   />
                 </Link>

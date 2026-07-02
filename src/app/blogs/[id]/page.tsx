@@ -145,21 +145,21 @@ export default function BlogDetail({ params }: BlogsDetailsType) {
           <div className="flex justify-between text-gray-500 my-2">
             <div className="flex items-center gap-2">
               <FontAwesomeIcon
-                className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                className="w-10 p-2 bg-white dark:bg-gray-300 text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faFile}
               />
               <span className="dark:text-gray-200">May 13,2025</span>
             </div>
             <div className="flex items-center gap-2">
               <FontAwesomeIcon
-                className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                className="w-10 p-2 bg-white dark:bg-gray-300 text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faUser}
               />
               <span className="dark:text-gray-200">By Spacing Teach</span>
             </div>
             <div className="flex items-center gap-2">
               <FontAwesomeIcon
-                className="w-10 p-2 bg-white text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
+                className="w-10 p-2 bg-white dark:bg-gray-300 text-gray-500 dark:text-gray-200 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
                 icon={faFileText}
               />
               <span className="dark:text-gray-200">0 Comments</span>
