@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Navber from "@/components/shared/Navber";
 import Footer from "@/components/shared/Footer";
 import { FavoriteProvider } from "@/context/FavoriteContext";
@@ -44,7 +43,8 @@ export default function RootLayout({
             <FavoriteProvider>
               <Navber />
 
-              <AntdRegistry>{children}</AntdRegistry>
+              {children}
+              {/* <AntdRegistry>{children}</AntdRegistry> */}
             </FavoriteProvider>
           </CartContext>
           <Footer />
