@@ -175,7 +175,7 @@ const Navber = () => {
                 {/* // hidden small device  */}
                 <div className="lg:block hidden">
                   <Link href={"/"}>
-                    <h1 className="hover:text-yellow-500 duration-300 font-semibold text-red-500 dark:text-gray-200">
+                    <h1 className="hover:text-yellow-500 duration-300 font-semibold text-green-500 dark:text-gray-200">
                       ACCOUNT
                     </h1>
                   </Link>
