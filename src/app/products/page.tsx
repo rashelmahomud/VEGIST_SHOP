@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const ProductsPage = () => {
   const [activeTab, setActiveTab] = useState("1");
-  const {favorites,toggleFavorite} = useFavorite();
+  const { favorites, toggleFavorite } = useFavorite();
 
   const items: ProductsType[] = [
     {
@@ -102,7 +102,7 @@ const ProductsPage = () => {
     },
     {
       id: 7,
-      title: "fresh fish",
+      title: "fresh Mango",
       cost: 10.0,
       review: "no review",
       img: "/assates/shop/shop(9).jpg",
@@ -130,6 +130,14 @@ const ProductsPage = () => {
       kgs: [1, 2, 3, 4, 5],
     },
   ];
+
+  const icons = [
+    faStar,
+    faStar,
+    faStar,
+    faStar,
+    faStar
+  ]
   return (
     <div className="lg:px-36">
       <h1 className="text-4xl font-semibold text-gray-800 dark:text-gray-200 my-10 text-center">
@@ -141,31 +149,28 @@ const ProductsPage = () => {
           <div className="lg:flex justify-center border-b border-gray-300">
             <button
               onClick={() => setActiveTab("1")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "1"
-                  ? "border-b-2 border-blue-500 text-blue-600"
-                  : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "1"
+                ? "border-b-2 border-blue-500 text-blue-600"
+                : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
+                }`}
             >
               SPECIAL PRODUCT
             </button>
             <button
               onClick={() => setActiveTab("2")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "2"
-                  ? "border-b-2 border-blue-500 text-blue-600"
-                  : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "2"
+                ? "border-b-2 border-blue-500 text-blue-600"
+                : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
+                }`}
             >
               BEST PRODUTS
             </button>
             <button
               onClick={() => setActiveTab("3")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "3"
-                  ? "border-b-2 border-blue-500 text-blue-600"
-                  : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "3"
+                ? "border-b-2 border-blue-500 text-blue-600"
+                : "text-gray-500 dark:text-gray-200 hover:text-gray-700"
+                }`}
             >
               BESTSELLING
             </button>
@@ -213,11 +218,10 @@ const ProductsPage = () => {
                         />
                         <FontAwesomeIcon
                           onClick={() => toggleFavorite(item)}
-                          className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${
-                            favorites.some((fav) => fav.id === item.id)
-                              ? "text-red-500"
-                              : "text-gray-500 hover:text-white hover:bg-yellow-500"
-                          }`}
+                          className={`w-10 p-2 bg-white duration-300 rounded-full cursor-pointer ${favorites.some((fav) => fav.id === item.id)
+                            ? "text-red-500"
+                            : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                            }`}
                           icon={faHeart}
                         />
 
@@ -234,31 +238,23 @@ const ProductsPage = () => {
                       </h1>
                       <p className="font-semibld text-gray-500 dark:text-gray-200">Cost: {item.cost}</p>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-sm text-yellow-600"
-                      />
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-sm text-yellow-600"
-                      />
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-sm text-yellow-600"
-                      />
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-sm text-yellow-600"
-                      />
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-sm text-yellow-600"
-                      />
+
+                    <div className="flex items-center gap-1">
+                      {
+                        icons.map((icon, index) => (
+                          <FontAwesomeIcon
+                            key={index}
+                            icon={icon}
+                            className="text-sm text-yellow-600"
+                          />
+                        ))}
+
                       <p className="font-semibld text-gray-500 dark:text-gray-200">
                         {item.review}
                       </p>
                     </div>
+
+
                   </div>
                 ))}
               </div>
@@ -305,11 +301,10 @@ const ProductsPage = () => {
                         <FontAwesomeIcon
                           onClick={() => toggleFavorite(item)}
                           icon={faHeart}
-                          className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${
-                            favorites.some((fav) => fav.id === item.id)
-                              ? "text-red-500"
-                              : "text-gray-500 hover:text-white hover:bg-yellow-500"
-                          }`}
+                          className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${favorites.some((fav) => fav.id === item.id)
+                            ? "text-red-500"
+                            : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                            }`}
                         />
                         <FontAwesomeIcon
                           icon={faBagShopping}
@@ -324,29 +319,24 @@ const ProductsPage = () => {
                       </h1>
                       <p className="font-semibld text-gray-500 dark:text-gray-200">Cost: {item.cost}</p>
                       <div className="flex items-center gap-2">
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <p className="font-semibld text-gray-500 dark:text-gray-200">
-                          {item.review}
-                        </p>
+
+                        {/* // here have a work */}
+
+                        <div className="flex items-center gap-1">
+
+                          {
+                            icons.map((icon, index) => (
+                              <FontAwesomeIcon
+                                key={index}
+                                icon={icon}
+                                className="text-sm text-yellow-600"
+                              />
+                            ))}
+
+                          <p className="font-semibld text-gray-500 dark:text-gray-200">
+                            {item.review}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -394,11 +384,10 @@ const ProductsPage = () => {
                         <FontAwesomeIcon
                           onClick={() => toggleFavorite(item)}
                           icon={faHeart}
-                          className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${
-                            favorites.some((fav) => fav.id === item.id)
-                              ? "text-red-500"
-                              : "text-gray-500 hover:text-white hover:bg-yellow-500"
-                          }`}
+                          className={`w-10 p-2 bg-white text-gray-500 duration-300 rounded-full ${favorites.some((fav) => fav.id === item.id)
+                            ? "text-red-500"
+                            : "text-gray-500 hover:text-white hover:bg-yellow-500"
+                            }`}
                         />
                         <FontAwesomeIcon
                           icon={faBagShopping}
@@ -412,30 +401,24 @@ const ProductsPage = () => {
                         {item.title}
                       </h1>
                       <p className="font-semibld text-gray-500 dark:text-gray-200">cost: ${item.cost}</p>
-                      <div className="flex items-center gap-2">
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
-                        <FontAwesomeIcon
-                          icon={faStar}
-                          className="text-sm text-yellow-600"
-                        />
+
+
+                      {/* customer review star  */}
+                      <div className="flex items-center gap-1">
+                        {
+                          icons.map((icon, index) => (
+                            <FontAwesomeIcon
+                              key={index}
+                              icon={icon}
+                              className="text-sm text-yellow-600"
+                            />
+                          ))}
+
                         <p className="font-semibld text-gray-500 dark:text-gray-200">
                           {item.review}
                         </p>
+
+
                       </div>
                     </div>
                   </div>

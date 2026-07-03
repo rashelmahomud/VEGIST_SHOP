@@ -48,7 +48,7 @@ const CustomerSay = () => {
           Our customer say
         </h1>
 
-     <div className="my-10 px-6 py-6 text-center">
+     <div className="my-10 px-6 p-2 text-center">
        <Carousel
        autoplay
         infinite
