@@ -42,6 +42,7 @@ const CustomerSay = () => {
     },
   ];
 
+
   return (
     <div className="lg:px-36 p-3">
         <h1 className="lg:text-4xl text-2xl font-semibold text-gray-800 dark:text-gray-200 text-center">
@@ -83,6 +84,7 @@ const CustomerSay = () => {
               <p className="font-semibld text-gray-500 dark:text-gray-200">{item.description}</p>
               <p className="font-semibld text-gray-800 dark:text-gray-200 text-xl">{item.name}</p>
               <div className="flex gap-2 justify-center items-center mt-2">
+
                 <FontAwesomeIcon
                   icon={faStar}
                   className="w-3 text-yellow-600"

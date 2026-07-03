@@ -131,7 +131,7 @@ const ProductsPage = () => {
     },
   ];
 
-  const icons = [
+   const icons = [
     faStar,
     faStar,
     faStar,
@@ -211,7 +211,7 @@ const ProductsPage = () => {
                           className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                         />
                       </Link>
-                      <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
+                      <div className="flex gap-5 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           className="bg-white text-gray-500 hover:text-white hover:bg-yellow-500 p-2 rounded-full w-10 duration-300"
                           icon={faEye}
@@ -293,7 +293,7 @@ const ProductsPage = () => {
                           className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                         />
                       </Link>
-                      <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
+                      <div className="flex gap-5 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
@@ -376,7 +376,7 @@ const ProductsPage = () => {
                           className="rounded-lg object-cover invisible group-hover:visible group-hover:opacity-100 relative"
                         />
                       </Link>
-                      <div className="flex gap-10 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
+                      <div className="flex gap-5 invisible group-hover:visible duration-100 absolute bottom-40 left-12">
                         <FontAwesomeIcon
                           icon={faEye}
                           className="w-10 p-2 bg-white text-gray-500 hover:text-white hover:bg-yellow-500 duration-300 rounded-full"
@@ -416,8 +416,7 @@ const ProductsPage = () => {
 
                         <p className="font-semibld text-gray-500 dark:text-gray-200">
                           {item.review}
-                        </p>
-
+                        </p>             
 
                       </div>
                     </div>

@@ -47,7 +47,7 @@ const DealOfDay = () => {
         </div>
       </div>
 
-      <button className="py-2 px-6 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500 lg:w-1/7 w-1/2">
+      <button className="py-2 px-3 bg-yellow-400 rounded-full font-semibold text-white hover:outline hover:yellow-none hover:bg-white hover:text-yellow-500 lg:w-1/7 w-1/2">
         Shop Collection
       </button>
     </div>
