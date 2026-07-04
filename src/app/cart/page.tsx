@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function CartPage() {
-  const { cart, removeCart, totalPrice,kg,country } = useCart();
+  const { cart, removeCart, totalPrice, kg, country } = useCart();
 
   const [open, setOpen] = useState(false);
 
@@ -32,7 +32,7 @@ export default function CartPage() {
                 {cart.map((item) => (
                   <div
                     key={item.id}
-                    className="lg:flex items-center gap-10 border border-gray-100 dark:border-gray-500 p-4 rounded-xl text-xl dark:text-gray-200"
+                    className="lg:flex items-center gap-3 border border-gray-100 dark:border-gray-500 p-4 rounded-xl text-xl dark:text-gray-200"
                   >
                     <Image
                       src={item.img}
@@ -41,12 +41,10 @@ export default function CartPage() {
                       alt="cart image"
                     />
 
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p>size:{kg}kg</p>
-                    <p>metarial:{country}</p>
-
-                    <p>Cost: {item.cost * item.quantity}</p>
-                    <p>Item: {item.quantity}</p>
+                    <h3 className="font-semibold text-xl">{item.title}</h3>
+                    <p className="text-sm">size: {kg}kg</p>
+                    <p className="text-sm">Cost: {item.cost * item.quantity}</p>
+                    <p className="text-sm">Item: {item.quantity >= 10 ? item.quantity  : "0" + item.quantity}</p>
                     <Button onClick={() => removeCart(item)}>Delete</Button>
                   </div>
                 ))}
@@ -66,12 +64,13 @@ export default function CartPage() {
               </p>
               <p className="flex justify-between text-base">
                 <span className="font-semibold">Delivery Cost:</span>
-                <span className="font-bold">$130</span>
+                <span className="font-bold">{totalPrice > 0 ? "$130": "$0"}</span>
+                {/* <span className="font-bold">$130</span> */}
               </p>
               <hr className="my-3 border-gray-200" />
               <p className="flex justify-between text-lg font-semibold text-gray-900 dark:text-gray-200">
                 <span>Grand Total:</span>
-                <span className="text-yellow-500">${totalPrice + 130}</span>
+                <span className="text-yellow-500">${totalPrice + (totalPrice > 0 ? 130 : 0)}</span>
               </p>
             </div>
 
