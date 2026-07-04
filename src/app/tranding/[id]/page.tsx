@@ -205,7 +205,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                 <div>
                   <Image
                     src={productDetails?.img}
-                    width={380}
+                    width={350}
                     height={500}
                     alt="image"
                   />
@@ -371,7 +371,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                         productDetails && handelCart(productDetails)
                       }
                       href={``}
-                      className="lg:px-14 px-3 py-3 text-white text-semibold bg-yellow-500 rounded-full"
+                      className="lg:px-8 px-3 py-3 text-white text-semibold bg-yellow-500 rounded-full"
                     >
                       Add to cart
                     </Link>
@@ -379,7 +379,7 @@ const TrandingId = ({ params }: { params: Promise<{ id: string }> }) => {
                   <button className="text-gray-600">
                     <Link
                       href={"/cart"}
-                      className="lg:px-14 px-3 py-3 text-white text-semibold bg-gray-800 rounded-full"
+                      className="lg:px-8 px-3 py-3 text-white text-semibold bg-gray-800 rounded-full"
                     >
                       Buy it now
                     </Link>
