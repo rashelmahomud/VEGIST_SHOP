@@ -27,7 +27,7 @@ const Navber = () => {
   const menuDesign =
     "font-bold text-gray-500 mb-2 hover:text-yellow-500 duration-300 w-full";
 
-    const searchDesign = 'dark:bg-gray-50'
+  const searchDesign = 'dark:bg-gray-50'
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -112,33 +112,95 @@ const Navber = () => {
                   </div>
                 )}
 
-                <div
-                  onClick={() => setOpenMenu(!openMenu)}
-                  className="relative"
-                >
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
-                  />
+                <div className="relative">
+                  {/* User Icon */}
+                  <button
+                    onClick={() => setOpenMenu(!openMenu)}
+                    className="group relative"
+                  >
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      className="lg:text-3xl text-xl hover:text-yellow-500 duration-300 text-gray-500 dark:text-gray-200 lg:mt-0 mt-5"
+                    />
+                  </button>
+
+                  {/* Dropdown */}
                   {openMenu && (
-                    <ul className="absolute bg-gray-200 p-3 space-y-2 text-center text-sm mt-5">
-                      <li>
-                        <Link href="/order">order</Link>
-                      </li>
-                      <li>Admin</li>
-                      <li>imortent</li>
-                      <li>setting</li>
-                      {/* theme dark light  */}
-                      <li>
-                        <button onClick={toggleTheme}>
-                          {theme === "light" ? (
-                            <FontAwesomeIcon icon={faMoon} />
-                          ) : (
-                            <FontAwesomeIcon icon={faSun} />
-                          )}
+                    <div className="absolute right-0 mt-4 w-64 rounded-2xl overflow-hidden bg-white/80 dark:bg-gray-900/90 backdrop-blur-xl border border-white/20 dark:border-gray-700 shadow-2xl animate-in fade-in zoom-in-95 duration-300 z-50">
+
+                      {/* Profile */}
+                      <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-5 text-center">
+                        <div className="w-16 h-16 mx-auto rounded-full bg-white flex items-center justify-center shadow-md">
+                          <FontAwesomeIcon
+                            icon={faUser}
+                            className="text-2xl text-orange-500"
+                          />
+                        </div>
+
+                        <h2 className="text-lg font-bold text-white mt-3">
+                          Md Rashel
+                        </h2>
+
+                        <p className="text-sm text-white/90">
+                          Frontend Developer
+                        </p>
+                      </div>
+
+                      {/* Menu */}
+                      <div className="p-2">
+
+                        <Link
+                          href="/order"
+                          className="flex items-center gap-3 dark:text-gray-400 rounded-xl px-4 py-3 hover:bg-yellow-100 dark:hover:bg-gray-800 duration-300"
+                        >
+                          📦
+                          <span>My Orders</span>
+                        </Link>
+
+                        <Link
+                          href="/admin"
+                          className="flex items-center gap-3 dark:text-gray-400 rounded-xl px-4 py-3 hover:bg-yellow-100 dark:hover:bg-gray-800 duration-300"
+                        >
+                          👨‍💻
+                          <span>Admin Panel</span>
+                        </Link>
+
+                        <Link
+                          href="/important"
+                          className="flex items-center gap-3 dark:text-gray-400 rounded-xl px-4 py-3 hover:bg-yellow-100 dark:hover:bg-gray-800 duration-300"
+                        >
+                          ⭐
+                          <span>Important</span>
+                        </Link>
+
+                        <Link
+                          href="/settings"
+                          className="flex items-center gap-3 dark:text-gray-400 rounded-xl px-4 py-3 hover:bg-yellow-100 dark:hover:bg-gray-800 duration-300"
+                        >
+                          ⚙️
+                          <span>Settings</span>
+                        </Link>
+
+                        <button
+                          onClick={toggleTheme}
+                          className="w-full flex items-center dark:text-gray-400 justify-between rounded-xl px-4 py-3 hover:bg-yellow-100 dark:hover:bg-gray-800 duration-300"
+                        >
+                          <span>
+                            {theme === "light"
+                              ? "🌙 Dark Mode"
+                              : "☀️ Light Mode"}
+                          </span>
+
+                          <FontAwesomeIcon
+                            icon={theme === "light" ? faMoon : faSun}
+                          />
                         </button>
-                      </li>
-                    </ul>
+
+                        <button className="mt-3 w-full rounded-xl bg-red-500 py-3 text-white hover:bg-red-600 duration-300">
+                          Logout
+                        </button>
+                      </div>
+                    </div>
                   )}
                 </div>
 
