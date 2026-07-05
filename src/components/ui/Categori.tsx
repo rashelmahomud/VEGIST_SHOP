@@ -8,21 +8,19 @@ const Categori = () => {
     title: string;
     img: string;
   }
+  
 
   const items: Categori[] = [
-    { id: 1, title: "Fresh Fist", img: "/assates/shop/shop (1).jpg" },
-    { id: 2, title: "Fresh Vegitable", img: "/assates/shop/shop (2).jpg" },
-    { id: 3, title: "Fresh Orange", img: "/assates/shop/shop (3).jpg" },
-    { id: 4, title: "fresh mango", img: "/assates/shop/shop (4).jpg" },
-    { id: 5, title: "excellent mongo", img: "/assates/shop/shop (5).jpg" },
-    { id: 6, title: "fresh pinapel", img: "/assets/shop/shop(6).webp" },
-    { id: 7, title: "fresh orange", img: "/assates/shop/shop(7).jpg" },
-    { id: 8, title: "fresh fish", img: "/assates/shop/shop(8).webp" },
-    { id: 9, title: "fresh tomato", img: "/assates/shop/shop(9).jpg" },
-    { id: 10, title: "fresh fish", img: "/assets/shop/shop(10)" },
-    { id: 11, title: "fresh banana", img: "/assates/shop/shop(1).jpg" },
-    { id: 12, title: "fresh fish", img: "/assates/shop/shop(5).jpg" },
-    {id: 14, title: "i am cuing desjgjs", img: "/assets/shop/shop(14).webp"}
+    { id: 1, title: "Fresh Fist", img: "/assates/shop/apple.jpg" },
+    { id: 2, title: "Fresh Vegitable", img: "/assates/shop/cfish.jpg" },
+    { id: 3, title: "Fresh Orange", img: "/assates/shop/coconat.jpg" },
+    { id: 4, title: "fresh mango", img: "/assates/shop/fish.webp" },
+    { id: 5, title: "excellent mongo", img: "/assates/shop/juice.jpg" },
+    { id: 6, title: "fresh pinapel", img: "/assates/shop/lichi.jpg" },
+    { id: 7, title: "fresh orange", img: "/assates/shop/orange.webp" },
+    { id: 8, title: "fresh fish", img: "/assates/shop/papaya.jpg" },
+    { id: 9, title: "fresh tomato", img: "/assates/shop/shop(4).jpg" },
+    { id: 10, title: "fresh fish", img: "/assates/shop/vegitable.webp" },
   ];
 
   return (
